@@ -1,0 +1,33 @@
+footer
+    background-color: $clr_footer
+    box-shadow: 0 -1px 8px 0 rgba(#000, .3)
+    margin-top: 20px
+    .row
+        justify-content: space-between
+        align-items: center
+        min-height: $footer_height
+        color: $clr_text
+        padding: 15px 0
+        flex-wrap: wrap
+    .auth-link
+        font-size: .8rem
+        color: $clr_text
+        display: block
+        text-decoration: none
+        margin: 8px 0
+    .menu 
+        display: flex
+        justify-content: center
+        &-link
+            color: $clr_text
+            display: block
+            text-decoration: none
+            margin-left: 30px
+            &:first-child
+                margin-left: 0
+@media screen and (max-width: 766px)
+    footer 
+        .menu
+            flex-direction: column
+        .menu-link
+            margin: 2px !important

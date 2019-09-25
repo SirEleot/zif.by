@@ -1,0 +1,59 @@
+.catalog
+    margin-top: $nav_height + 20px
+    z-index: 50
+    .filter
+        box-shadow: 4px 4px 8px 0 rgba(#000,.2)
+        overflow: hidden
+        p
+            margin: 5px 0
+        a
+            text-decoration: none
+            color: $clr_text
+            white-space: nowrap
+        &-category
+            font-size: 18px
+            font-weight: bold
+        &-subcategory
+            font-size: 15px
+            margin: 0 25px 0
+    .body
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+    .card
+        width: 240px
+        height: 330px
+        flex: 0 1 auto
+        margin: 0 15px 30px
+        box-shadow: 4px 4px 8px 0 rgba(#000,.2)
+        position: relative
+        text-align: center
+    .image       
+        width: 220px
+        height: 220px
+        margin: 10px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+    .info
+        width: 220px
+        border-top: 2px solid rgba(#555,.7)
+        margin: auto
+        &-name
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+            margin: 5px auto
+            font-size: 18px
+        &-price           
+            font-size: 20px
+            font-weight: bold            
+    .pagination
+        justify-content: center
+    .navi-string 
+        font-size: .9rem
+        a
+            color: $clr_text
+            text-decoration: none
+
+
