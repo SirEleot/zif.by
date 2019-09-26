@@ -5,9 +5,9 @@
       <div class="container">
          <div class="row">
             <p class="navi-string">
-               <a href="{{ route('home') }}">Главная</a>/
-               <a href="{{ route('catalog', 0) }}">Каталог товаров</a>/             
-               <a href="{{ route('catalog', $categoryId) }}">{{$categories[$categoryId]->name}}</a>/
+               <a href="{{ route('home') }}">Главная</a> /
+               <a href="{{ route('catalog', 0) }}">Каталог товаров</a> /             
+               <a href="{{ route('catalog', $categoryId) }}">{{$categories[$categoryId]->name}}</a> /
             </p>
          </div>
          <div class="row">
@@ -20,7 +20,7 @@
                <div class="body">
                   @foreach ($paginator as $item)
                      <div class="card">
-                        <div class="image" style="background-image: url({{ asset("img/".$item->img) }})"></div>
+                        <div class="image" style="background-image: url({{ asset("image/items/".$item->image) }})"></div>
                         <div class="info">
                            <p class="info-name">{{$item->name}}</p>
                            <p class="info-price">{{$item->price}} руб</p>                   

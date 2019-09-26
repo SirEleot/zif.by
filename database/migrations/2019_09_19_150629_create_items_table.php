@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('price');
-            $table->string('img');
+            $table->string('image');
             $table->json('description');
             $table->integer('category_id');
 

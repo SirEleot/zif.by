@@ -10,6 +10,9 @@
             text-decoration: none
             color: $clr_text
             white-space: nowrap
+            &:hover
+                text-shadow: 0 0 1px rgba($PURPLE,.5)
+                color: $PURPLE
         &-category
             font-size: 18px
             font-weight: bold
@@ -25,9 +28,14 @@
         height: 330px
         flex: 0 1 auto
         margin: 0 15px 30px
-        box-shadow: 4px 4px 8px 0 rgba(#000,.2)
+        box-shadow: 2px 2px 4px 0 rgba(#000,.2)
         position: relative
         text-align: center
+        transition: all .3
+        &:hover
+            cursor: pointer            
+            box-shadow: 4px 4px 8px 0 rgba(#000,.2)
+            transform: scale(1.02)
     .image       
         width: 220px
         height: 220px
@@ -55,5 +63,11 @@
         a
             color: $clr_text
             text-decoration: none
-
-
+.page-link
+    color: $PURPLE
+    font-weight: bold
+    &:hover
+        color: $PURPLE
+.page-item.active  .page-link
+    background-color: $PURPLE
+    border-color: $PURPLE

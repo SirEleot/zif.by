@@ -1,13 +1,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Variables
+@import 'color';
 @import 'variables';
-@import 'colors';
-
+@import 'font';
 @import 'common';
-@import 'sections/nav';
+
 @import 'sections/header';
-@import 'sections/catalog';
-    
+@import 'sections/button';
+@import 'sections/aboutUs';
+@import 'sections/form';
+@import 'sections/blog';
+@import 'sections/contacts';
 @import 'sections/footer';
+@import 'sections/catalog';

@@ -19,7 +19,7 @@ class ItemSeeder extends Seeder
             $result[] = array(
                 'name'=> $value->name?$value->name:"noname", 
                 'price'=>$value->price, 
-                'img'=>"image_$key.jpg",
+                'image'=>$value->image,
                 'description'=>json_encode($value->characteristics), 
                 'category_id'=> DB::table('categories')->where('name',$value->subcategory)->value('id')
             );
