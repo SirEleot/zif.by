@@ -1,6 +1,6 @@
 .footer {
   margin-top: 20px;
-  background: #4e4884;
+  background: $PURPLE;
   color: #ffffff;
   font-family: "Segoe UI";
   font-weight: 400;
@@ -30,4 +30,7 @@
     font-size: 14px;
     margin-top: 50px;
   }
+}
+.social-ico {
+  cursor: pointer;
 }

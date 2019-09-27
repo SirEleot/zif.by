@@ -1,25 +1,28 @@
-function scrollTo(elementID,smooth = true){
-    const el = document.getElementById(naelementIDme);
-    const option = {};
-    if(smooth) option.behavior = smooth;
-    if(el) el.scrollIntoView(option);
+function scrollTo(elementID){
+    const el = document.getElementById(elementID);
+    if(el) el.scrollIntoView({ behavior: "smooth"});
 }
 
+
 $(document).ready(function () {
-    $('.menu-btn').click(function (e) { 
-        e.preventDefault();
-        $('nav').toggleClass('active');
+    $('.nav-menu-btn').click(function (e) {
+        $('.nav-menu').toggleClass('nav-menu-active');
     });
-    $('.menu-link').click(function (e) { 
+    $('.nav-menu-link').click(function (e) { 
         e.preventDefault();     
-        if($('nav').hasClass('active'))
-            $('nav').removeClass('active');       
-        const aray = e.target.href.split("#");
-        if(e.target.origin + e.target.pathname == e.target.baseURI){
-            if(aray[1]){
-                scrollTo(aray[1]);
-            }
-        }else document.location = e.target.href
+        if($('.nav-menu').hasClass('nav-menu-active'))
+            $('.nav-menu').removeClass('nav-menu-active');
+
+        console.log(document.location.href);
         
+
+        if(e.target.href.match(/catalog/))
+            document.location = e.target.href;
+        else if (document.location.href.match(/catalog/))
+            document.location = e.target.href;
+        else {       
+            const aray = e.target.href.split("#");            
+            scrollTo(aray[1]);
+        }
     });
 });

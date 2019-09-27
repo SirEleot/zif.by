@@ -20,7 +20,7 @@
                <div class="body">
                   @foreach ($paginator as $item)
                      <div class="card">
-                        <div class="image" style="background-image: url({{ asset("image/items/".$item->image) }})"></div>
+                        <div class="image" style="background-image: url({{ asset("img/items/".$item->image) }})"></div>
                         <div class="info">
                            <p class="info-name">{{$item->name}}</p>
                            <p class="info-price">{{$item->price}} руб</p>                   

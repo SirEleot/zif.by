@@ -9,61 +9,20 @@
       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   </head>
   <body>
-    <div class="section nav">
-      <div class="container">
-        <div class="header">
-          <div class="nav-top">
-            <div class="row">
-              <div class="col-2">
-                <img class="nav-top-logo" src="{{ asset('image/svg/logo.svg')}}" alt="logo">
-              </div>
-              <div class="col-5 nav-top-contact">
-                <img src="{{ asset('image/svg/viber-white.svg') }}" alt="">
-                <a href="tel">8 800 123 45 67</a>
-                <img src="{{ asset('image/svg/whatsapp-white.svg') }}" alt="">
-                <a href="tel">8 800 123 45 67</a>
-              </div>
-              <div class="col-5">
-                <ul>
-                  <li>
-                    <a href="">Главная</a>
-                  </li>
-                  <li>
-                    <a href="">О нас</a>
-                  </li>
-                  <li>
-                    <a href="">Услуги</a>
-                  </li>
-                  <li>
-                    <a href="{{ route('catalog', ['category' => 0]) }}">Товары</a>
-                  </li>
-                  <li>
-                    <a href="">Блог</a>
-                  </li>
-                  <li>
-                    <a href="">Контакты</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div id="main"></div>
+      @include('nav')
 
       {{-- content --}}
       @yield('content')
 
-    <div class="section footer">
+    <footer class="footer">
       <div class="container">
         <div class="row footer-cont">
-          <div class="col-2">
-            <img src="{{ asset('image/svg/logo.svg') }}" alt="">
-          </div>
-          <div class="col-2">
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2">
+            <img src="{{ asset('img/svg/logo.svg') }}" alt="">
             <a class="footer-name" href="">Замки и фурнитура</a>
           </div>
-          <div class="col-2">
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-5">
             <ul>
               <p>Каталог товаров</p>
               <li>
@@ -80,7 +39,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-1">
+          <div class="col-xl-1 col-lg-2 col-md-2 col-sm-5">
               <ul>
                 <p>Важное</p>
                 <li>
@@ -94,25 +53,24 @@
                 </li>
               </ul>
             </div>
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-2 col-md-2 col-sm-4">
               <p>Адреса магазинов</p>
-              <img src="{{ asset('image/svg/contacts/map-pointer-white.svg') }}" alt="">
+              <img src="{{ asset('img/svg/contacts/map-pointer-white.svg') }}" alt="">
               <a href="">г. Минск ул. Ленина д.32</a><br/>
-              <img src="{{ asset('image/svg/contacts/map-pointer-white.svg') }}" alt="">
+              <img src="{{ asset('img/svg/contacts/map-pointer-white.svg') }}" alt="">
               <a href="">г. Минск ул. Ленина д.32</a><br/>
-              <img src="{{ asset('image/svg/contacts/map-pointer-white.svg') }}" alt="">
+              <img src="{{ asset('img/svg/contacts/map-pointer-white.svg') }}" alt="">
               <a href="">г. Минск ул. Ленина д.32</a><br/>
             </div>
-            <div class="col-2">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
               <p>Закажите звонок</p>
               <input type="text" placeholder="+7 978 777 77 77">
-              <img style="margin-top: 15px;" src="{{ asset('image/svg/vk.svg') }}" alt="">
-              <img style="margin-top: 15px;" src="{{ asset('image/svg/instagram-logo.svg') }}" alt="">
+              <img class="social-ico" style="margin-top: 15px;" src="{{ asset('img/svg/vk.svg') }}" alt="">
+              <img class="social-ico" style="margin-top: 15px;" src="{{ asset('img/svg/instagram-logo.svg') }}" alt="">
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </footer>
     {{-- Custom Scripts--}}
     <script src="{{ asset('js/app.js') }}"></script>
   </body>
