@@ -18,6 +18,8 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('price');
             $table->string('image');
+            $table->string('series');
+            $table->string('factory');
             $table->json('description');
             $table->integer('category_id');
 
