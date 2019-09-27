@@ -18,7 +18,7 @@
               <a href="{{ route('home') }}#main" class="nav-menu-link">Главная</a>
               <a href="{{ route('home') }}#about" class="nav-menu-link">О нас</a>
               <a href="{{ route('home') }}#services" class="nav-menu-link">Услуги</a>
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link">Каталг товаров</a>
+              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link">Каталог товаров</a>
               <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link">Акции</a>
               <a href="{{ route('home') }}#posts" class="nav-menu-link">Статьи</a>
               <a href="{{ route('home') }}#contacts" class="nav-menu-link">Контакты</a>

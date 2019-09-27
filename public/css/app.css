@@ -10647,15 +10647,18 @@ a.text-dark:focus {
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto";
+  font-weight: 400;
 }
 
 .title {
   color: #000;
   font-family: "Roboto";
+  width: 90%;
   font-size: 50px;
   font-weight: 700;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin: 10px auto;
+  padding: 15px;
   border-bottom: 1px solid grey;
 }
 
@@ -10677,6 +10680,10 @@ a.text-dark:focus {
 
 .color-rurple {
   color: #4E4884 !important;
+}
+
+section {
+  padding: 70px 0;
 }
 
 button {
@@ -10740,6 +10747,7 @@ button:active {
 
 .nav .phones a {
   margin-left: 30px;
+  font-size: 16px;
 }
 
 .nav .phones a:hover {
@@ -10764,6 +10772,7 @@ button:active {
 }
 
 .nav-menu-link {
+  font-size: 16px;
   display: block;
   margin-left: 20px;
   text-decoration: none;
@@ -10937,6 +10946,10 @@ button:active {
   margin: 30px 30px 0 0;
 }
 
+.header-buttons .button-1 a:hover {
+  color: #fff;
+}
+
 @media screen and (max-width: 766px) {
   .header {
     margin: 80px auto;
@@ -10950,13 +10963,8 @@ button:active {
 }
 
 .aboutUs {
-  margin-top: 70px;
   text-align: center;
-}
-
-.aboutUs h3 {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 40px auto;
   color: #0d0d0d;
   font-family: "Montserrat";
   font-size: 27px;
@@ -10964,8 +10972,11 @@ button:active {
   text-transform: uppercase;
 }
 
+.aboutUs .row {
+  margin-top: 40px;
+}
+
 .aboutUs img {
-  max-width: 100%;
   width: 100px;
   height: 100px;
 }
@@ -10977,21 +10988,38 @@ button:active {
   font-weight: 400;
 }
 
-.form {
-  margin-top: 130px;
-  margin-bottom: 85px;
-  box-shadow: 0px 0px 10px 0px black;
-  padding: 25px 15px;
+#services {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1920px;
+  margin: auto;
 }
 
-.form h3 {
+#services .container {
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+  padding: 25px 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.form {
+  margin: 90px auto;
+  width: 80%;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+  padding: 25px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+h3 {
   color: #030303;
   font-family: "Segoe UI";
   font-size: 32px;
   font-weight: 700;
 }
 
-.form input {
+input {
   padding: 15px;
   border-radius: 26px;
   border: 1px solid #e05e80;
@@ -11005,14 +11033,14 @@ button:active {
     box-shadow: 0px 0px 10px 0px black;
   }
 
-  .form h3 {
+  h3 {
     color: #030303;
     font-family: "Segoe UI";
     font-size: 30px;
     font-weight: 700;
   }
 
-  .form input {
+  input {
     padding: 3px;
     border-radius: 26px;
     border: 1px solid #e05e80;
@@ -11029,7 +11057,7 @@ button:active {
     padding: 10px 10px;
   }
 
-  .form h3 {
+  h3 {
     text-align: center;
     color: #030303;
     font-family: "Segoe UI";
@@ -11037,7 +11065,7 @@ button:active {
     font-weight: 700;
   }
 
-  .form input {
+  input {
     padding: 15px;
     border-radius: 26px;
     border: 1px solid #e05e80;
@@ -11047,18 +11075,64 @@ button:active {
   }
 }
 
-.blog {
+.posts {
   cursor: pointer;
 }
 
-.blog a {
+.posts-card {
+  margin: 10px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.posts-card:first-child {
+  margin-top: 40px;
+}
+
+.posts-card:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.6);
+}
+
+.posts-card-image {
+  width: 100%;
+  height: 240px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.posts-card-tittle {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.posts-card-description {
+  text-indent: 20px;
+  margin: 5px 0;
+  height: 120px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.posts-card-date {
+  text-align: right;
+  margin: 5px 0;
+  font-weight: 450;
+}
+
+a {
   color: #000000;
   font-family: "Roboto";
   font-size: 20px;
   font-weight: 400;
 }
 
-.blog p {
+p {
   color: #000000;
   font-family: "Roboto";
   font-size: 15px;

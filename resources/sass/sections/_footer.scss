@@ -1,36 +1,36 @@
 .footer {
-  margin-top: 20px;
-  background: $PURPLE;
-  color: #ffffff;
-  font-family: "Segoe UI";
-  font-weight: 400;
-  line-height: 25px;
-  p {
-    font-size: 20px;
-  }
-  a {
-    font-size: 14px;
+    margin-top: 20px;
+    background: $PURPLE;
     color: #ffffff;
-  }
-  li {
-    list-style: none;
-  }
-  &-rules {
-    border-top: 1px solid #ffffff;
-    margin-top: 5px;
-    color: #fff;
     font-family: "Segoe UI";
-    font-size: 3px;
-  }
-  &-cont {
-    padding-top: 15px;
-  }
-  &-name {
-    display: block;
-    font-size: 14px;
-    margin-top: 50px;
-  }
+    font-weight: 400;
+    line-height: 25px;
+    p {
+        font-size: 20px;
+    }
+    a {
+        font-size: 14px;
+        color: #ffffff;
+    }
+    li {
+        list-style: none;
+    }
+    &-rules {
+        border-top: 1px solid #ffffff;
+        margin-top: 5px;
+        color: #fff;
+        font-family: "Segoe UI";
+        font-size: 3px;
+    }
+    &-cont {
+        padding-top: 15px;
+    }
+    &-name {
+        display: block;
+        font-size: 14px;
+        margin-top: 50px;
+    }
 }
 .social-ico {
-  cursor: pointer;
+    cursor: pointer;
 }
