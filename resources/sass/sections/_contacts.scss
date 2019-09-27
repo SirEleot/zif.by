@@ -1,4 +1,5 @@
 .contacts {
+  text-align: left;
   img {
     width: 20px;
     height: 30px;
@@ -16,5 +17,10 @@
     font-family: 'Roboto';
     font-size: 24px;
     font-weight: 400;
+  }
+}
+@media screen and (max-width: 990px){
+  .contacts{
+    text-align: center;
   }
 }

@@ -10697,9 +10697,7 @@ button:active {
   border: none;
 }
 
-.button-1 {
-  width: 210px;
-  padding: 10px;
+.button {
   border-radius: 32px !important;
   border: none;
   background: linear-gradient(180deg, #EB95AC 0%, #E05E80 46.35%, #BF3F61 100%);
@@ -10708,7 +10706,7 @@ button:active {
   box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.43);
 }
 
-.button-1 a {
+.button a {
   color: #ffffff;
   font-family: "Segoe UI";
   font-size: 20px;
@@ -10716,11 +10714,11 @@ button:active {
   text-decoration: none;
 }
 
-.button-1 a:hover {
+.button a:hover {
   text-decoration: none;
 }
 
-.button-1:hover {
+.button:hover {
   transition: 0.2;
   transform: scale(1.05);
 }
@@ -10738,7 +10736,7 @@ button:active {
 }
 
 .nav-logo {
-  height: 60px;
+  height: 55px;
 }
 
 .nav .phones {
@@ -10764,7 +10762,7 @@ button:active {
 }
 
 .nav .phones img {
-  width: 25px;
+  width: 16px;
 }
 
 .nav-menu-links {
@@ -10807,12 +10805,16 @@ button:active {
     right: 0;
   }
 
+  .nav .phones img {
+    width: 40px;
+  }
+
   .nav .phones .phone,
   .nav .phones .viber {
     display: block;
     border-radius: 50%;
     background-color: green;
-    padding: 10px;
+    padding: 12px;
     margin: 10px;
     opacity: 0.5;
   }
@@ -10942,11 +10944,13 @@ button:active {
   justify-content: space-between;
 }
 
-.header-buttons .button-1 {
+.header-buttons .button {
+  width: 210px;
+  padding: 10px;
   margin: 30px 30px 0 0;
 }
 
-.header-buttons .button-1 a:hover {
+.header-buttons .button a:hover {
   color: #fff;
 }
 
@@ -11003,87 +11007,56 @@ button:active {
   border-radius: 10px;
 }
 
-.form {
+#services .form {
   margin: 90px auto;
-  width: 80%;
+  width: 90%;
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-  padding: 25px 15px;
+  padding: 25px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
 }
 
-h3 {
-  color: #030303;
-  font-family: "Segoe UI";
-  font-size: 32px;
-  font-weight: 700;
+#services .form-inputs {
+  justify-content: space-between;
+  text-align: center;
 }
 
-input {
-  padding: 15px;
+#services .form input {
+  padding: 5px;
+  margin: 10px;
+  width: 100%;
+  padding-left: 15px;
   border-radius: 26px;
   border: 1px solid #e05e80;
   background-color: #ffffff;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .form {
-    margin-top: 130px;
-    margin-bottom: 85px;
-    box-shadow: 0px 0px 10px 0px black;
-  }
-
-  h3 {
-    color: #030303;
-    font-family: "Segoe UI";
-    font-size: 30px;
-    font-weight: 700;
-  }
-
-  input {
-    padding: 3px;
-    border-radius: 26px;
-    border: 1px solid #e05e80;
-    background-color: #ffffff;
-    margin-bottom: 5px;
-  }
-}
-
-@media (max-width: 470px) {
-  .form {
-    margin-top: 130px;
-    margin-bottom: 85px;
-    box-shadow: 0px 0px 10px 0px black;
-    padding: 10px 10px;
-  }
-
-  h3 {
     text-align: center;
-    color: #030303;
-    font-family: "Segoe UI";
-    font-size: 25px;
-    font-weight: 700;
   }
 
-  input {
-    padding: 15px;
-    border-radius: 26px;
-    border: 1px solid #e05e80;
-    background-color: #ffffff;
-    width: 100%;
-    margin-bottom: 5px;
+  .form input {
+    width: 80%;
+    text-align: center;
+  }
+
+  .form .button {
+    width: 50% !important;
   }
 }
 
 .posts {
   cursor: pointer;
+  text-align: center;
 }
 
 .posts-card {
-  margin: 10px;
+  margin: 10px auto;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
   padding: 10px;
   height: 450px;
+  max-width: 300px;
   overflow: hidden;
 }
 
@@ -11125,18 +11098,8 @@ input {
   font-weight: 450;
 }
 
-a {
-  color: #000000;
-  font-family: "Roboto";
-  font-size: 20px;
-  font-weight: 400;
-}
-
-p {
-  color: #000000;
-  font-family: "Roboto";
-  font-size: 15px;
-  font-weight: 400;
+.contacts {
+  text-align: left;
 }
 
 .contacts img {
@@ -11160,48 +11123,48 @@ p {
   font-weight: 400;
 }
 
+@media screen and (max-width: 990px) {
+  .contacts {
+    text-align: center;
+  }
+}
+
 .footer {
   margin-top: 20px;
   background: #4E4884;
-  color: #ffffff;
+  color: #fff;
   font-family: "Segoe UI";
   font-weight: 400;
   line-height: 25px;
+  padding: 20px 0;
 }
 
-.footer p {
+.footer .logo {
+  text-align: center;
+}
+
+.footer-tittle {
   font-size: 20px;
+  margin: 5px 0;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.footer a {
+.footer-link {
+  margin: 0;
+  text-align: center;
   font-size: 14px;
-  color: #ffffff;
 }
 
-.footer li {
-  list-style: none;
-}
-
-.footer-rules {
-  border-top: 1px solid #ffffff;
-  margin-top: 5px;
+.footer-link a {
+  font-size: 14px;
   color: #fff;
-  font-family: "Segoe UI";
-  font-size: 3px;
 }
 
-.footer-cont {
-  padding-top: 15px;
-}
-
-.footer-name {
-  display: block;
-  font-size: 14px;
-  margin-top: 50px;
-}
-
-.social-ico {
-  cursor: pointer;
+.footer-link img {
+  width: 16px;
+  margin: 0 !important;
+  padding: 0;
 }
 
 .catalog {

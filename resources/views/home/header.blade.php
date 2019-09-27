@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="header-buttons col-xl-6 col-lg-7 col-md-8 col-sm-12">
-      <button class="button-1"><a href="{{ route('home') }}#services">Услуги</a></button>
-      <button class="button-1"><a href="{{ route('catalog', ['category'=>0]) }}">Каталог товаров</a></button></div>
+      <button class="button"><a href="{{ route('home') }}#services">Услуги</a></button>
+      <button class="button"><a href="{{ route('catalog', ['category'=>0]) }}">Каталог товаров</a></button></div>
   </div>
 </header>

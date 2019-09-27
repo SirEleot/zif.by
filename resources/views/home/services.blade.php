@@ -23,27 +23,26 @@
         <p>окажем профессиональную консультацию по выбору <strong class="color-pink">замка или дверной фурнитуры</strong> для вашей двери</p>
       </div>
     </div>
-    <div class="form">
+    <form class="form" action="#" method="POST">
       <div class="row">
           <div class="col-sm-12">
             <h3>Заказать звонок</h3>
           </div>
       </div>
-      <div class="row">
-          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+      <div class="row form-inputs">
+          <div class="col-xl-3 col-lg-12">
             <input type="text" required placeholder="Ваше имя">
-          </div>
-          
-          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+          </div>          
+          <div class="col-xl-3 col-lg-12 ">
             <input type="text" required placeholder="Ваше телефон">
           </div>
-          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+          <div class="col-xl-3 col-lg-12 ">
             <input type="text" required placeholder="Ваш город">
           </div>
-          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
-            <button class="button-form"><a href="">Заказать</a></button>
+          <div class="col-xl-3 col-lg-12">
+              <input type="submit" class="button">
           </div>
       </div>
-    </div>
+    </form>
   </div>
 </section>

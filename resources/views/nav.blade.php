@@ -5,8 +5,9 @@
           <img src="{{ asset('img/svg/logo.svg') }}" alt="" class="nav-logo">
         </div>
         <div class="phones">
-          <a href="tel:+375292420909" class="phone"><img src="{{ asset('img/svg/viber-white.svg') }}" alt=""><span class="phones-text">+375 29 242 09 09</span></a>
-          <a href="tel:+37529242090" class="viber"><img src="{{ asset('img/svg/whatsapp-white.svg') }}" alt=""> <span class="phones-text">+375 29 242 09 09</span></a>
+          <a href="tel:+375291420908" class="phone"><img src="{{ asset('img/svg/whatsapp-white.svg') }}" alt=""><span class="phones-text">+375 29 142 09 08</span></a>
+          {{-- <a href="tel:+375291420908" class="phone"><img src="{{ asset('img/svg/whatsapp-white.svg') }}" alt=""><span class="phones-text">+375 29 242 09 09</span></a> --}}
+          <a href="viber://chat?number=+375292420909" class="viber"><img src="{{ asset('img/svg/viber-white.svg') }}" alt=""> <span class="phones-text">+375 29 242 09 09</span></a>
         </div>
         <div class="nav-menu">
           <div class="nav-menu-btn">
