@@ -20,6 +20,6 @@ class CatalogController extends BaseCatalogController
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
         //dd($paginator);
-        return view("catalog", compact('paginator', 'categories', 'categoryId'));
+        return view("catalog.main", compact('paginator', 'categories', 'categoryId'));
     }
 }

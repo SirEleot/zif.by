@@ -17,7 +17,7 @@
         public function getAllWithPaginate()
         {
             return $this->startConditions()
-                ->select('name', 'id', 'price', 'image')
+                ->select('name', 'id', 'price', 'image', 'description')
                 ->with('category')
                 ->paginate($this->pages);
         }

@@ -1,0 +1,114 @@
+#modal
+    display: none
+    position: fixed
+    overflow: hidden
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: rgba(#000, .5)
+    z-index: 1000
+.catalog-item
+    &-wrapper
+        max-width: 860px
+        margin: $nav_height + 50px auto
+        background-color: white
+        @include box-shadow-hover
+    h3
+        text-align: center
+        margin: 15px 0 0 15px
+        padding: 0
+    hr
+        margin: 8px 15px
+    &-info
+        overflow-y: scroll
+        height: 270px
+    &-row
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        width: 100%
+        &>div
+            margin: 15px
+    #modal-close
+        width: 90px
+        text-align: right
+        color: rgba(grey, .4)
+        font-size: 1.2rem
+        font-weight: bold
+        margin: 15px 15px 0 auto
+        text-shadow: 1px 1px 3px rgba(grey, .6)
+        overflow: hidden
+        &:hover
+            color: grey
+            cursor: pointer
+    &-image
+        width: 350px
+        height: 350px
+        @include box-shadow
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+    &-description
+        width: 450px
+        height: 350px
+        //overflow: hidden
+        padding: 15px
+        h3
+            text-align: centera
+        table
+            width: 100%
+            font-size: .8rem
+            .value
+                text-align: right
+        td
+            padding: 1px 5px
+    &-add
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        width: 100%
+        margin-top:25px  
+        &>div
+            margin: 0 5px
+        .button
+            padding: 4px 30px
+            margin-left: auto
+        .count
+            &>div
+                display: inline-block
+                margin: 0 
+                padding: 1px 0
+            &-btn
+                width: 30px
+                font-size: 1.1rem
+                font-weight: bold
+                text-align: center
+                border-radius: 0 6px 6px 0  
+                @include box-shadow
+                background-color: $PURPLE
+                color: #fff
+                &:first-child                
+                    border-radius: 6px 0 0 6px 
+            &-info
+                border: 1px solid grey
+                width: 40px
+                text-align: center
+        .item
+            font-size: 1.1em
+        #item-total            
+            font-weight: bold
+    &-more
+        width: 135px
+        height: 135px
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+        @include box-shadow
+        &:hover            
+            @include box-shadow-hover
+            cursor: pointer
+            transform: scale(1.1) translate(-2px, -2px)
+        
+        
+
