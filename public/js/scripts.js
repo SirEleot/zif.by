@@ -1,3 +1,27 @@
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+window.$ = function (selector) {
+  switch (selector[0]) {
+    case '.':
+      return document.getElementsByClassName(selector.substring(1));
+
+    case '#':
+      return document.getElementById(selector.substring(1));
+
+    default:
+      return document.getElementsByTagName(selector);
+  }
+};
+
+var Element = function Element(el) {
+  var collection = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  _classCallCheck(this, Element);
+
+  this.el = el;
+  this.collection = collection;
+};
+
 require('./selector');
 
 function scrollTo(elementID) {

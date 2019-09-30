@@ -22,7 +22,7 @@ function addItemToCart(id) {
 
 
 document.addEventListener('DOMContentLoaded',() => {   
-   
+
     $("#modal-close").click(function (e) { 
         showModal(-1);        
     });
