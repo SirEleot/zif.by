@@ -1,25 +1,28 @@
+require('./selector');
+
 function scrollTo(elementID){
     const el = document.getElementById(elementID);
     if(el) el.scrollIntoView({ behavior: "smooth"});
 }
 
 function showModal(id=-1) {
-    console.log(id);
-    
     if(id < 0){
-        $('body').removeClass('modal-open');
-        $('#modal').css('display', 'none')
+
+        //$('body').removeClass('modal-open');
+       // $('#modal').css('display', 'none')
     }else{
-        $('body').addClass('modal-open');
-        $('#modal').css('display', 'block');
+        //$('body').addClass('modal-open');
+        //$('#modal').css('display', 'block');
     }
 }
 
 function addItemToCart(id) {
+
 }
 
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded',() => {   
+   
     $("#modal-close").click(function (e) { 
         showModal(-1);        
     });
