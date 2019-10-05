@@ -1,34 +1,34 @@
-require('./selector');
-
-function scrollTo(elementID){
+window.scrollTo = (elementID) => {
     const el = document.getElementById(elementID);
     if(el) el.scrollIntoView({ behavior: "smooth"});
 }
 
-function showModal(id=-1) {
-    if(id < 0){
-
-        //$('body').removeClass('modal-open');
-       // $('#modal').css('display', 'none')
+window.showModal = (show = false) => {
+    if(show){
+        $('body').addClass('modal-open');
+        $('#modal').css('display', 'block');
     }else{
-        //$('body').addClass('modal-open');
-        //$('#modal').css('display', 'block');
+        $('body').removeClass('modal-open');
+        $('#modal').css('display', 'none')
     }
 }
 
-function addItemToCart(id) {
-
+window.changeItemCount = (val) => {
+    let count = +$('#item-count').html();
+    if(val < 0 && count == 1) return;
+    $('#item-count').html(+count + val);
 }
 
+window.loadItem = async (id) => {
+    if(id < 0) return;
+    $('#modal').html('load...');
+    showModal(true);
+    let response = await fetch(home + `/item/${id}`);
+    let result = await response.text();
+    $('#modal').html(result);
+}
 
-document.addEventListener('DOMContentLoaded',() => {   
-   
-    $("#modal-close").click(function (e) { 
-        showModal(-1);        
-    });
-    $('.card').click(function (e) {        
-        showModal(e.currentTarget.id);
-    });
+document.addEventListener('DOMContentLoaded',() => {
     $('.nav-menu-btn').click(function (e) {
         $('.nav-menu').toggleClass('nav-menu-active');
     });
@@ -36,9 +36,6 @@ document.addEventListener('DOMContentLoaded',() => {
         e.preventDefault();     
         if($('.nav-menu').hasClass('nav-menu-active'))
             $('.nav-menu').removeClass('nav-menu-active');
-
-        console.log(document.location.href);
-        
 
         if(e.target.href.match(/catalog/))
             document.location = e.target.href;

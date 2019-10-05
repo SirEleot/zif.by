@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class CatalogController extends BaseCatalogController
 {
-    public function Index(int $categoryId, CategoryRepository $categoryRepository, ItemRepository $itemRepository)
+    public function index(int $categoryId, CategoryRepository $categoryRepository, ItemRepository $itemRepository)
     {
         $categories = $categoryRepository->getAll();
         if($categoryId == 0){
@@ -20,6 +20,13 @@ class CatalogController extends BaseCatalogController
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
         //dd($paginator);
-        return view("catalog.main", compact('paginator', 'categories', 'categoryId'));
+        return view("catalog", compact('paginator', 'categories', 'categoryId'));
+    }
+
+    public function item(int $id, ItemRepository $itemRepository )
+    {
+        $items = $itemRepository->getById($id);
+        //dd($items);
+        return view("item", compact('items'));
     }
 }

@@ -30,6 +30,15 @@
                 ->with('category')
                 ->paginate($this->pages);
         }
+
+        public function getById(int $id)
+        {
+            return $this->startConditions($count = 6)
+                ->where('id', '>=', $id)
+                ->orderBy('id')
+                ->take($count)
+                ->get();
+        }
     }
     
 ?>

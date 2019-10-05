@@ -10686,6 +10686,18 @@ section {
   padding: 70px 0;
 }
 
+#modal {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
 button {
   border: none;
   outline: none;
@@ -11171,7 +11183,7 @@ button:active {
 }
 
 .catalog {
-  margin-top: 100px;
+  margin-top: 25px;
   z-index: 50;
 }
 
@@ -11283,18 +11295,6 @@ button:active {
   border-color: #4E4884;
 }
 
-#modal {
-  display: none;
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
 .catalog-item-wrapper {
   max-width: 860px;
   margin: 130px auto;
@@ -11317,6 +11317,11 @@ button:active {
   height: 270px;
 }
 
+.catalog-item-noinfo {
+  text-align: center;
+  color: grey;
+}
+
 .catalog-item-row {
   display: flex;
   justify-content: space-between;
@@ -11328,7 +11333,7 @@ button:active {
   margin: 15px;
 }
 
-.catalog-item #modal-close {
+.catalog-item .modal-close {
   width: 90px;
   text-align: right;
   color: rgba(128, 128, 128, 0.4);
@@ -11337,9 +11342,10 @@ button:active {
   margin: 15px 15px 0 auto;
   text-shadow: 1px 1px 3px rgba(128, 128, 128, 0.6);
   overflow: hidden;
+  text-transform: uppercase;
 }
 
-.catalog-item #modal-close:hover {
+.catalog-item .modal-close:hover {
   color: grey;
   cursor: pointer;
 }
@@ -11412,6 +11418,11 @@ button:active {
 
 .catalog-item-add .count-btn:first-child {
   border-radius: 6px 0 0 6px;
+}
+
+.catalog-item-add .count-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .catalog-item-add .count-info {

@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-   @include('catalog.item',['paginator'=>$paginator])
+   {{-- @include('catalog.item',['paginator'=>$paginator]) --}}
+   @php
+      use Illuminate\Support\Str;
+   @endphp
    <section class="catalog">
       <div class="container">
          <div class="row">
@@ -20,8 +23,8 @@
             <div class="col-xl-9">
                <div class="body">
                   @foreach ($paginator as $item)
-                     <div class="card" id="{{$item->id}}">
-                        <div class="image" style="background-image: url({{ asset("img/items/".$item->image) }})"></div>
+                     <div class="card" onclick="loadItem({{$item->id}})" title="{{$item->name}}">
+                     <div class="image" style="background-image: url({{ asset("img/items/".$item->image) }})" alt="{{Str::slug($item->name, '-')}}" ></div>
                         <div class="info">
                            <p class="info-name">{{$item->name}}</p>
                            <p class="info-price">{{$item->price}} руб</p>                   
@@ -30,7 +33,7 @@
                   @endforeach
                </div>          
                <div>
-                  {{$paginator->links()}}   
+                  {{$paginator->onEachSide(1)->links()}}   
                </div>     
             </div>      
          </div> 
