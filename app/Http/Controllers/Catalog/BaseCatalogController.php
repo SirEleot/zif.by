@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class BaseCatalogController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('cors');
+    }
 }
