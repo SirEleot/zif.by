@@ -21,8 +21,7 @@
                 <p class="footer-link"><a href="#">Копыль</a> </p>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <p class="footer-tittle">Вскрытие замков</p>
-               
+                <p class="footer-tittle">Вскрытие замков</p>               
                 <p class="footer-link"><a href="#">+375 29 142 09 08</a></p>
                 <p class="footer-link"><a href="#">+375 29 242 09 09</a></p>
                 <p class="footer-link"><a href="#">Любань</a> </p>

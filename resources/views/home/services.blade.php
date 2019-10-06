@@ -14,13 +14,13 @@
       <div class="col-xl-4 col-md-4 col-sm-12 service">
         <img src="img/svg/services/lock.svg" alt="">
         <h3>ремонт</h3>
-        <p>производим замену сломаных <strong class="color-pink">замков и дверной фурнитуры</strong> на исправные <br>
+        <p>Производим замену сломаных <strong class="color-pink">замков и дверной фурнитуры</strong> на исправные <br>
           на товары приобретенные в нашем магазине предоставляем гарантию</p>
       </div>
       <div class="col-xl-4 col-md-4 col-sm-12 service">
-        <img src="img/svg/services/lock.svg" alt="">
+        <img src="img/svg/services/service.svg" alt="">
         <h3>консультация</h3>
-        <p>окажем профессиональную консультацию по выбору <strong class="color-pink">замка или дверной фурнитуры</strong> для вашей двери</p>
+        <p>Окажем профессиональную консультацию по выбору <strong class="color-pink">замка или дверной фурнитуры</strong> для вашей двери</p>
       </div>
     </div>
     <form class="form" action="#" method="POST">

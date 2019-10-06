@@ -10653,7 +10653,7 @@ a.text-dark:focus {
 
 .title {
   color: #000;
-  font-family: "Montserrat";
+  font-family: "Roboto";
   width: 90%;
   font-size: 50px;
   font-weight: 700;
@@ -10931,6 +10931,8 @@ button:active {
   margin-top: 200px;
   font-weight: bold;
   font-size: 50px;
+  font-family: "Montserrat";
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1.3em;
 }
@@ -10975,7 +10977,6 @@ button:active {
   font-family: "Montserrat";
   font-size: 27px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .aboutUs .row {
@@ -10992,6 +10993,14 @@ button:active {
   font-family: "Roboto";
   font-size: 14px;
   font-weight: 400;
+}
+
+.aboutUs h3 {
+  font-family: "Montserrat";
+  font-size: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
 #services {
@@ -11031,6 +11040,11 @@ button:active {
   border-radius: 26px;
   border: 1px solid #e05e80;
   background-color: #ffffff;
+}
+
+#services .form input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #E05E80;
 }
 
 @media screen and (max-width: 1200px) {
@@ -11205,6 +11219,10 @@ button:active {
   margin: 0 25px 0;
 }
 
+.catalog .search {
+  display: none;
+}
+
 .catalog .body {
   display: flex;
   justify-content: space-around;
@@ -11283,6 +11301,74 @@ button:active {
   border-color: #4E4884;
 }
 
+@media (max-width: 470px) {
+  .catalog {
+    margin-top: 30px;
+  }
+
+  .catalog .filter {
+    display: none;
+  }
+
+  .catalog .card {
+    width: 100%;
+    height: 100px;
+    flex: 0 1 auto;
+    margin: 1px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: right;
+    transition: all 0.3;
+    margin-bottom: 3px;
+  }
+
+  .catalog .card:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.6);
+    transform: scale(1.02) translate(-4px, -4px);
+  }
+
+  .catalog .image {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+  }
+
+  .catalog .info {
+    margin-right: 5px;
+    border-top: none;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .catalog .info-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 1px;
+    font-size: 14px;
+  }
+
+  .catalog .info-price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .catalog .search {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .catalog .body {
+    margin-bottom: 75px;
+  }
+}
+
 #modal {
   display: none;
   position: fixed;
@@ -11337,6 +11423,7 @@ button:active {
   margin: 15px 15px 0 auto;
   text-shadow: 1px 1px 3px rgba(128, 128, 128, 0.6);
   overflow: hidden;
+  background-image: url("/img/svg/cross.svg");
 }
 
 .catalog-item #modal-close:hover {
@@ -11360,7 +11447,7 @@ button:active {
 }
 
 .catalog-item-description h3 {
-  text-align: centera;
+  text-align: center;
 }
 
 .catalog-item-description table {
