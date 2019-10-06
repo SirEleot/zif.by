@@ -1,7 +1,7 @@
 <div class="catalog-item" >
     <div class="catalog-item-wrapper"> 
         <div class="catalog-item-row">
-            <h3 class="catalog-item-tittle">{{$paginator[0]->name}}</h2>
+            <h3 class="catalog-item-tittle">{{$items[0]->name}}</h2>
             <div id="modal-close"></div>   
         </div>  
         <hr>  
