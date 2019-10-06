@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', "HomeController@Index")->name('home');
+Route::get('/', "HomeController@index")->name('home');
 
-Route::get('/catalog/{category}/', "Catalog\CatalogController@Index")->name('catalog');
+Route::get('/catalog/{category}/', "Catalog\CatalogController@index")->name('catalog');
+Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
+Route::get('/cart', "Catalog\CatalogController@cart")->name('cart');

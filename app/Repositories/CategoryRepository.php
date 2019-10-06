@@ -15,8 +15,8 @@
         public function getAll()
         {
             return $this->startConditions()
-            ->get('*')
-            ->where('id','<',35);
+            ->where('id','<',35)
+            ->get('*');
         }
 
         public function getCategoriesById($categoryId)
