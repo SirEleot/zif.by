@@ -1,8 +1,8 @@
 <div class="catalog-item" >
     <div class="catalog-item-wrapper"> 
         <div class="catalog-item-row">
-            <h3 class="catalog-item-tittle">{{$items[0]->name}}</h2>
-            <div class="modal-close" onclick="showModal(false)">Закрыть</div>   
+            <h3 class="catalog-item-tittle">{{$paginator[0]->name}}</h2>
+            <div id="modal-close"></div>   
         </div>  
         <hr>  
         <div class="catalog-item-row">
