@@ -67,7 +67,7 @@ class Element {
     toggleClass = (className)=>{
         if(this.collection){
             for (const el of this.el) {
-                el.classList[0].toggle(className);
+                el.classList.toggle(className);
             }
         } else this.el.classList.toggle(className);
     }
