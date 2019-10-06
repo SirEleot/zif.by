@@ -74,7 +74,53 @@
     background-color: $PURPLE
     border-color: $PURPLE
 
-@media (max-width:470px)
+@media (max-width:992px)
+    .catalog
+        margin-top: 30px
+        .filter
+            display: none
+        .card
+            width: 240px
+            height: 330px
+            flex: 0 1 auto
+            margin: 0 15px 30px
+            @include box-shadow
+            position: relative
+            text-align: center
+            transition: all .3
+            &:hover
+                cursor: pointer            
+                @include box-shadow-hover
+                transform: scale(1.02) translate(-4px, -4px)
+        .image       
+            width: 220px
+            height: 220px
+            margin: 10px
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+        .info
+            width: 220px
+            border-top: 2px solid rgba(#555,.7)
+            margin: auto
+            &-name
+                text-overflow: ellipsis
+                white-space: nowrap
+                overflow: hidden
+                margin: 5px auto
+                font-size: 18px
+            &-price           
+                font-size: 20px
+                font-weight: bold
+        .search
+            display: block
+            margin-bottom: 25px
+        .body
+            margin-bottom: 75px
+        .navi-string 
+            display: none
+
+@media (max-width:768px)
     .catalog
         margin-top: 30px
         .filter
@@ -121,3 +167,5 @@
             margin-bottom: 25px
         .body
             margin-bottom: 75px
+        .navi-string 
+            display: none

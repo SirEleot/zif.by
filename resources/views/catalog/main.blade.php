@@ -5,7 +5,7 @@
    <section class="catalog">
       <div class="container">
          <div class="row search">
-            <div class="col-sm-12">
+            <div class="col-md-12 col-sm-12">
                <div class="form-group">
                   <label for="my-select">Выберите раздел</label>
                   <select id="my-select" class="form-control" name="">
@@ -18,7 +18,7 @@
                   </select>
                </div>
             </div>
-            <div class="col-sm-12">
+            <div class="col-md-12 col-sm-12">
                <div class="form-group">
                   <label for="my-select">Выберите категорию</label>
                   <select id="my-select" class="form-control" name="">
@@ -33,7 +33,7 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+            <div class="col-xl-4 col-lg-4 col-md-0 col-sm-4">
                <p class="navi-string">
                   <a href="{{ route('home') }}">Главная</a> /
                   <a href="{{ route('catalog', 0) }}">Каталог товаров</a> /             
@@ -47,7 +47,7 @@
                   <p><a href="{{ route('catalog', ['category'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}">{{$item->name}}</a></p>
                @endforeach
             </div>
-            <div class="col-xl-9 ">
+            <div class="col-xl-9 col-lg-8 col-md-12">
                <div class="body">
                   @foreach ($paginator as $item)
                      <div class="card" id="{{$item->id}}">
