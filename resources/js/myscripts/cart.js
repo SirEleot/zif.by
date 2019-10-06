@@ -9,5 +9,7 @@ window.addItemToCart = (id, count = 1) => {
     });
     if(item)  item[1] += count;
     else cart.push([id,count]);
-    setCookie('cart', JSON.stringify(cart), 10);
+    setCookie('cart', JSON.stringify(cart), 3.154e+7);
+    console.log(getCookie('cart'));
+    
 }

@@ -7,6 +7,7 @@ use App\Repositories\CategoryRepository;
 use App\Models;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 
 class CatalogController extends BaseCatalogController
 {
@@ -20,13 +21,22 @@ class CatalogController extends BaseCatalogController
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
         //dd($paginator);
-        return view("catalog", compact('paginator', 'categories', 'categoryId'));
+        return view("catalog.main", compact('paginator', 'categories', 'categoryId'));
     }
 
     public function item(int $id, ItemRepository $itemRepository )
     {
         $items = $itemRepository->getById($id);
         //dd($items);
-        return view("item", compact('items'));
+        return view("catalog.item", compact('items'));
+    }
+
+    public function cart(Request $req, ItemRepository $itemRepository)
+    {
+        $itemsArray =  $_COOKIE['cart'] ? json_decode($_COOKIE['cart']) : [];
+        $idsArray = array_map(function($i){ return $i[0];}, $itemsArray);
+        $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
+        //dd($itemsArray, $idsArray, $items);
+        return view("catalog.cart", compact('items'));
     }
 }
