@@ -34,9 +34,14 @@ class CatalogController extends BaseCatalogController
     public function cart(Request $req, ItemRepository $itemRepository)
     {
         $itemsArray =  $_COOKIE['cart'] ? json_decode($_COOKIE['cart']) : [];
-        $idsArray = array_map(function($i){ return $i[0];}, $itemsArray);
+        $counts = array();
+        $idsArray = array();
+        foreach ($itemsArray as $value) {
+            $idsArray[] = $value[0];
+            $counts[$value[0]] = $value[1];
+        }
         $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
         //dd($itemsArray, $idsArray, $items);
-        return view("catalog.cart", compact('items'));
+        return view("catalog.cart", compact('items', 'counts'));
     }
 }

@@ -57,8 +57,21 @@
                 text-align: right
         td
             padding: 1px 5px
+    &-more
+        width: 135px
+        height: 135px
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+        @include box-shadow
+        &:hover            
+            @include box-shadow-hover
+            cursor: pointer
+            transform: scale(1.1) translate(-2px, -2px)
+.item
     &-add
         display: flex
+        flex-wrap: nowrap
         justify-content: flex-end
         align-items: center
         width: 100%
@@ -95,14 +108,4 @@
             font-size: 1.1em
         #item-total            
             font-weight: bold
-    &-more
-        width: 135px
-        height: 135px
-        background-position: center
-        background-size: contain
-        background-repeat: no-repeat
-        @include box-shadow
-        &:hover            
-            @include box-shadow-hover
-            cursor: pointer
-            transform: scale(1.1) translate(-2px, -2px)
+    

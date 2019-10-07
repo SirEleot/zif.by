@@ -31,14 +31,14 @@
                     </table> 
                 </div>                 
                     
-                <div class="catalog-item-add">
+                <div class="item-add">
                     <div class="item">
                         <span id="item-price">{{$items[0]->price}}</span>
                     </div> 
                     <div class="count">
-                        <div class="count-btn" onclick="changeItemCount(-1)">-</div> 
-                        <div class="count-info"> <span id="item-count">1</span></div>
-                        <div class="count-btn" onclick="changeItemCount(1)">+</div>
+                        <div class="count-btn" onclick="changeItemCount(-1,0)">-</div> 
+                        <div class="count-info"> <span id="item-count-0">1</span></div>
+                        <div class="count-btn" onclick="changeItemCount(1,0)">+</div>
                     </div>
                     <div class="item">
                         <span id="item-total">{{$items[0]->price}}</span> руб

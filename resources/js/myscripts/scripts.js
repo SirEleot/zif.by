@@ -13,10 +13,12 @@ window.showModal = (show = false) => {
     }
 }
 
-window.changeItemCount = (val) => {
-    let count = +$('#item-count').html();
+window.changeItemCount = (val, id) => {
+    const el =  $(`#item-count-${id}`);
+    //console.log(el);
+    let count = el.html();
     if(val < 0 && count == 1) return;
-    $('#item-count').html(+count + val);
+    el.html(+count + val);
 }
 
 window.loadItem = async (id) => {
