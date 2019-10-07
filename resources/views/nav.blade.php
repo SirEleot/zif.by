@@ -22,6 +22,7 @@
               <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link">Каталог товаров</a>
               <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link">Акции</a>
               <a href="{{ route('home') }}#posts" class="nav-menu-link">Статьи</a>
+              <a href="{{ route('home') }}#contacts" class="nav-menu-link">Корзина</a>
               <a href="{{ route('home') }}#contacts" class="nav-menu-link">Контакты</a>
           </div>
         </div>
