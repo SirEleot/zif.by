@@ -4,6 +4,7 @@
     z-index: 500
     &-row
         display: flex
+        flex-wrap: nowrap
         align-items: center
         justify-content: space-between
         height: $nav_height
@@ -12,8 +13,10 @@
     .phones
         text-decoration: none
         a
-            margin-left: 30px            
+            margin-left: 20px            
             font-size: 16px
+            display: block
+            margin: 0
             &:hover
                 text-decoration: none
         &-text            
@@ -29,7 +32,7 @@
         &-link
             font-size: 16px
             display: block
-            margin-left: 20px
+            margin-left: 10px
             text-decoration: none
             color: $clr_text_white
             &:first-child
@@ -44,26 +47,48 @@
                 width: 20px
                 height: 2px
                 background-color: $clr_text_white
-                margin: 4px        
+                margin: 4px 
+        &-cart svg
+            fill: white
+            transition: all .5s
+            &:hover
+                cursor: pointer 
+                fill: $PINK
+                font-weight: bold
 @media screen and (max-width: 1200px)
     .nav
         .phones
             position: fixed
-            bottom: 0
-            right: 0
+            bottom: 75px
+            right: 15px
             img
-                width: 40px
+                width: 30px
             .phone, .viber
-                display: block
+                width: 60px
+                height: 60px
+                display: flex
+                align-items: center
+                justify-content: center
                 border-radius: 50%
                 background-color: green
-                padding: 12px
-                margin: 10px
-                opacity: .5
+                margin-bottom: 15px
+                opacity: .7
             .viber                
                 background-color: $PURPLE
             &-text
                 display: none
+        .nav-menu-cart
+            opacity: .7
+            display: flex
+            align-items: center
+            justify-content: center
+            position: fixed
+            bottom: 15px
+            right: 15px
+            width: 60px
+            height: 60px
+            border-radius: 50%
+            background-color: green
 @media screen and (max-width: 766px)
     .nav
         &-menu
