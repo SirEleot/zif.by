@@ -32,7 +32,7 @@ window.loadItem = async (id) => {
     if(id < 0) return;
     $('#modal').html('load...');
     showModal(true);
-    let response = await fetch(home + `/item/${id}`);
+    let response = await fetch(`/item/${id}`);
     let result = await response.text();
     $('#modal').html(result);
 }
