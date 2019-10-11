@@ -57,6 +57,14 @@ class Element {
         }
     }
 
+    remove = ()=>{
+        if(this.collection){           
+            for (const el of this.el) {
+                el.remove();
+            }
+        } else this.el.remove();
+    }
+
     hasClass = (className)=>{
         //document.body.classList.toggle
         if(this.collection){
@@ -70,6 +78,14 @@ class Element {
                 el.classList.toggle(className);
             }
         } else this.el.classList.toggle(className);
+    }
+
+    each = (fnc)=>{
+        if(this.collection){
+            for (const el of this.el) {
+                fnc(el);
+            }
+        } else  fnc(this.el);
     }
 
     log = ()=>{

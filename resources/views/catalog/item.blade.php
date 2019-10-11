@@ -33,7 +33,7 @@
                     
                 <div class="item-add">
                     <div class="item">
-                        <span id="item-price">{{$items[0]->price}}</span>
+                        <span id="item-price-0">{{$items[0]->price}}</span>
                     </div> 
                     <div class="count">
                         <div class="count-btn" onclick="changeItemCount(-1,0)">-</div> 
@@ -41,7 +41,7 @@
                         <div class="count-btn" onclick="changeItemCount(1,0)">+</div>
                     </div>
                     <div class="item">
-                        <span id="item-total">{{$items[0]->price}}</span> руб
+                        <span id="item-total-0">{{$items[0]->price}}</span> руб
                     </div> 
                     <button class="button" onclick="addItemToCart({{$items[0]->id}})">В корзину</button>
                 </div>  

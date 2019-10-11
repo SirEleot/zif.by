@@ -4,6 +4,7 @@
     background-size: cover
     background-repeat: no-repeat
     background-position: center
+    background-image: url('../img/bg.png')
     margin: $nav_height auto 0
     hr
         width: 90%
@@ -28,10 +29,13 @@
             a:hover
                 color: $clr_text_white
 
-@media screen and ( max-width: 766px )
+@media screen and ( max-width: 768px )
     .header
         margin: 80px auto
         text-align: center
+        background-image: url('../img/bg_min.png')
+        &-tittle
+            margin-top: 100px
         &-buttons
             flex-direction: column
             align-items: center
