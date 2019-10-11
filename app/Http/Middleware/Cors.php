@@ -15,7 +15,7 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-        if(!$_COOKIE['cart'])$_COOKIE['cart'] = '[]';
+        if(!isset($_COOKIE['cart'])) $_COOKIE['cart'] = '[]';
         return $next($request) 
             ->header('Access-Control-Allow-Origin', '*')
             ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

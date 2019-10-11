@@ -66,4 +66,10 @@ class CatalogController extends BaseCatalogController
             return 'noItems';
         }
     }
+
+    public function reset()
+    {
+        setcookie('cart', '[]', time() + 3.154e+7);
+        return redirect()->route('home');
+    }
 }
