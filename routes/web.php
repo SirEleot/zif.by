@@ -12,6 +12,7 @@
 */
 
 Route::get('/', "HomeController@index")->name('home');
+Route::get('/breaking', "HomeController@breaking")->name('breaking');
 
 Route::get('/catalog/{category}/', "Catalog\CatalogController@index")->name('catalog');
 Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');

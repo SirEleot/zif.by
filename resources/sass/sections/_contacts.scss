@@ -18,6 +18,40 @@
     font-size: 24px;
     font-weight: 400;
   }
+  &-form {
+		@include box-shadow;
+    input {
+      width: 250px;
+      height: 45px;
+      border-color: $PINK;
+      border-radius: 25px;
+      padding-left: 15px;
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 8px $PINK;
+      }
+    }
+    button {
+      width: 500px;
+      height: 45px;
+      border-radius: 25px;
+      background-color: $PINK;
+      color: white;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+    p {
+      color: #000000;
+      font-family: "Segoe UI";
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+  }
 }
 @media screen and (max-width: 990px){
   .contacts{
