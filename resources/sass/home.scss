@@ -1,4 +1,3 @@
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 @import 'color';
@@ -6,6 +5,8 @@
 @import 'font';
 @import 'common';
 @import 'buttons';
+@import 'sections/footer';
+
 
 @import 'sections/nav';
 @import 'sections/header';
@@ -13,7 +14,3 @@
 @import 'sections/services';
 @import 'sections/posts';
 @import 'sections/contacts';
-@import 'sections/catalog';
-@import 'sections/item';
-@import 'sections/cart';
-@import 'sections/breaking';
