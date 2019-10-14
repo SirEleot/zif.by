@@ -2,6 +2,8 @@
 
 @section('content')
    {{-- @include('catalog.item',['paginator'=>$paginator]) --}}
+   
+   {{-- <link rel="stylesheet" href="{{ asset('css/catalog.css') }}"> --}}
    @php
       use Illuminate\Support\Str;
    @endphp
