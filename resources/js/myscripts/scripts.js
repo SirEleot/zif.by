@@ -44,19 +44,13 @@ document.addEventListener('DOMContentLoaded',() => {
     $('.nav-menu-btn').click(function (e) {
         $('.nav-menu').toggleClass('nav-menu-active');
     });
-    $('.nav-menu-link').click(function (e) { 
-        e.preventDefault();     
-        if($('.nav-menu').hasClass('nav-menu-active'))
-            $('.nav-menu').removeClass('nav-menu-active');
-
-        if(e.target.href.match(/catalog/))
-            document.location = e.target.href;
-        else if (document.location.href.match(/catalog/))
-            document.location = e.target.href;
-        else {       
-            const aray = e.target.href.split("#");            
+    $('.nav-menu-link').click(function (e) {
+        console.log(e.target.pathname);
+        e.preventDefault();
+        if(window.location.pathname == '/' && e.target.pathname == '/'){            
+            const aray = e.target.href.split("#");   
             scrollTo(aray[1]);
-        }
+        }else window.location.href = e.target.href;
     });
 });
 
