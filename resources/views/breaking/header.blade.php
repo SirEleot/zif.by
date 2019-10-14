@@ -9,7 +9,7 @@
           Профессиональная консультация мастера
       </h3>
       <h3 class="breaking-subtittle">+375 29 242 09 09</h3>
-      <button class="button breaking-button" id="test">Заказать обратный звонок</button>
+      <button class="button breaking-button" id="test"> <a href="tel://">Вызвать мастера</a> </button>
     </div>    
   </div>
 </header>
