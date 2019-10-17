@@ -22,20 +22,7 @@
                      <option>Text</option>
                   </select>
                </div>
-            </div>
-            <div class="col-md-12 col-sm-12">
-               <div class="form-group">
-                  <label for="my-select">Выберите категорию</label>
-                  <select id="my-select" class="form-control" name="">
-                     <option>Накладные замки</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                  </select>
-               </div>
-            </div>
+            </div>            
          </div>
          <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-0 col-sm-4">

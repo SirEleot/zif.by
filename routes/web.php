@@ -19,3 +19,13 @@ Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
 Route::get('/cart', "Catalog\CatalogController@cart")->name('cart');
 Route::post('/order', "Catalog\CatalogController@order")->name('order');
 Route::get('/reset', "Catalog\CatalogController@reset")->name('reset');
+
+
+Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function ()
+{
+    Route::resource(
+        'items', 
+        "AdminItemsController"
+    )->names('admin.items');
+    Route::post('setKof', 'AdminItemsController@setKof')->name('admin.setKof');
+});

@@ -22,6 +22,7 @@ mix.babelConfig ({
     .sass('resources/sass/cart.scss', 'public/css')
     .sass('resources/sass/breaking.scss', 'public/css')
     .sass('resources/sass/catalog.scss', 'public/css')
+    .sass('resources/sass/admin.items.show.scss', 'public/css')
     .options({
         processCssUrls: false
      });

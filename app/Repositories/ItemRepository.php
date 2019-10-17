@@ -8,18 +8,18 @@
      */
     class ItemRepository extends BaseRepository
     {
-        private $pages = 9;
+        private $itemOnPage = 9;
         
         protected function getModelClass(){
             return Model::class;
         }
 
-        public function getAllWithPaginate()
+        public function getAllWithPaginate(int $itemOnPage = -1)
         {
             return $this->startConditions()
                 ->select('name', 'id', 'price', 'image', 'description')
                 ->with('category')
-                ->paginate($this->pages);
+                ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
         }
         
         public function getByCategories($categories)
@@ -28,7 +28,7 @@
                 ->where('category_id', $categories)
                 ->select('name', 'id', 'price', 'image')
                 ->with('category')
-                ->paginate($this->pages);
+                ->paginate($this->itemOnPage);
         }
 
         public function getById(int $id)
@@ -46,6 +46,20 @@
                 ->select('name', 'id', 'price', 'image')
                 ->whereIn('id', $ids)
                 ->get();
+        }
+
+        public function updateItem($id, $inputs)
+        {
+            $this->startConditions()
+                ->where('id', $id)
+                ->update(['name'=>$inputs['name'], 'price'=>$inputs['price']]);
+        } 
+        
+        public function deleteItem($id)
+        {
+            $this->startConditions()
+                ->where('id', $id)
+                ->delete();
         }
     }
     

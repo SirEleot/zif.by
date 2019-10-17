@@ -6,7 +6,6 @@ use App\Repositories\ItemRepository;
 use App\Repositories\CategoryRepository;
 use App\Mail\Order;
 use Illuminate\Support\Facades\Mail;
-use App\Models;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;

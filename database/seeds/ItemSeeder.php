@@ -18,10 +18,11 @@ class ItemSeeder extends Seeder
         foreach ($itemsList as $key => $value) {
             $result[] = array(
                 'name'=> $value->name?$value->name:"noname", 
-                'price'=>$value->price, 
+                'price'=>$value->price,
                 'image'=>$value->image,
                 'factory'=>$value->produces,
                 'series'=>$value->series,
+                'sale'=>'0',
                 'description'=>json_encode($value->characteristics), 
                 'category_id'=> DB::table('categories')->where('name',$value->subcategory)->value('id')
             );

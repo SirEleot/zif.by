@@ -64,3 +64,9 @@ window.onInputPhoneNumber = (ev, el) => {
     }else el.value = prev;
 }
     
+window.selectFileImg = (id, file)=>{
+    const img = document.getElementById("admin-item-image-" + id)
+    const r = new FileReader();
+    r.onload = () => img.src = r.result;
+    r.readAsDataURL(file);  
+}

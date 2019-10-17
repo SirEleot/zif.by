@@ -17,12 +17,13 @@ class CreateItemsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('price');
+            $table->string('sale');
             $table->string('image');
             $table->string('series');
             $table->string('factory');
             $table->json('description');
             $table->integer('category_id');
-
+            $table->softDeletes();
             //$table->foreign('category_id')->references('id')->on('categories');
         });
     }

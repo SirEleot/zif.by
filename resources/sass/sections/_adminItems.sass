@@ -1,0 +1,102 @@
+.admin
+    &-menu
+        margin-top: 80px
+        padding: 15px
+        width: 20%
+        background-color: $PURPLE
+        color: white
+        position: fixed
+        top: 0
+        left: 0
+        min-height: calc(100vh - $nav_height)
+        overflow-y: scroll
+        z-index: 450
+        &-tittle
+            font-size: 1.1rem
+            margin: 0 15px
+        &-add
+            text-align: center
+            button
+                padding: 5px 20px
+                margin: auto
+        p
+            margin: 5px
+        input,textarea,select
+            width: 90%
+        textarea
+            height: 10vh
+    &-items
+        margin-left: 20%
+        padding: 0 15px
+        position: relative
+        .pagination
+            margin: 25px 0
+            justify-content: center
+    &-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        padding: 25px
+        border-bottom: 1px solid #000
+        &>div>input
+            width: 100%           
+        &-file
+            margin: 0 15px
+            img
+                width: 35px
+                height: 35px
+            input
+                display: none
+            label
+                &:hover
+                    cursor: pointer
+                    box-shadow: 2px 2px 4px 1px #000
+        &-name
+            flex: 3 0 auto
+        &-price
+            max-width:80px
+            margin-left: 15px
+            input                
+                text-align: right
+        &-total
+            font-size: 1.2rem
+            font-weight: bold
+            min-width: 150px
+        &-btn
+            width: 25px
+            height: 25px
+            margin-left: 15px
+            &:hover
+                cursor: pointer
+        &-sale
+            width: 25px
+            height: 25px
+        &-id
+            margin-right: 15px
+    .filter
+        overflow: hidden
+        padding: 0
+        p
+            margin: 5px 0
+        a
+            text-decoration: none
+            color: $clr_text
+            white-space: nowrap
+            &:hover
+                text-shadow: 0 0 1px rgba($PURPLE,.5)
+                color: $PURPLE
+        &-category
+            font-size: 18px
+            font-weight: bold
+        &-subcategory
+            font-size: 15px
+            margin: 0 25px 0
+    &-kof
+        display: flex
+        justify-content: space-between
+        padding: 0 15px
+        button>svg
+            background-color: $PURPLE
+
+            
