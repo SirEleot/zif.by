@@ -37,7 +37,7 @@ class AdminItemsController extends BaseAdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, ItemRepository $itemRepository)
     {
         $validatedData = $request->validate([
             'name' => 'required',
@@ -55,15 +55,8 @@ class AdminItemsController extends BaseAdminController
             }
         }
         $inputs['description'] = json_encode($desc);
-        $item = new Item();
-        $item->fill($inputs);
-        $item->save();
-        if($request->file('image') != null) {
-            $item['image'] ='item_'.$item->id.'.jpg';
-            $item->update();
-            $request->file('image')->storeAs('items',$item->image, 'images');
-        }
-        dd($item);
+        $itemRepository->addItem($inputs, $request->file('image'));
+        return redirect($request->headers->get('referer'));
     }
 
     /**

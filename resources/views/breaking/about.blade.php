@@ -10,21 +10,21 @@
     <div class="aboutUs">
       <div class="row">
         <div class="col-xl-3 col-md-3 col-sm-12">
-          <img src="img/svg/aboutUs/ten.svg" alt="">
+          <img src="{{ asset('img/svg/aboutUs/ten.svg') }} " alt="ten year">
           <p>Опыт мастеров от 10 лет</p>
         </div>
         <div class="col-xl-3 col-md-3 col-sm-12">
-          <img src="img/svg/aboutUs/shield.svg" alt="">
+          <img src="{{ asset('img/svg/aboutUs/shield.svg') }}" alt="guarantee">
           <p>Гарантия на выполненные работы</p>
         </div>
         <div class="col-xl-3 col-md-3 col-sm-12">
-          <img src="img/svg/breaking/headset.svg" alt="">
+          <img src="{{ asset('img/svg/breaking/headset.svg') }}" alt="support">
           <p>Консультация специалиста
           </p>
         </div>
         <div class="col-xl-3 col-md-3 col-sm-12">
-          <img src="img/svg/breaking/fast.svg" alt="">
-          <p>Срочный выездв любой район</p>
+          <img src="{{ asset('img/svg/breaking/fast.svg') }}" alt="fast">
+          <p>Срочный выездв любой район <br> <strong class="color-pink">{{$whom}}</strong></p>
         </div>
     </div>
   </div>

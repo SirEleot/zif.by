@@ -61,6 +61,18 @@
                 ->where('id', $id)
                 ->delete();
         }
+
+        public function addItem($inputs, $img)
+        {
+            $item = $this->startConditions();
+            $item->fill($inputs);
+            $item->save();
+            if($img) {
+                $item['image'] ='item_'.$item->id.'.jpg';
+                $item->update();
+                $img->storeAs('items',$item->image, 'images');
+            }
+        }
     }
     
 ?>

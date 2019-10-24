@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded',() => {
     $('.nav-menu-btn').click(function (e) {
         $('.nav-menu').toggleClass('nav-menu-active');
     });
-    $('.nav-menu-link').click(function (e) {
-        console.log(e.target.pathname);
+    $('.action-link').click(function (e) {
+        //console.log(e.target.pathname);
         e.preventDefault();
-        if(window.location.pathname == '/' && e.target.pathname == '/'){            
-            const aray = e.target.href.split("#");   
-            scrollTo(aray[1]);
-        }else window.location.href = e.target.href;
+        const aray = e.target.href.split("#");
+        const el = document.getElementById(aray[1]);
+        if(el)scrollTo(aray[1]);
+        else window.location.href = e.target.href;
     });
 });
 

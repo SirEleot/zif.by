@@ -12,7 +12,7 @@
 */
 
 Route::get('/', "HomeController@index")->name('home');
-Route::get('/breaking', "HomeController@breaking")->name('breaking');
+Route::get('/breaking/{sity}', "HomeController@breaking")->name('breaking');
 
 Route::get('/catalog/{category}/', "Catalog\CatalogController@index")->name('catalog');
 Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
@@ -29,3 +29,5 @@ Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function ()
     )->names('admin.items');
     Route::post('setKof', 'AdminItemsController@setKof')->name('admin.setKof');
 });
+
+Auth::routes();

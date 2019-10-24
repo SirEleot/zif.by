@@ -14,17 +14,14 @@
         <p class="breaking-inputs"><input class="breaking-button button" type="submit" value="Отправить"/>
       </form>
       <div class="col-xl-4 col-lg-4 offset-xl-1 offset-lg-1 col-md-12 col-sm-12 contacts">
-        <p>Телефоны</p>
+      <p>Телефон мастера в </p>
+      <p style="margin-top: 0;"><strong class="color-pink text-align-center">{{$where}}:</strong></p>
         <div>
-          <img src="img/svg/contacts/whatsapp.svg" alt="">
-          <a href="tel:+375291420908">+375 29 142 09 08</a>
-        </div>
-        <div>
-          <img src="img/svg/contacts/viber.svg" alt="">
-          <a href="viber://chat?number=+375292420909">+375 29 242 09 09</a>
-        </div>
+          <img src="{{ asset('img/svg/contacts/whatsapp.svg') }}" alt="phone">
+          <a href="tel://{{str_replace(' ', '', $phone)}}">{{$phone}}</a>
+        </div>       
         <p>Почтовый адрес</p>
-        <img src="img/svg/contacts/mail.svg" alt="">
+        <img src="{{ asset('img/svg/contacts/mail.svg') }}" alt="email">
         <a href="mailto:support@zif.by">support@zif.by</a>
       </div>
     </div>

@@ -2,10 +2,10 @@
 
 @section('content')
   {{-- <link rel="stylesheet" href="{{ asset('css/breaking.css') }}"> --}}
-  @include('breaking.header')
-  @include('breaking.about')
+  @include('breaking.header', $sity_arr)
+  @include('breaking.about', $sity_arr)
   {{-- @include('breaking.services') --}}
-  @include('breaking.posts')
-  @include('breaking.contacts')
+  @include('breaking.posts', $sity_arr)
+  @include('breaking.contacts', $sity_arr)
 
 @endsection
