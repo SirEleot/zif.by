@@ -53,7 +53,7 @@ class HomeController extends Controller
                 'where'=>'Копыле',
                 'whom'=>'Копыля', 
                 'phone'=>'+375 29 142 09 08',
-                'img'=>'soligorsk.png'
+                'img'=>'kopil.png'
             ];
             
             default: return [
