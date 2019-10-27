@@ -19,7 +19,7 @@
                 <p class="footer-link"><a href="{{route('breaking',['sity'=>'slutsk'])}}">Слуцк</a> </p>
                 <p class="footer-link"><a href="{{route('breaking',['sity'=>'luban'])}}">Любань</a> </p>
                 <p class="footer-link"><a href="{{route('breaking',['sity'=>'kopil'])}}">Копыль</a> </p>
-                <p class="footer-link"><a href="{{route('breaking',['sity'=>'baranovichi'])}}">Барановичи</a> </p>
+                <p class="footer-link"><a href="{{route('breaking',['sity'=>'starie_dorogi'])}}">Старые дорги</a> </p>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                 <p class="footer-tittle">Наши контакты</p>               
