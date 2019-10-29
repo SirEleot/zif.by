@@ -2,9 +2,6 @@
 @extends('layouts.app',['phones'=>Config::get('common.phones')])
 
 @section('content')
-   {{-- @include('catalog.item',['paginator'=>$paginator]) --}}
-   
-   {{-- <link rel="stylesheet" href="{{ asset('css/catalog.css') }}"> --}}
    @php
       use Illuminate\Support\Str;
    @endphp
@@ -14,13 +11,12 @@
             <div class="col-md-12 col-sm-12">
                <div class="form-group">
                   <label for="my-select">Выберите раздел</label>
-                  <select id="my-select" class="form-control" name="">
-                     <option>Дверные замки</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                     <option>Text</option>
-                     <option>Text</option>
+                  <select id="my-select" class="form-control" name="nav" onchange="window.location.href = this.value"> 
+                     @foreach ($categories as $item)
+                        <option value="{{ route('catalog', ['category'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}" {{$item->id == $categoryId ? 'selected' : ''}}>
+                           {{$item->name}}
+                        </option>
+                     @endforeach
                   </select>
                </div>
             </div>            
@@ -37,7 +33,7 @@
          <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 filter">
                @foreach ($categories as $item)
-                  <p><a href="{{ route('catalog', ['category'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}">{{$item->name}}</a></p>
+                  <p class="{{$item->id == $categoryId ? 'filter-selected' : ''}}"><a href="{{ route('catalog', ['category'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}">{{$item->name}}</a></p>
                @endforeach
             </div>
             <div class="col-xl-9 col-lg-8 col-md-12">
@@ -47,7 +43,13 @@
                      <div class="image" style="background-image: url({{ asset("img/items/".$item->image) }})" alt="{{Str::slug($item->name, '-')}}" ></div>
                         <div class="info">
                            <p class="info-name">{{$item->name}}</p>
-                           <p class="info-price">{{$item->price}} руб</p>                   
+                           @if ($item->sale > 0)
+                              <p class="info-price">{{$item->price}} руб</p>  
+                              <p class="info-price">{{$item->sale}} руб</p>  
+                           @else
+                               <p class="info-price">{{$item->price}} руб</p>  
+                           @endif
+                                            
                         </div>                     
                      </div>
                   @endforeach

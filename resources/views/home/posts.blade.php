@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row posts">
       @foreach ($posts as $post)   
-        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12" onclick="window.location.href = '{{route('post',['id'=>$post->id])}}'">
           <div class="posts-card">
             <div class="posts-card-image" style="background-image: url({{ asset('/img/posts/'.$post->image) }});"></div>
             <div class="posts-card-tittle">{{$post->tittle}}</div>

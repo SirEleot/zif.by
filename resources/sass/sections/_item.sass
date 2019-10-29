@@ -1,7 +1,11 @@
 .catalog-item
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
     &-wrapper
         max-width: 860px
-        margin: $nav_height + 50px auto
         background-color: white
         @include box-shadow-hover
     h3
@@ -23,22 +27,6 @@
         width: 100%
         &>div
             margin: 15px
-    #modal-close
-        width: 25px
-        height: 25px
-        text-align: right
-        color: rgba(grey, .4)
-        font-size: 1.2rem
-        font-weight: bold
-        margin: 15px 15px 0 auto
-        text-shadow: 1px 1px 3px rgba(grey, .6)
-        overflow: hidden
-        background-image: url('/img/svg/cross.svg')
-        background-size: contain
-        background-repeat: no-repeat
-        &:hover
-            color: grey
-            cursor: pointer
     &-image
         width: 350px
         height: 350px
@@ -113,4 +101,15 @@
                 min-width: 5.5em
                 span                          
                     font-weight: bold
-    
+@media screen and ( max-width:  861px)    
+    .catalog-item
+        &-wrapper
+            width: 100%
+            height: 100%
+            overflow-y: scroll
+        &-row
+            flex-direction: column
+            align-items: center
+        &-more
+            width: 60vw
+            height: 60vw

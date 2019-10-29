@@ -10,7 +10,7 @@ class Item extends Model
     use SoftDeletes;
     public $timestamps = false;
 
-    protected $fillable = ['name', 'price', 'description', 'factory', 'category_id'];
+    protected $fillable = ['name', 'price', 'sale', 'description', 'factory', 'category_id'];
     
     protected $attributes = [
         'series' => '',

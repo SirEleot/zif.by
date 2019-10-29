@@ -10,15 +10,15 @@
             <div class="form-group">
                <select  onchange="window.location.href = this.value">
                     @foreach ($categories as $item)
-                        <option value="{{ route('admin.items.show', ['item'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}" >{{$item->name}}</option>
+                        <option value="{{ route('admin.items.show', ['item'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}" {{$item->id == $categoryId ? 'selected' : ''}}>{{$item->name}}</option>
                     @endforeach
                </select>
             </div>
         </div>
         <p class="admin-menu-tittle">Коэффициент цены:</p>
-        <form action="{{route('admin.setKof')}}" method="POST" class="admin-kof">
+        <form action="{{route('admin.setCoef')}}" method="POST" class="admin-kof">
             @csrf
-            <p class="admin-kof-val"> <input type="number" value="{{$kof}}" name="kof" min="0.5" step=".1"></p> 
+            <p class="admin-kof-val"> <input type="number" value="{{$coef}}" name="coef" min="0.5" step=".1"></p> 
             <p class="admin-kof-btn">
                 <button type="submit">
                     <svg 
@@ -95,9 +95,9 @@
                 </div>
                 <div class="admin-item-id">Id: {{$item->id}}</div>
                 <div class="admin-item-name" ><input type="text" name="name" value="{{$item->name}}"></div>
-                <div class="admin-item-price"><input type="number" name="sale" placeholder="акция" value=""></div>
+                <div class="admin-item-price"><input type="number" name="sale" placeholder="акция" value="{{$item->sale > 0 ? $item->sale : null}}"></div>
                 <div class="admin-item-price" ><input type="number" name="price" value="{{$item->price}}"></div>
-                <div class="admin-item-total"> * {{$kof}}  = {{round($item->price * $kof, 2)}} руб.</div>
+                <div class="admin-item-total"> * {{$coef}}  = {{round($item->price * $coef, 2)}} руб.</div>
                 <div class="admin-item-btn" title="Удалить товар"><img src="{{ asset('/img/svg/cross.svg') }}" alt="{{$item->name}}" onclick="deleteItem({{$item->id}})"></div>
                 <div class="admin-item-btn" title="Сохранить изменения"><img src="{{ asset('/img/svg/save.svg') }}" alt="{{$item->name}}" onclick="saveItem({{$item->id}})"></div>
                 <div><input type="hidden" name="image_path" value="{{$item->image}}"></div>

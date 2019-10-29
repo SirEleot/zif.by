@@ -21,15 +21,15 @@ class CatalogController extends BaseCatalogController
             $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
-        //dd($paginator);
-        return view("catalog.main", compact('paginator', 'categories', 'categoryId'));
+        $coef = config('common.coef');
+        return view("catalog.main", compact('paginator', 'categories', 'categoryId', 'coef'));
     }
 
     public function item(int $id, ItemRepository $itemRepository )
     {
         $items = $itemRepository->getById($id);
-        //dd($items);
-        return view("catalog.item", compact('items'));
+        $coef = config('common.coef');
+        return view("catalog.item", compact('items', 'coef'));
     }
 
     public function cart(ItemRepository $itemRepository)
@@ -42,8 +42,8 @@ class CatalogController extends BaseCatalogController
             $counts[$value[0]] = $value[1];
         }
         $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
-        //dd($itemsArray, $idsArray, $items);
-        return view("catalog.cart", compact('items', 'counts'));
+        $coef = config('common.coef');
+        return view("catalog.cart", compact('items', 'counts', 'coef'));
     }
 
     public function order(Request $req, ItemRepository $itemRepository)
@@ -57,7 +57,6 @@ class CatalogController extends BaseCatalogController
         }
         $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
         if(count($itemsArray) > 0) {
-            //dd($_POST);
             Mail::to('support@zif.by')->send(new Order($items, $counts));
             setcookie('cart', '[]', time() + 3.154e+7);
             return 'ok';

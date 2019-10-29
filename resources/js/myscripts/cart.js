@@ -12,15 +12,21 @@ window.addItemToCart = (id) => {
     if(item)  item[1] += count;
     else cart.push([id,count]);
     setCookie('cart', JSON.stringify(cart), 3.154e+7);
-    //console.log(getCookie('cart'));
+    showModal(false);
+    updateCountCart();
 }
 
 window.removeItemFromCart = (id) => {
     if(cart.length > 0){
-        cart.splice(id, 1);
-        setCookie('cart', JSON.stringify(cart), 3.154e+7);
-        $(`#item-${id}`).remove();
-        updateCart();
+        cart.forEach((item, index) => {
+            if(item[0] == id){
+                cart.splice(index, 1);
+                setCookie('cart', JSON.stringify(cart), 3.154e+7);
+                $(`#item-${id}`).remove();
+                updateCart();
+                return;
+            }
+        });
     }
 }
 
@@ -35,7 +41,8 @@ window.updateCart = () => {
     });
     
     $('#order-count').html(orderCount);
-    $('#order-price').html(orderPrice.toFixed(2));
+    $('#order-price').html(orderPrice.toFixed(2));    
+    updateCountCart();
 }
 
 window.sendOrder = (e, form) => {
@@ -46,4 +53,16 @@ window.sendOrder = (e, form) => {
     if(code != '29' && code != '25' && code != '33') return alert('Введен некорректный код оператора');
     if(phone.length != 9) return alert('В веденном номере телефона не хватает символов');
     form.submit();
+}
+
+window.updateCountCart = () => {
+    let count = 0;
+    cart.forEach(element => {
+        count += element[1];
+    });
+    if(count > 0) {
+        $('#cart-count').html(count);
+        $('.cart-count').css('display', 'flex');
+    }
+    else $('.cart-count').css('display', 'none')
 }

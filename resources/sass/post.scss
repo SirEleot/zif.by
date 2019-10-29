@@ -1,0 +1,26 @@
+@import '~bootstrap/scss/bootstrap';
+
+@import 'color';
+@import 'variables';
+@import 'font';
+@import 'common';
+@import 'buttons';
+@import 'sections/nav';
+@import 'sections/footer';
+
+.post {
+    h1{
+        margin: 25px 0;
+        font-size: 4rem;
+        color: $PINK;
+        font-weight: bold;
+    };
+    img{
+        float: left;
+        margin: 0 15px 15px 0;
+    };
+    p{
+        text-indent: 15px;
+        font-size: 1.2rem;
+    };
+};

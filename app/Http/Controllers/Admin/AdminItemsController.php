@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Repositories\ItemRepository;
 use App\Repositories\CategoryRepository;
-use App\Models\Setting;
 use App\Models\Item;
 
 use Illuminate\Http\Request;
@@ -65,9 +64,9 @@ class AdminItemsController extends BaseAdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(int $categoryId, CategoryRepository $categoryRepository, ItemRepository $itemRepository, Setting $setting)
+    public function show(int $categoryId, CategoryRepository $categoryRepository, ItemRepository $itemRepository)
     {
-        $kof = round($setting->first()['kof'] / 100, 2);
+        $coef = config('common.coef');
         $categories = $categoryRepository->getAll();
         if($categoryId == 0){
             $paginator = $itemRepository->getAllWithPaginate(20);
@@ -75,8 +74,7 @@ class AdminItemsController extends BaseAdminController
             $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
-        //dd($paginator);
-        return view("admin.main", compact('paginator', 'categories', 'categoryId', 'kof'));
+        return view("admin.main", compact('paginator', 'categories', 'categoryId', 'coef'));
     }
 
     /**
@@ -116,10 +114,9 @@ class AdminItemsController extends BaseAdminController
         return redirect($request->headers->get('referer'));
     }
 
-    public function setKof(Request $request, Setting $setting)
+    public function setCoef(Request $request)
     {
-        $kof = $request->input('kof') * 100;
-        $setting->where('id', 1)->update(['kof'=>$kof]);
+        config(['common.coef'=>$request->input('coef')]);
         return redirect($request->headers->get('referer'));
     }
 }

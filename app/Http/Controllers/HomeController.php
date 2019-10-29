@@ -18,4 +18,18 @@ class HomeController extends Controller
         return view("breaking", config('common.sities')[$sity]);
     }
 
+    public function posts(PostRepository $postRepository)
+    {
+        $posts = $postRepository->getAllWithPaginate();
+        return view('posts', compact('posts'));
+    }
+
+    public function post(int $id, PostRepository $postRepository)
+    {
+        $post = $postRepository->getPostById($id);
+        $paragraphs = explode("\n",$post->text);
+        //dd($paragraphs);
+        return view('post', compact('post', 'paragraphs'));
+    }
+
 }

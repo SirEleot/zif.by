@@ -7,7 +7,5 @@ window.deleteItem = (id) => {
 
 window.saveItem = (id) => {
     let form = document.getElementById('item_' + id);
-    form.submit();
-    //console.log(form);
-    
+    form.submit();    
 }

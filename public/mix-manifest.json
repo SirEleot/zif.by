@@ -6,5 +6,7 @@
     "/css/breaking.css": "/css/breaking.css",
     "/css/catalog.css": "/css/catalog.css",
     "/css/admin.items.show.css": "/css/admin.items.show.css",
-    "/css/login.css": "/css/login.css"
+    "/css/login.css": "/css/login.css",
+    "/css/posts.css": "/css/posts.css",
+    "/css/post.css": "/css/post.css"
 }

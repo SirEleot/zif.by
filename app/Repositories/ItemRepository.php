@@ -17,7 +17,7 @@
         public function getAllWithPaginate(int $itemOnPage = -1)
         {
             return $this->startConditions()
-                ->select('name', 'id', 'price', 'image', 'description')
+                ->select('name', 'id', 'price', 'sale', 'image', 'description')
                 ->with('category')
                 ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
         }
@@ -26,7 +26,7 @@
         {
             return $this->startConditions()
                 ->where('category_id', $categories)
-                ->select('name', 'id', 'price', 'image')
+                ->select('name', 'id', 'price', 'sale', 'image')
                 ->with('category')
                 ->paginate($this->itemOnPage);
         }
@@ -43,7 +43,7 @@
         public function getByRange(array $ids)
         {
             return $this->startConditions($count = 6)
-                ->select('name', 'id', 'price', 'image')
+                ->select('name', 'id', 'price', 'sale', 'image')
                 ->whereIn('id', $ids)
                 ->get();
         }
@@ -52,7 +52,7 @@
         {
             $this->startConditions()
                 ->where('id', $id)
-                ->update(['name'=>$inputs['name'], 'price'=>$inputs['price']]);
+                ->update(['name'=>$inputs['name'], 'price'=>$inputs['price'], 'sale'=>$inputs['sale']]);
         } 
         
         public function deleteItem($id)

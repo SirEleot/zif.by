@@ -49,13 +49,35 @@
                 height: 2px
                 background-color: $clr_text_white
                 margin: 4px 
-        &-cart svg
-            fill: white
-            transition: all .5s
-            &:hover
-                cursor: pointer 
-                fill: $PINK
-                font-weight: bold
+        &-cart
+            position: relative
+            svg
+                fill: white
+                transition: all .5s
+                &:hover
+                    cursor: pointer 
+                    fill: $PINK
+                    font-weight: bold
+.cart-count
+    position: absolute
+    background-color: $PINK
+    border-radius: 50%
+    border: 1px solid white
+    margin: 0
+    padding: 0
+    bottom: -2px
+    right: -2px
+    width: 15px
+    height: 15px
+    display: none
+    justify-content: center
+    align-items: center
+    p
+        font-size: .6rem
+        margin: 0
+        padding: 0
+        color: white
+
 @media screen and (max-width: 1200px)
     .nav
         .phones

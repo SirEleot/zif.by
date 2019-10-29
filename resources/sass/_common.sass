@@ -34,5 +34,26 @@ section
 	height: 100vh
 	background-color: rgba(#000, .5)
 	z-index: 1000
+#modal-close
+	width: 25px
+	height: 25px
+	text-align: right
+	color: rgba(grey, .4)
+	font-size: 1.2rem
+	font-weight: bold
+	margin: 15px 15px 0 auto
+	text-shadow: 1px 1px 3px rgba(grey, .6)
+	overflow: hidden
+	background-image: url('/img/svg/cross.svg')
+	background-size: contain
+	background-repeat: no-repeat
+	&:hover
+		color: grey
+		cursor: pointer
+@media screen and ( max-width:  861px)
+	#modal-close
+		position: fixed
+		right: 5px
+		top: 5px
 .container 
 	overflow: hidden

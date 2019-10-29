@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded',() => {
         if(el)scrollTo(aray[1]);
         else window.location.href = e.target.href;
     });
+    updateCountCart();
 });
 
 window.onInputPhoneNumber = (ev, el) => {

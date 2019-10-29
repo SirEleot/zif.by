@@ -20,7 +20,7 @@
                             <h2 class="catalog-item-noinfo">Нет информации</h2>
                         @endif
                         @foreach ($description as $key => $row)
-                            <tr style="{{$trigger ? "background-color: #888; color: white;":"background-color: white;"}}">
+                            <tr style="{{$trigger ? "background-color: #888; color: white;" : "background-color: white;"}}">
                                 @php
                                     $trigger=!$trigger;
                                 @endphp
