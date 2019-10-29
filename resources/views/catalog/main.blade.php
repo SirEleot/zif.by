@@ -1,4 +1,5 @@
-@extends('layouts.app')
+
+@extends('layouts.app',['phones'=>Config::get('common.phones')])
 
 @section('content')
    {{-- @include('catalog.item',['paginator'=>$paginator]) --}}

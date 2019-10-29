@@ -11,7 +11,6 @@
       <link rel="stylesheet" href="{{ asset('css/'.Request::route()->getName().'.css') }}">
   </head>
   <body>
-      <div id="main"></div>
       <div id="modal"></div>
       @include('nav')
 

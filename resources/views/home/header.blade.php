@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="main_top">
   <div class="container">
     <div class="row">
       <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12 header-text">

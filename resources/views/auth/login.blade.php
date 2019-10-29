@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app',,['phones'=>Config::get('common.phones')])
 
 @section('content')
 <div class="container">

@@ -18,7 +18,7 @@
       <p style="margin-top: 0;"><strong class="color-pink text-align-center">{{$where}}:</strong></p>
         <div>
           <img src="{{ asset('img/svg/contacts/whatsapp.svg') }}" alt="phone">
-          <a href="tel://{{str_replace(' ', '', $phone)}}">{{$phone}}</a>
+          <a href="tel:{{str_replace(' ', '', $phone)}}">{{$phone}}</a>
         </div>       
         <p>Почтовый адрес</p>
         <img src="{{ asset('img/svg/contacts/mail.svg') }}" alt="email">
