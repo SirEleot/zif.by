@@ -7,8 +7,12 @@
         <h1 class="text-center">{{$post->tittle}}</h1>
         <div class="text">
             <img src="{{ asset('img/posts/'.$post->image) }}" alt="post_image">
-            @foreach ($paragraphs as $p)
-                <p>{{$p}}</p>
+            @foreach ($paragraphs as $p)              
+                <p>
+                    {!!
+                        str_replace('$shop', Config::get('common.postLinks')['$shop'], str_replace('$breaking', Config::get('common.postLinks')['$breaking'], $p))
+                    !!}
+                </p>
             @endforeach
         </div>
     </div>

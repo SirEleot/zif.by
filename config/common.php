@@ -57,6 +57,10 @@
                 'phone'=>'+375 29 142 09 08',
                 'img'=>'soligorsk.png'
             ]
+        ),
+        'postLinks'=>array(
+            '$shop'=>'<a href="/catalog/0">нашем магазине</a>',
+            '$breaking'=>'<a href="/breaking/soligorsk">Наши специалисты</a> '
         )
     )
 ?>
