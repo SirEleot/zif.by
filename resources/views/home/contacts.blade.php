@@ -23,7 +23,7 @@
         
         <div>
           <img src="img/svg/contacts/viber.svg" alt="">
-          <a href="viber://chat?number=+375292420909">+375 29 242 09 09</a>
+          <a href="viber://chat?number=375292420909">+375 29 242 09 09</a>
         </div>
         <p>Почтовый адрес</p>
         <img src="img/svg/contacts/mail.svg" alt="">

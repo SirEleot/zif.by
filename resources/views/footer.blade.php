@@ -27,7 +27,7 @@
                 <p class="footer-link">
                     <a href="{{config('common.social')['vk']}}"  target="blank"><img class="social-ico" src="{{ asset('img/svg/vk.svg') }}" alt="vk"></a>
                     <a href="{{config('common.social')['instagram']}}" target="blank"><img class="social-ico" src="{{ asset('img/svg/instagram-logo.svg') }}" alt="instagramm"></a>
-                    <a href="viber://chat?number=+375292420909"><img class="social-ico" src="{{ asset('img/svg/viber-white.svg') }}" alt="viber"></a>
+                    <a href="viber://chat?number=375292420909"><img class="social-ico" src="{{ asset('img/svg/viber-white.svg') }}" alt="viber"></a>
                 </p>
                 <p></p>
                 <p></p>

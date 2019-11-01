@@ -28,7 +28,7 @@ class PostSeeder extends Seeder
         $result[] = array(
             'tittle'=>'Подбор замка для замены',
             'description'=>'Эх, столкнувшись с выбором  замены замка на дверь, многие с ностальгией вспомнят советские времена...',
-            'image'=>'2.png',
+            'image'=>'3.png',
             'text'=>'Эх, столкнувшись с выбором  замены замка на дверь, многие с ностальгией вспомнят советские времена, где все ходили в одинаковых одеждах, ездили на одинаковых авто и, зайдя в промтовары, быстро выбирали себе замок. В принципе выбор заключался в подборе цвета: взять серый, черный или белый. Сейчас же при современном развитии науки и техники можно потратить кучу нервов и времени, выбирая из сотни тысяч вариантов с первого взгляда одинаковых замков. Но ведь мы хотим заменить замок аналогичным, чтобы не пришлось вскрывать замок варварским способом : сверлить, пилить, долбить весь свой выходной день и использовать при этом лишь одну отвертку. 
             Как же найти и установить замок на аналогичный замок и почему это так сложно? Мы должны понимать, что производитель делает размеры замка, расстояния креплений, бексет и межосевое расстояние уникальными, чтобы мы вынуждены были купить замок и устанавить замок при поломке замка опять такой же и той же фирмы. 
             Итак, первым делом определяем, кем произведен замок. Это очень облегчит наш поиск. Определив фирму производителя, мы замеряем межосевое расстояние и бексет замка. Это основное расстояние замка. Для начала вспомним, что они из себя представляют.
@@ -43,7 +43,7 @@ class PostSeeder extends Seeder
         $result[] = array(
             'tittle'=>'tittle',
             'description'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolor dicta quisquam laboriosam doloremque, voluptatum ipsam pariatur impedit dolorem voluptate unde officia asperiores voluptas. Autem cumque iusto aspernatur corrupti beatae?',
-            'image'=>'3.png',
+            'image'=>'2.png',
             'text'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolor dicta quisquam laboriosam doloremque, voluptatum ipsam pariatur impedit dolorem voluptate unde officia asperiores voluptas. Autem cumque iusto aspernatur corrupti beataeLorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolor dicta quisquam laboriosam doloremque, voluptatum ipsam pariatur impedit dolorem voluptate unde officia asperiores voluptas. 
             Autem cumque iusto aspernatur corrupti beataeLorem ipsum dolor sit amet consectetur adipisicing elit. 
             Modi, dolor dicta quisquam laboriosam doloremque, voluptatum ipsam pariatur impedit dolorem voluptate unde officia asperiores voluptas. 
