@@ -11,6 +11,10 @@
             '+375 29 142 09 08',
             '+375 29 242 09 09'
         ),
+        'social'=>array(
+            'vk'=>'https://vk.com/mnogo.zamkof',
+            'instagram'=>'https://www.instagram.com/zamki_i_furnitura_soligorsk/?hl=ru'
+        ),
         /*
         |   settings for sities
         */
@@ -18,7 +22,7 @@
             'starie_dorogi'=> [
                 'name'=>'Старые Дороги', 
                 'where'=>'Старых Дорогах', 
-                'whom'=>'Стырых Догог', 
+                'whom'=>'Стырых Дорог', 
                 'phone'=>'+375 29 142 09 08',
                 'img'=>'starie_dorogi.png'
             ],
@@ -26,7 +30,7 @@
                 'name'=>'Минск', 
                 'where'=>'Минске',
                 'whom'=>'Минска', 
-                'phone'=>'+375 29 142 09 08',
+                'phone'=>'+375 29 669 74 74',
                 'img'=>'minsk.png'
             ],
             'slutsk'=> [
@@ -37,9 +41,9 @@
                 'img'=>'slutsk.png'
             ],
             'luban'=> [
-                'name'=>'Любаь', 
+                'name'=>'Любань', 
                 'where'=>'Любане',
-                'whom'=>'Любаня', 
+                'whom'=>'Любани', 
                 'phone'=>'+375 29 142 09 08',
                 'img'=>'luban.png'
             ],
@@ -61,7 +65,8 @@
         'postLinks'=>array(
             '$shop'=>'<a href="/catalog/0">нашем магазине</a>',
             '$breaking'=>'<a href="/breaking/soligorsk">Наши специалисты</a> '
-        )
+        ),
+        'adress'=>'г.Солигорск ул. Заслонова 44'
     )
 ?>
 

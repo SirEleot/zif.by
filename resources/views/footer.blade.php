@@ -25,19 +25,14 @@
                 <p class="footer-link"><a href="tel://375291420908">+375 29 142 09 08</a></p>
                 <p class="footer-link"><a href="tel://375292420909">+375 29 242 09 09</a></p>
                 <p class="footer-link">
-                    <a href="#"><img class="social-ico" src="{{ asset('img/svg/vk.svg') }}" alt="vk"></a>
-                    <a href="#"><img class="social-ico" src="{{ asset('img/svg/instagram-logo.svg') }}" alt="instagramm"></a>
-                    <a href="#"><img class="social-ico" src="{{ asset('img/svg/viber-white.svg') }}" alt="viber"></a>
+                    <a href="{{config('common.social')['vk']}}"  target="blank"><img class="social-ico" src="{{ asset('img/svg/vk.svg') }}" alt="vk"></a>
+                    <a href="{{config('common.social')['instagram']}}" target="blank"><img class="social-ico" src="{{ asset('img/svg/instagram-logo.svg') }}" alt="instagramm"></a>
+                    <a href="viber://chat?number=+375292420909"><img class="social-ico" src="{{ asset('img/svg/viber-white.svg') }}" alt="viber"></a>
                 </p>
                 <p></p>
                 <p></p>
                 <p class="footer-link"> <a href="#">@SiteEasyFast</a></p>
             </div>
-            {{-- <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
-            <p>Закажите звонок</p>
-            <input type="text" placeholder="+7 978 777 77 77">
-            <img class="social-ico" style="margin-top: 15px;" src="{{ asset('img/svg/vk.svg') }}" alt="">
-            <img class="social-ico" style="margin-top: 15px;" src="{{ asset('img/svg/instagram-logo.svg') }}" alt=""> --}}
         </div>
     </div>
 </footer>

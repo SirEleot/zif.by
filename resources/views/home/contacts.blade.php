@@ -31,7 +31,7 @@
         <p>Адреса магазинов</p>
         <div>
           <img src="img/svg/contacts/map-pointer.svg" alt="">
-          <a href="">г. Минск ул. Ленина д.32</a><br/>
+          <a href="#">{{config('common.adress')}}</a><br/>
         </div>
       </div>
     </div>
