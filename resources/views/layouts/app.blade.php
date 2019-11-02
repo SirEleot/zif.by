@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="yandex-verification" content="0b50416dde7d6df2" />
       <meta name="csrf-token" content="{{ csrf_token() }}">
       @php
           //dd(Request::route()->getName());
