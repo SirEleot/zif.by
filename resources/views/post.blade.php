@@ -10,8 +10,7 @@
     >
         <h1 class="text-center" itemprop="headline">{{$post->tittle}}</h1>
         <div class="text">
-            <img itemprop="url contentUrl" src="{{ asset('img/posts/'.$post->image) }}" alt="post_image">
-            <meta itemprop="url" content="{{ asset('img/posts/'.$post->image) }}">
+            <img itemprop="image" src="{{ asset('img/posts/'.$post->image) }}" alt="post_image">
             <article
                 itemprop="articleBody"
             > 
@@ -22,14 +21,31 @@
                         !!}
                     </p>
                 @endforeach
-            </article> 
-            <p
-                class="text-right"
-                itemprop="datePublished"
-                datetime="{{$post->created_at}}"
-            >
-                {{$post->created_at}}
+            </article>
+            <p itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="zamki i furnitura">
+                <meta itemprop="url" content="https://zif.by">
+                <span itemprop="logo" content="logo" itemscope itemtype="https://schema.org/imageObject">
+                    <meta itemprop="url" content="{{ asset('img/svg/logo.svg') }}">
+                </span>
             </p>
+            <p class="text-right"
+            >
+                Дата публикации: 
+                <span
+                    itemprop="datePublished"
+                    datetime="{{$post->created_at}}"
+                >
+                    {{$post->created_at}}
+                </span>
+            </p>
+            <p class="text-right">
+                Автор:
+                <span
+                    itemprop="author"
+                >zif.by</span>
+            </p>
+            
         </div>
     </div>
 </section>

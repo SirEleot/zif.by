@@ -21,13 +21,28 @@
                </div>
             </div>            
          </div>
-         <div class="row">
+         <div class="row">              
             <div class="col-xl-4 col-lg-4 col-md-0 col-sm-4">
-               <p class="navi-string">
-                  <a href="{{ route('home') }}">Главная</a> /
-                  <a href="{{ route('catalog', 0) }}">Каталог товаров</a> /             
-                  <a href="{{ route('catalog', $categoryId) }}">{{$categories[$categoryId]->name}}</a> /
-               </p>
+               <div class="navi-string" itemscope itemtype="https://schema.org/BreadcrumbList">
+                  <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                     <a href="{{ route('home') }}">
+                        <span itemprop="name"> Главная</span>
+                     </a> 
+                     <meta itemprop="position" content="1">
+                  </div>
+                  <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                     <a href="{{ route('catalog', 0) }}">
+                        <span itemprop="name">/ Каталог товаров</span>
+                     </a>  
+                     <meta itemprop="position" content="2">
+                  </div>
+                  <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                     <a href="{{ route('catalog', $categoryId) }}">
+                        <span itemprop="name">/ {{$categories[$categoryId]->name}}/</span>
+                     </a> 
+                     <meta itemprop="position" content="3">
+                  </div>
+               </div>
             </div>
          </div>
          <div class="row">
