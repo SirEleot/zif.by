@@ -21,30 +21,26 @@
                </div>
             </div>            
          </div>
-         <div class="row">              
-            <div class="col-xl-4 col-lg-4 col-md-0 col-sm-4">
-               <div class="navi-string" itemscope itemtype="https://schema.org/BreadcrumbList">
-                  <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-                     <a href="{{ route('home') }}" itemprop="item">
-                        <span itemprop="name"> Главная</span>
-                     </a> 
-                     <meta itemprop="position" content="1">
-                  </div>
-                  <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-                     <a href="{{ route('catalog', 0) }}" itemprop="item">
-                        <span itemprop="name">/ Каталог товаров</span>
-                     </a>  
-                     <meta itemprop="position" content="2">
-                  </div>
-                  <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-                     <a href="{{ route('catalog', $categoryId) }}" itemprop="item">
-                        <span itemprop="name">/ {{$categories[$categoryId]->name}}/</span>
-                     </a> 
-                     <meta itemprop="position" content="3">
-                  </div>
+            <div class="navi-string" itemscope itemtype="https://schema.org/BreadcrumbList">
+               <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                  <a href="{{ route('home') }}" itemprop="item">
+                     <span itemprop="name"> Главная</span>
+                  </a> 
+                  <meta itemprop="position" content="1">
+               </div>
+               <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                  <a href="{{ route('catalog', 0) }}" itemprop="item">
+                     <span itemprop="name">/ Каталог товаров</span>
+                  </a>  
+                  <meta itemprop="position" content="2">
+               </div>
+               <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                  <a href="{{ route('catalog', $categoryId) }}" itemprop="item">
+                     <span itemprop="name">/ {{$categories[$categoryId]->name}}/</span>
+                  </a> 
+                  <meta itemprop="position" content="3">
                </div>
             </div>
-         </div>
          <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 filter">
                @foreach ($categories as $item)

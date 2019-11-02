@@ -21,13 +21,27 @@
               <div class="nav-menu-btn-line"></div>
           </div>
           <div class="nav-menu-links" itemscope itemtype="http://www.schema.org/SiteNavigationElement" >                
-              <a href="{{ route('home') }}#main_top" class="nav-menu-link action-link"  itemprop="name url">Главная</a>
-              <a href="{{ route('home') }}#about" class="nav-menu-link action-link"  itemprop="name url">О нас</a>
-              <a href="{{ route('home') }}#services" class="nav-menu-link action-link"  itemprop="name url">Услуги</a>
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="name url">Каталог товаров</a>
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="name url">Акции</a>
-              <a href="{{ route('home') }}#posts" class="nav-menu-link action-link"  itemprop="name url">Статьи</a>
-              <a href="{{ route('home') }}#contacts" class="nav-menu-link action-link"  itemprop="name url">Контакты</a>
+              <a href="{{ route('home') }}#main_top" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="Главная">Главная               
+              </a>
+              <a href="{{ route('home') }}#about" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="О нас">О нас
+              </a>
+              <a href="{{ route('home') }}#services" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="Услуги">Услуги
+              </a>
+              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="Каталог товаров">Каталог товаров
+              </a>
+              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="Акции">Акции
+              </a>
+              <a href="{{ route('home') }}#posts" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="Статьи">Статьи
+              </a>
+              <a href="{{ route('home') }}#contacts" class="nav-menu-link action-link"  itemprop="name url">
+                  <meta an itemprop="name" content="Контакты">Контакты
+              </a>
           </div>
         </div>
         <a href="{{ route('cart') }}" class="nav-menu-cart" >
