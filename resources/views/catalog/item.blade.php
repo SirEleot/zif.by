@@ -4,24 +4,7 @@
             <h1 class="catalog-item-tittle" itemprop="name">{{$items[0]->name}}</h1>
             <div id="modal-close" onclick="showModal(false)"></div>   
         </div>  
-        <hr>  
-{{--         
-        <div itemscope="" itemtype="http://schema.org/Product">
-            <div itemprop="name">
-               <h1>Наименование товара</h1>
-            </div>
-            <a itemprop="image" href="ссылка-на-изображение.jpg">
-            <img src="products_pictures/ссылка-на-изображение.jpg" title="Наименование товара">
-            </a>
-            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-               <meta itemprop="price" content="690.00">
-               <meta itemprop="priceCurrency" content="RUB">
-               <div>В наличии</div>
-               <link itemprop="availability" href="http://schema.org/InStock">
-            </div>
-            <div itemprop="description">Описание товара</div> 
-        </div>
-         --}}
+        <hr>
         <div class="catalog-item-row" >
             <div 
                 class="catalog-item-image"  
@@ -56,23 +39,28 @@
                 </div>                 
                     
                 <div class="item-add">
-                    <div class="item">
-                        <span id="item-price-0">{{$items[0]->price}}</span>
+                    <div class="item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        <span 
+                            id="item-price-0" 
+                            itemprop="price" 
+                            content="{{$items[0]->price}}"
+                        >
+                            {{$items[0]->price}}
+                        </span>
+                        <meta itemprop="priceCurrency" content="BYN">
+                        <meta itemprop="prod" content="{{$items[0]->factory}}">
                     </div> 
                     <div class="count">
                         <div class="count-btn" onclick="changeItemCount(-1,0)">-</div> 
                         <div class="count-info"> <span id="item-count-0">1</span></div>
                         <div class="count-btn" onclick="changeItemCount(1,0)">+</div>
                     </div>
-                    <div class="item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <div class="item">
                         <span 
-                            id="item-total-0" 
-                            itemprop="price" 
-                            content="{{$items[0]->price}}"
+                            id="item-total-0"
                         >
                             {{$items[0]->price}}
                         </span> руб
-                        <meta itemprop="priceCurrency" content="BYN">
                     </div> 
                     <button class="button" onclick="addItemToCart({{$items[0]->id}})">В корзину</button>
                 </div>  

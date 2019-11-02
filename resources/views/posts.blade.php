@@ -3,6 +3,14 @@
 @section('content')
 <section>  
     <div class="container">
+        <div class="navi-string" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+               <a href="{{ route('home') }}" itemprop="item">
+                  <span itemprop="name"> Главная/</span>
+               </a> 
+               <meta itemprop="position" content="1">
+            </div>        
+        </div>
         <div class="row posts">
             @foreach ($posts as $post)   
                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12" onclick="window.location.href = '{{route('post',['id'=>$post->id])}}'">
@@ -17,7 +25,7 @@
         </div>
 
         <div>
-            {{$posts->onEachSide(1)->links()}}   
+            {{$posts->links('pagination')}}   
         </div>  
     </div>
 </section>   

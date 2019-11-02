@@ -20,14 +20,14 @@
               <div class="nav-menu-btn-line"></div>
               <div class="nav-menu-btn-line"></div>
           </div>
-          <div class="nav-menu-links">                
-              <a href="{{ route('home') }}#main_top" class="nav-menu-link action-link">Главная</a>
-              <a href="{{ route('home') }}#about" class="nav-menu-link action-link">О нас</a>
-              <a href="{{ route('home') }}#services" class="nav-menu-link action-link">Услуги</a>
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link">Каталог товаров</a>
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link">Акции</a>
-              <a href="{{ route('home') }}#posts" class="nav-menu-link action-link">Статьи</a>
-              <a href="{{ route('home') }}#contacts" class="nav-menu-link action-link">Контакты</a>
+          <div class="nav-menu-links" itemscope itemtype="http://www.schema.org/SiteNavigationElement" >                
+              <a href="{{ route('home') }}#main_top" class="nav-menu-link action-link"  itemprop="name url">Главная</a>
+              <a href="{{ route('home') }}#about" class="nav-menu-link action-link"  itemprop="name url">О нас</a>
+              <a href="{{ route('home') }}#services" class="nav-menu-link action-link"  itemprop="name url">Услуги</a>
+              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="name url">Каталог товаров</a>
+              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="name url">Акции</a>
+              <a href="{{ route('home') }}#posts" class="nav-menu-link action-link"  itemprop="name url">Статьи</a>
+              <a href="{{ route('home') }}#contacts" class="nav-menu-link action-link"  itemprop="name url">Контакты</a>
           </div>
         </div>
         <a href="{{ route('cart') }}" class="nav-menu-cart" >

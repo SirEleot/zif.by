@@ -2,8 +2,23 @@
 
 @section('content')
 
-<section class="post" 
->
+<section class="post">
+    <div class="container">
+        <div class="navi-string" itemscope itemtype="https://schema.org/BreadcrumbList">
+           <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+              <a href="{{ route('home') }}" itemprop="item">
+                 <span itemprop="name"> Главная</span>
+              </a> 
+              <meta itemprop="position" content="1">
+           </div>
+           <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+              <a href="{{ route('posts') }}" itemprop="item">
+                 <span itemprop="name">/ статьи/</span>
+              </a>  
+              <meta itemprop="position" content="2">
+           </div>          
+        </div>
+    </div>
     <div class="container"
         itemscope
         itemtype="http://schema.org/Article"
