@@ -122,6 +122,7 @@
                 position: absolute
                 left: 0
                 top: $nav_height + 2px
+                height: 0
                 width: 100%
                 overflow: hidden
             &-link
@@ -156,6 +157,8 @@
             &-active
                 .nav-menu-link
                     transform: translateX(0)
+                .nav-menu-links
+                    height: auto
                 .nav-menu-btn-line
                     background-color: $clr_text_white
                     &:nth-child(2)

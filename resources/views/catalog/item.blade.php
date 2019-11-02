@@ -14,7 +14,6 @@
                         @php
                             $trigger=true;
                             $description = json_decode($items[0]->description);
-                            //dd($description);
                         @endphp
                         @if ($description == [])
                             <h2 class="catalog-item-noinfo">Нет информации</h2>
