@@ -43,9 +43,11 @@
             </article>
             <p itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                 <meta itemprop="name" content="zamki i furnitura">
-                <meta itemprop="url" content="https://zif.by">
-                <span itemprop="logo" content="logo" itemscope itemtype="https://schema.org/imageObject">
-                    <meta itemprop="url" content="{{ asset('img/svg/logo.svg') }}">
+                <link itemprop="url" href="https://zif.by">
+                <meta itemprop="address" content="ул.Заслонова-44 г.Солигорск 223710">
+                <meta itemprop="telephone" content="+375291420908">
+                <span itemprop="logo" content="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <link itemprop="image" href="{{ asset('img/svg/logo_black.svg') }}">
                 </span>
             </p>
             <p class="text-right"

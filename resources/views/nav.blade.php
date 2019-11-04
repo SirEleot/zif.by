@@ -1,9 +1,9 @@
 <nav class="nav fixed-top">
   <div class="container">
       <div class="nav-row">
-        <div class="logo" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-          <a href="{{ route('home') }}" itemprop="url" content="{{ route('home') }}">
-            <img src="{{ asset('img/svg/logo.svg') }}" alt="logo" class="nav-logo" itemprop="logo">
+        <div class="logo">
+          <a href="{{ route('home') }}">
+            <img src="{{ asset('img/svg/logo.svg') }}" alt="logo" class="nav-logo" >
           </a>          
         </div>
         <div class="phones">

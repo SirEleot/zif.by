@@ -15,8 +15,18 @@
       @endphp
       <link rel="stylesheet" href="{{ asset('css/'.$routeName.'.css') }}">
       @if ($counter != '')
-      
-        <!-- Yandex.Metrika counter -->
+      {{-- google analytics --}}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E1T86HCJV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-2E1T86HCJV');
+        </script>        
+        {{-- google analytics --}}
+
+       {{-- Yandex.Metrika counter --}}
         <script type="text/javascript" >
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -29,7 +39,7 @@
           });
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/{{$counter}}" style="position:absolute; left:-9999px;" alt="no js" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->  
+        {{-- /Yandex.Metrika counter --}}
 
       @endif
       <title>{{$meta['tittle']}}</title>      
