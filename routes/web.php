@@ -12,7 +12,7 @@
 */
 
 Route::get('/', "HomeController@index")->name('home');
-Route::get('/breaking/{sity}', "HomeController@breaking")->name('vskrytie-zamkov');
+Route::get('/vskrytie-zamkov/{sity}', "HomeController@breaking")->name('vskrytie-zamkov');
 Route::get('/posts', "HomeController@posts")->name('posts');
 Route::get('/post/{id}', "HomeController@post")->name('post');
 
