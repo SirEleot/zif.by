@@ -1,4 +1,4 @@
-@extends('layouts.app', ['phones'=>(array($phone))])
+@extends('layouts.app', ['phones'=>(array($phone)), 'meta'=>Config::get('common.meta.breaking'), 'name'=>$name, 'where'=>$where])
 
 @section('content')
   {{-- <link rel="stylesheet" href="{{ asset('css/breaking.css') }}"> --}}

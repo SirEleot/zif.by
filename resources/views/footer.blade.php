@@ -16,7 +16,7 @@
                 <p class="footer-tittle">Вскрытие замков</p>
                 @foreach (Config::get('common.sities') as $key => $sity)
                     <p class="footer-link">
-                        <a href="{{route('breaking',['sity'=>$key])}}">{{$sity['name']}}</a>
+                        <a href="{{route('vskrytie-zamkov',['sity'=>$key])}}">{{$sity['name']}}</a>
                     </p>
                 @endforeach
             </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app',['phones'=>Config::get('common.phones')])
+@extends('layouts.app',['phones'=>Config::get('common.phones'), 'meta'=>Config::get('common.meta.home')])
 
 @section('content')
 
@@ -32,7 +32,11 @@
                 @foreach ($paragraphs as $p)
                     <p>
                         {!!
-                            str_replace('$shop', Config::get('common.postLinks')['$shop'], str_replace('$breaking', Config::get('common.postLinks')['$breaking'], $p))
+                            str_replace(
+                                ['$shop','$breaking'], 
+                                [Config::get('common.postLinks.shop'), Config::get('common.postLinks.breaking')], 
+                                $p
+                            )
                         !!}
                     </p>
                 @endforeach

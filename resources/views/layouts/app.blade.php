@@ -4,27 +4,36 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="yandex-verification" content="0b50416dde7d6df2" />
       <meta name="csrf-token" content="{{ csrf_token() }}">
       @php
-          //dd(Request::route()->getName());
+          $routeName = Request::route()->getName();
+          $counter = Config::get('common.yandex')[$routeName] ?? '';
+          //dd($name);
+          if(isset($name)) {
+            $meta = str_replace(['$name', '$where', '$phone'], [$name, $where, $phones[0]], $meta);
+          }
       @endphp
-      <link rel="stylesheet" href="{{ asset('css/'.Request::route()->getName().'.css') }}">
-      <!-- Yandex.Metrika counter -->
-      <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      <link rel="stylesheet" href="{{ asset('css/'.$routeName.'.css') }}">
+      @if ($counter != '')
+      
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+          ym({{$counter}}, "init", {
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true
+          });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/{{$counter}}" style="position:absolute; left:-9999px;" alt="no js" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->  
 
-        ym(56055262, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-      </script>
-      <noscript><div><img src="https://mc.yandex.ru/watch/56055262" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-      <!-- /Yandex.Metrika counter -->
+      @endif
+      <title>{{$meta['tittle']}}</title>      
+      <meta name="description" content="{{$meta['description']}}"> 
   </head>
   <body>
       <div id="modal"></div>
