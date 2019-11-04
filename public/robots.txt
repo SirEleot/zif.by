@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /cart/
-/admin/
+Disallow: /admin/
 
 Sitemap: https://zif.by/sitemap.xml
