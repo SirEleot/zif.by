@@ -19,7 +19,7 @@
                                         <span class="item-sale">{{ round($item->price * $coef, 2 ) }}</span>  
                                         <span id="item-price-{{$id}}">{{round($item->sale * $coef, 2 ) }}</span>
                                      @else
-                                         <p id="item-price-{{$id}}">{{ round($item->price * $coef, 2 )}}</p>  
+                                         <span id="item-price-{{$id}}">{{ round($item->price * $coef, 2 )}}</span>  
                                      @endif
                                 </div> 
                                 <div class="count">
