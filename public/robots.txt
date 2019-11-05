@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /cart/
 Disallow: /admin/
+Disallow: /login
+Disallow: /register
 
 Sitemap: https://zif.by/sitemap.xml

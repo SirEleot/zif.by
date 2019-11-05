@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Catalog;
 
 use App\Repositories\ItemRepository;
 use App\Repositories\CategoryRepository;
+use App\Repositories\SettingRepository;
 use App\Mail\Order;
 use Illuminate\Support\Facades\Mail;
 
@@ -12,7 +13,12 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CatalogController extends BaseCatalogController
 {
-    public function index(int $categoryId, CategoryRepository $categoryRepository, ItemRepository $itemRepository)
+    public function index(
+        int $categoryId, 
+        CategoryRepository $categoryRepository, 
+        ItemRepository $itemRepository, 
+        SettingRepository $settingRepository
+    )
     {
         $categories = $categoryRepository->getAll();
         if($categoryId == 0){
@@ -21,18 +27,25 @@ class CatalogController extends BaseCatalogController
             $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
-        $coef = config('common.coef');
+        $coef = $settingRepository->getCoef();
         return view("catalog.main", compact('paginator', 'categories', 'categoryId', 'coef'));
     }
 
-    public function item(int $id, ItemRepository $itemRepository )
+    public function item(
+        int $id, 
+        ItemRepository $itemRepository,
+        SettingRepository $settingRepository
+    )
     {
         $items = $itemRepository->getById($id);
-        $coef = config('common.coef');
+        $coef = $settingRepository->getCoef();
         return view("catalog.item", compact('items', 'coef'));
     }
 
-    public function cart(ItemRepository $itemRepository)
+    public function cart(
+        ItemRepository $itemRepository,
+        SettingRepository $settingRepository
+    )
     {
         $itemsArray =  json_decode($_COOKIE['cart']);
         $counts = array();
@@ -42,7 +55,7 @@ class CatalogController extends BaseCatalogController
             $counts[$value[0]] = $value[1];
         }
         $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
-        $coef = config('common.coef');
+        $coef = $settingRepository->getCoef();
         return view("catalog.cart", compact('items', 'counts', 'coef'));
     }
 

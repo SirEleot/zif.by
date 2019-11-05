@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Repositories\ItemRepository;
 use App\Repositories\CategoryRepository;
-use App\Models\Item;
+use App\Repositories\SettingRepository;
 
 use Illuminate\Http\Request;
 
@@ -64,9 +64,14 @@ class AdminItemsController extends BaseAdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(int $categoryId, CategoryRepository $categoryRepository, ItemRepository $itemRepository)
+    public function show(
+        int $categoryId, 
+        CategoryRepository $categoryRepository, 
+        ItemRepository $itemRepository, 
+        SettingRepository $settingRepository
+    )
     {
-        $coef = config('common.coef');
+        $coef = $settingRepository->getCoef();
         $categories = $categoryRepository->getAll();
         if($categoryId == 0){
             $paginator = $itemRepository->getAllWithPaginate(20);
@@ -114,9 +119,12 @@ class AdminItemsController extends BaseAdminController
         return redirect($request->headers->get('referer'));
     }
 
-    public function setCoef(Request $request)
+    public function setCoef(
+        Request $request, 
+        SettingRepository $settingRepository
+    )
     {
-        config(['common.coef'=>$request->input('coef')]);
+        $settingRepository->setCoef($request->input('coef'));
         return redirect($request->headers->get('referer'));
     }
 }

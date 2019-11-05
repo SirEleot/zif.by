@@ -16,7 +16,6 @@
                 <meta itemprop="url" content="{{ asset("img/items/".$items[0]->image) }}">
             </div>
             <div class="catalog-item-description">
-                
                 <div class="catalog-item-info">                    
                     <table>
                         @php
@@ -36,17 +35,31 @@
                             </tr>             
                         @endforeach
                     </table> 
-                </div>                 
-                    
+                </div>
                 <div class="item-add">
                     <div class="item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                        <span 
-                            id="item-price-0" 
-                            itemprop="price" 
-                            content="{{$items[0]->price}}"
-                        >
-                            {{$items[0]->price}}
-                        </span>
+                        @if ($items[0]->sale > 0)
+                            <span class="item-sale">
+                                {{ round($items[0]->price * $coef, 2 ) }}
+                            </span>
+                            <span
+                                class="item-price"
+                                id="item-price-0"  
+                                itemprop="price" 
+                                content="{{ round($items[0]->sale * $coef, 2 ) }}"
+                            >
+                                {{ round($items[0]->sale * $coef, 2 ) }}
+                            </span>
+                        @else
+                            <span 
+                                class="item-price"
+                                id="item-price-0"  
+                                itemprop="price" 
+                                content="{{ round($items[0]->price * $coef, 2 )}}"
+                            >
+                                {{ round($items[0]->price * $coef, 2 )}}
+                            </span>  
+                        @endif
                         <meta itemprop="priceCurrency" content="BYN">
                         <meta itemprop="prod" content="{{$items[0]->factory}}">
                     </div> 
@@ -59,18 +72,21 @@
                         <span 
                             id="item-total-0"
                         >
-                            {{$items[0]->price}}
+                            {{round($items[0]->price * $coef, 2) }}
                         </span> руб
                     </div> 
                     <button class="button" onclick="addItemToCart({{$items[0]->id}})">В корзину</button>
-                </div>  
-
+                </div>
             </div>
         </div>         
         <hr>  
         <div class="catalog-item-row">
             @for ($i = 1; $i < count($items); $i++)
-                <div style="background-image: url({{ asset("img/items/".$items[$i]->image) }})" class="catalog-item-more"  onclick="loadItem({{$items[$i]->id}})"> </div>
+                <div 
+                    style="background-image: url({{ asset("img/items/".$items[$i]->image) }})" 
+                    class="catalog-item-more"  onclick="loadItem({{$items[$i]->id}})"
+                > 
+                </div>
             @endfor
         </div>
     </div>

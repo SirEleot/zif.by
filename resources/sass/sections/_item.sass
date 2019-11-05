@@ -64,15 +64,22 @@
             cursor: pointer
             transform: scale(1.1) translate(-2px, -2px)
 .item
+    &-price
+        font-size: 1rem
+    &-sale
+        font-size: 0.6rem
+        color: grey
+        text-decoration: line-through
     &-add
         display: flex
         flex-wrap: nowrap
         justify-content: flex-end
         align-items: center
         width: 100%
-        margin-top:25px  
+        margin-top:25px
         &>div
             margin: 0 5px
+        
         .button
             padding: 4px 30px
             margin-left: auto
@@ -104,7 +111,7 @@
             &-total            
                 min-width: 5.5em
                 span                          
-                    font-weight: bold
+                    font-weight: bold            
 @media screen and ( max-width:  861px)    
     .catalog-item
         &-wrapper

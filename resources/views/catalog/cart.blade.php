@@ -1,4 +1,4 @@
-@extends('layouts.app',['phones'=>Config::get('common.phones')])
+@extends('layouts.app',['phones'=>Config::get('common.phones'), 'meta'=>Config::get('common.meta.catalog')])
 
 @section('content')
     <div class="container">
@@ -15,7 +15,12 @@
                             <div class="name">{{$item->name}}</div>
                             <div class="item-add">
                                 <div>
-                                    <span id="item-price-{{$id}}">{{$item->price}}</span>
+                                    @if ($item->sale > 0)
+                                        <span class="item-sale">{{ round($item->price * $coef, 2 ) }}</span>  
+                                        <span id="item-price-{{$id}}">{{round($item->sale * $coef, 2 ) }}</span>
+                                     @else
+                                         <p id="item-price-{{$id}}">{{ round($item->price * $coef, 2 )}}</p>  
+                                     @endif
                                 </div> 
                                 <div class="count">
                                     <div class="count-btn" onclick="changeItemCount(-1, {{ $id }})">-</div> 
@@ -23,13 +28,12 @@
                                     <div class="count-btn" onclick="changeItemCount(1, {{ $id }})">+</div>
                                 </div>
                                 <div class="item-total">
-                                    <span id="item-total-{{$id}}">{{round( $item->price * $counts[$item->id], 2)}}</span> руб.
+                                    <span id="item-total-{{$id}}">
+                                        {{round( $item->price * $coef * $counts[$item->id], 2)}}
+                                    </span> руб.
                                 </div>
                             </div>
                             <div class="item-remove" onclick="removeItemFromCart({{$item->id}})">
-                                {{-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 510 510">
-                                    <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M382.5,280.5h-255v-51h255V280.5z"/>
-                                </svg> --}}
                             </div>
                         </div>
                         @php

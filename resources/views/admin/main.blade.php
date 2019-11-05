@@ -1,9 +1,6 @@
-@extends('layouts.app',['phones'=>Config::get('common.phones')])
+@extends('layouts.app',['phones'=>Config::get('common.phones'), 'meta'=>Config::get('common.meta.catalog')])
 
 @section('content')
-    @php
-        //dd($paginator->currentPage())
-    @endphp
     <div class="admin admin-menu">
         <p class="admin-menu-tittle">Категории:</p>
         <div class="filter">
@@ -85,26 +82,31 @@
         @foreach ($paginator as $item)
             <form class="admin-item" action="{{route('admin.items.update', ['item'=>$item->id])}}" method="POST" id="item_{{$item->id}}" enctype="multipart/form-data">
                 @csrf
-                @method('PATCH')
-                
+                @method('PATCH')                
                 <div class="admin-item-file">
                     <label for="admin-item-file-{{$item->id}}">
                         <img src="{{ asset("img/items/".$item->image) }}" alt="img"  id="admin-item-image-{{$item->id}}">                        
                     </label> 
                     <input accept="image/jpeg,image/png,image/gif" type="file" name="image" id="admin-item-file-{{$item->id}}" onchange="selectFileImg({{$item->id}}, this.files[0])">                    
                 </div>
+                
                 <div class="admin-item-id">Id: {{$item->id}}</div>
                 <div class="admin-item-name" ><input type="text" name="name" value="{{$item->name}}"></div>
-                <div class="admin-item-price"><input type="number" name="sale" placeholder="акция" value="{{$item->sale > 0 ? $item->sale : null}}"></div>
+                <div class="admin-item-price"><input type="number" name="sale" placeholder="акция" value="{{$item->sale > 0 ? $item->sale : null}}"></div>                
                 <div class="admin-item-price" ><input type="number" name="price" value="{{$item->price}}"></div>
                 <div class="admin-item-total"> * {{$coef}}  = {{round($item->price * $coef, 2)}} руб.</div>
-                <div class="admin-item-btn" title="Удалить товар"><img src="{{ asset('/img/svg/cross.svg') }}" alt="{{$item->name}}" onclick="deleteItem({{$item->id}})"></div>
-                <div class="admin-item-btn" title="Сохранить изменения"><img src="{{ asset('/img/svg/save.svg') }}" alt="{{$item->name}}" onclick="saveItem({{$item->id}})"></div>
+                <div class="admin-item-btn" title="Удалить товар">
+                    <img src="{{ asset('/img/svg/cross.svg') }}" alt="{{$item->name}}" onclick="deleteItem({{$item->id}})">
+                </div>
+                <div class="admin-item-btn" title="Сохранить изменения">
+                    <img src="{{ asset('/img/svg/save.svg') }}" alt="{{$item->name}}" onclick="saveItem({{$item->id}})">
+                </div>                
                 <div><input type="hidden" name="image_path" value="{{$item->image}}"></div>
             </form>
         @endforeach
+    
         <div>
-           {{$paginator->onEachSide(1)->links()}}   
+            {{$paginator->links('pagination')}}  
         </div> 
     </div>
     

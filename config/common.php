@@ -1,10 +1,6 @@
 <?php
     return array(
         /*
-        |   Coefficient of price items
-        */
-        'coef'=>1,
-        /*
         |   base phone numbers 
         */
         'phones'=>array(

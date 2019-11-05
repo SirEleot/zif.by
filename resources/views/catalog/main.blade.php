@@ -53,14 +53,16 @@
                <div class="body">
                   @foreach ($paginator as $item)
                      <div class="card" onclick="loadItem({{$item->id}})" title="{{$item->name}}">
-                     <div class="image" style="background-image: url({{ asset("img/items/".$item->image) }})" alt="{{Str::slug($item->name, '-')}}" ></div>
+                        <div class="image" style="background-image: url({{ asset("img/items/".$item->image) }})" alt="{{Str::slug($item->name, '-')}}" >
+                        </div>
                         <div class="info">
                            <p class="info-name">{{$item->name}}</p>
                            @if ($item->sale > 0)
-                              <p class="info-price">{{$item->price}} руб</p>  
-                              <p class="info-price">{{$item->sale}} руб</p>  
+                              <p class="info-price-sale">{{ round($item->price * $coef, 2 ) }} руб</p>  
+                              <p class="info-price">{{round($item->sale * $coef, 2 ) }} руб</p>
+                              <img src="{{ asset('img/svg/sale.svg') }}" alt="sale" class="label-sale">
                            @else
-                               <p class="info-price">{{$item->price}} руб</p>  
+                               <p class="info-price">{{ round($item->price * $coef, 2 )}} руб</p>  
                            @endif
                                             
                         </div>                     

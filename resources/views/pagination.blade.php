@@ -27,7 +27,7 @@
                 <a class="page-link" href="{{ $paginator->currentPage() }}">{{ $paginator->currentPage() }}</a>
             </li>
 
-            @if ($paginator->currentPage() + 1 != $paginator->lastPage())
+            @if ($paginator->currentPage() + 1 < $paginator->lastPage())
                 <li class="page-item">
                     <a class="page-link" href="{{ $paginator->nextPageUrl() }}">{{ $paginator->currentPage() + 1 }}</a>
                 </li>
@@ -35,8 +35,14 @@
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
-                <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
-                <li class="page-item"><a class="page-link" href="{{ $paginator->path() }}">{{$paginator->lastPage()}}</a></li>
+                <li class="page-item disabled" aria-disabled="true">
+                    <span class="page-link">...</span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="{{ $paginator->url($paginator->lastPage()) }}">
+                        {{$paginator->lastPage()}}
+                    </a>
+                </li>
                 <li class="page-item">
                     <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
                 </li>

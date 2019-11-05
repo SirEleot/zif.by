@@ -27,6 +27,7 @@ class ItemSeeder extends Seeder
                 'category_id'=> DB::table('categories')->where('name',$value->subcategory)->value('id')
             );
         }
+        DB::table('settings')->insert(['coef'=>100]);
         DB::table('items')->insert($result);
     }
 }
