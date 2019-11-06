@@ -19,13 +19,15 @@ class Order extends Mailable
      */
 
     private $items;
-
-    public function __construct(Collection $items, array $counts)
+    private $coef;
+    public function __construct(Collection $items, array $counts, $coef, $mail)
     {        
         foreach ($items as $value) {
             $value->count = $counts[$value->id];
         }
         $this->items = $items;
+        $this->coef = $coef;
+        $this->mail = $mail;
     }
 
     /**
@@ -35,8 +37,8 @@ class Order extends Mailable
      */
     public function build()
     {
-        //dd($this->items);
-        return $this->view('catalog.order')
-            ->with(['items' => $this->items, 'name' => $_POST['name'],'phone' => $_POST['phone']]);
+        //dd($this->mail);
+        return $this->from($this->mail['from'],$this->mail['name'])
+            ->view('mail.order',['items' => $this->items, 'name' => $_POST['name'],'phone' => $_POST['phone'],'coef'=>$this->coef]);
     }
 }

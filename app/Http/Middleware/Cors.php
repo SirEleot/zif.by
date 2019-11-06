@@ -18,7 +18,7 @@ class Cors
         if(!isset($_COOKIE['cart'])) $_COOKIE['cart'] = '[]';
         return $next($request) 
             ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-            ->header('Cache-Control', 'max-age=31536000');
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            // ->header('Cache-Control', 'max-age=31536000');
     }
 }

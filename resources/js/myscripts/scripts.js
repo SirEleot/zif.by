@@ -32,13 +32,12 @@ window.loadItem = async (id) => {
     if(id < 0) return;
     $('#modal').html('load...');
     showModal(true);
-    let response = await fetch(`/item/${id}?date=${new Date().getTime()}`);
+    let response = await fetch(`/item/${id}`);
     let result = await response.text();
     $('#modal').html(result);
 }
 
 document.addEventListener('DOMContentLoaded',() => {
-    //setCookie('cart', '[]', 3.154e+7);
     const cart = getCookie('cart');
     window.cart =  cart ? JSON.parse(cart) : [];
     $('.nav-menu-btn').click(function (e) {
@@ -70,4 +69,14 @@ window.selectFileImg = (id, file)=>{
     const r = new FileReader();
     r.onload = () => img.src = r.result;
     r.readAsDataURL(file);  
+}
+
+window.sendForm = (e, form) => {
+    e.preventDefault();
+    let phone = form.querySelector('[name=phone]').value;
+    phone = phone.replace(/\s/g, '');
+    const code = phone.substring(0,2);
+    if(code != '29' && code != '25' && code != '33') return alert('Введен некорректный код оператора');
+    if(phone.length != 9) return alert('В веденном номере телефона не хватает символов');
+    form.submit();
 }

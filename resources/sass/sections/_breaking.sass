@@ -29,17 +29,34 @@
         text-transform: uppercase
     &-inputs
         width: 90%
-        margin: 15px auto !important
+        margin: 15px auto
         padding: 0
         position: relative
-        input
-            width: 100% !important
+        .input
+            width: 100%
             text-align: center
+        .phone
+            width: 80%
+            border-radius: 0 26px 26px 0
+            text-align: left
+            padding-left: 15px
+            margin: 0
+            &-prefix
+                padding: 8px
+                font-weight: normal
+                border: 1px solid $PINK
+                border-radius: 26px 0 0 26px
+                color: grey
         textarea
             width: 100%
             font-size: 1rem
             padding: 15px
             margin: 0
+    #phone
+        width: 20px
     &-form
-        margin: 15px 
-    
+        margin: 15px
+@media screen and ( max-width: 400px )
+    .breaking-inputs
+        .phone-prefix
+            padding: 8px 2px

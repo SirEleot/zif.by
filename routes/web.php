@@ -19,16 +19,20 @@ Route::get('/post/{id}', "HomeController@post")->name('post');
 Route::get('/catalog/{category}/', "Catalog\CatalogController@index")->name('catalog');
 Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
 Route::get('/cart', "Catalog\CatalogController@cart")->name('cart');
-Route::post('/order', "Catalog\CatalogController@order")->name('order');
+Route::post('/sendMessage', "Catalog\CatalogController@order")->name('order');
 Route::get('/reset', "Catalog\CatalogController@reset")->name('reset');
+
+Route::group(['namespace'=>'Message', 'prefix'=>'send'], function ()
+{
+    Route::post('/order', "MessageController@order")->name('order');
+    Route::post('/ticket', "MessageController@ticket")->name('ticket');
+    Route::post('/callback', "MessageController@callback")->name('callback');
+});
 
 
 Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function ()
 {
-    Route::resource(
-        'items', 
-        "AdminItemsController"
-    )->names('admin.items');
+    Route::resource('items', "AdminItemsController")->names('admin.items');
     Route::post('setKof', 'AdminItemsController@setCoef')->name('admin.setCoef');
 });
 

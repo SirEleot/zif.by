@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Catalog;
 use App\Repositories\ItemRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\SettingRepository;
-use App\Mail\Order;
-use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
@@ -48,6 +46,7 @@ class CatalogController extends BaseCatalogController
     )
     {
         $itemsArray =  json_decode($_COOKIE['cart']);
+        //dd($itemsArray);
         $counts = array();
         $idsArray = array();
         foreach ($itemsArray as $value) {
@@ -57,25 +56,6 @@ class CatalogController extends BaseCatalogController
         $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
         $coef = $settingRepository->getCoef();
         return view("catalog.cart", compact('items', 'counts', 'coef'));
-    }
-
-    public function order(Request $req, ItemRepository $itemRepository)
-    {
-        $itemsArray =  json_decode($_COOKIE['cart']);
-        $counts = array();
-        $idsArray = array();
-        foreach ($itemsArray as $value) {
-            $idsArray[] = $value[0];
-            $counts[$value[0]] = $value[1];
-        }
-        $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
-        if(count($itemsArray) > 0) {
-            Mail::to('support@zif.by')->send(new Order($items, $counts));
-            setcookie('cart', '[]', time() + 3.154e+7);
-            return 'ok';
-        }else{
-            return 'noItems';
-        }
     }
 
     public function reset()

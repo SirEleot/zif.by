@@ -23,7 +23,8 @@
         <p>Окажем профессиональную консультацию по выбору <strong class="color-pink">замка или дверной фурнитуры</strong> для вашей двери</p>
       </div>
     </div>
-    <form class="form" action="#" method="POST">
+    <form class="form" action="{{ route('callback') }}" method="POST">
+      @csrf
       <div class="row">
           <div class="col-sm-12">
             <h3>Заказать звонок</h3>
@@ -31,13 +32,13 @@
       </div>
       <div class="row form-inputs">
           <div class="col-xl-3 col-lg-12">
-            <input type="text" required placeholder="Ваше имя">
+            <input type="text" required placeholder="Ваше имя" name="name">
           </div>          
           <div class="col-xl-3 col-lg-12 ">
-            <input type="text" required placeholder="Ваше телефон">
+            <input type="text" required placeholder="Ваше телефон" name="phone">
           </div>
           <div class="col-xl-3 col-lg-12 ">
-            <input type="text" required placeholder="Ваш город">
+            <input type="text" required placeholder="Ваш город" name="city">
           </div>
           <div class="col-xl-3 col-lg-12">
               <input type="submit" class="button">

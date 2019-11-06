@@ -45,16 +45,6 @@ window.updateCart = () => {
     updateCountCart();
 }
 
-window.sendOrder = (e, form) => {
-    e.preventDefault();
-    let phone = form.querySelector('[name=phone]').value;
-    phone = phone.replace(/\s/g, '');
-    const code = phone.substring(0,2);
-    if(code != '29' && code != '25' && code != '33') return alert('Введен некорректный код оператора');
-    if(phone.length != 9) return alert('В веденном номере телефона не хватает символов');
-    form.submit();
-}
-
 window.updateCountCart = () => {
     let count = 0;
     cart.forEach(element => {
