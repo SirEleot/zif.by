@@ -20,6 +20,15 @@
                 ->select('name', 'id', 'price', 'sale', 'image', 'description')
                 ->with('category')
                 ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
+        } 
+        
+        public function getSaleWithPaginate(int $itemOnPage = -1)
+        {
+            return $this->startConditions()                
+                ->where('sale', '>', 0)
+                ->select('name', 'id', 'price', 'sale', 'image')
+                ->with('category')
+                ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
         }
         
         public function getByCategories($categories)

@@ -25,7 +25,7 @@
               <a href="{{ route('home') }}#about" class="nav-menu-link action-link"  itemprop="url">О нас</a>
               <a href="{{ route('home') }}#services" class="nav-menu-link action-link"  itemprop="url">Услуги</a>
               <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="url">Каталог товаров</a>
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="url">Акции</a>
+              <a href="{{ route('catalog', ['category'=>99]) }}" class="nav-menu-link action-link"  itemprop="url">Акции</a>
               <a href="{{ route('home') }}#posts" class="nav-menu-link action-link"  itemprop="url">Статьи</a>
               <a href="{{ route('home') }}#contacts" class="nav-menu-link action-link"  itemprop="url">Контакты</a>
           </div>

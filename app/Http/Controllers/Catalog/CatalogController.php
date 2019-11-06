@@ -21,6 +21,8 @@ class CatalogController extends BaseCatalogController
         $categories = $categoryRepository->getAll();
         if($categoryId == 0){
             $paginator = $itemRepository->getAllWithPaginate();
+        }elseif($categoryId == 99){
+            $paginator = $itemRepository->getSaleWithPaginate();
         }else{ 
             $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
             $paginator = $itemRepository->getByCategories($arrayCategories);

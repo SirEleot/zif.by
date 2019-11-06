@@ -36,7 +36,14 @@
                </div>
                <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
                   <a href="{{ route('catalog', $categoryId) }}" itemprop="item">
-                     <span itemprop="name">/ {{$categories[$categoryId]->name}}/</span>
+                     <span itemprop="name">/ 
+                        @if ($categoryId == 99)
+                            Акционные товары
+                        @else
+                             {{$categories[$categoryId]->name}}
+                        @endif
+                       
+                     /</span>
                   </a> 
                   <meta itemprop="position" content="3">
                </div>
