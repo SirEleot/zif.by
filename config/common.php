@@ -101,17 +101,17 @@
         */
         'mail'=>array(
             'order'=>[
-                'to'=>'admin@zif.by',
+                'to'=>'support@zif.by',
                 'from'=>'robot@zif.by',
                 'name'=>'Новый заказ'
             ],
             'ticket'=>[
-                'to'=>'admin@zif.by',
+                'to'=>'support@zif.by',
                 'from'=>'robot@zif.by',
                 'name'=>'Консультация'
             ],
             'callback'=>[
-                'to'=>'admin@zif.by',
+                'to'=>'support@zif.by',
                 'from'=>'robot@zif.by',
                 'name'=>'Перезвонить'
             ]
