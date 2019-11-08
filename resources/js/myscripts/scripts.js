@@ -37,23 +37,6 @@ window.loadItem = async (id) => {
     $('#modal').html(result);
 }
 
-document.addEventListener('DOMContentLoaded',() => {
-    const cart = getCookie('cart');
-    window.cart =  cart ? JSON.parse(cart) : [];
-    $('.nav-menu-btn').click(function (e) {
-        $('.nav-menu').toggleClass('nav-menu-active');
-    });
-    $('.action-link').click(function (e) {
-        //console.log(e.target.pathname);
-        e.preventDefault();
-        const aray = e.target.href.split("#");
-        const el = document.getElementById(aray[1]);
-        if(el)scrollTo(aray[1]);
-        else window.location.href = e.target.href;
-    });
-    updateCountCart();
-});
-
 window.onInputPhoneNumber = (ev, el) => {
     const next = ev.data;
     if(next === null)return;
@@ -80,3 +63,40 @@ window.sendForm = (e, form) => {
     if(phone.length != 9) return alert('В веденном номере телефона не хватает символов');
     form.submit();
 }
+
+window.updateSubcategories = () => {    
+    const el = $('#subcat');
+    if(el.exist()){
+        const currCategory = $("#my-select-category").val;
+        const select = $('#my-select-subcategory').el;
+        const currrSubcategory = select.value;
+        const subcategories = JSON.parse(el.val)[currCategory];
+        select.innerHTML = '';
+        for (const key in subcategories) {
+            const element = subcategories[key];
+            const option = document.createElement('option')
+            option.value = `http://localhost:8000/catalog/${element.id}`;
+            option.innerHTML = element.name;            
+            if(element.id == currrSubcategory)  option.selected= true;
+            select.append(option);
+        }
+    }         
+}
+
+document.addEventListener('DOMContentLoaded',() => {
+    const cart = getCookie('cart');
+    window.cart = cart ? JSON.parse(cart) : [];
+    $('.nav-menu-btn').click(function (e) {
+        $('.nav-menu').toggleClass('nav-menu-active');
+    });
+    $('.action-link').click(function (e) {
+        //console.log(e.target.pathname);
+        e.preventDefault();
+        const aray = e.target.href.split("#");
+        const el = document.getElementById(aray[1]);
+        if(el)scrollTo(aray[1]);
+        else window.location.href = e.target.href;
+    });
+    updateCountCart();
+    updateSubcategories();
+});

@@ -8,24 +8,48 @@
 @section('content')
    @php
       use Illuminate\Support\Str;
+      $subcategories = array();
    @endphp
    <section class="catalog">
       <div class="container">
          <div class="row alt-filter">
             <div class="col-md-12 col-sm-12">
                <div class="form-group">
-                  <label for="my-select">Выберите раздел</label>
-                  <select id="my-select" class="form-control" name="nav" onchange="window.location.href = this.value"> 
+                  <label for="my-select-category">Выберите категорию</label>
+                  <select 
+                     id="my-select-category" 
+                     class="form-control" 
+                     onchange="updateSubcategories()"
+                  >
                      @foreach ($categories as $item)
-                        <option 
-                           value="{{ route('catalog', ['category'=>$item->id]) }}" 
-                           class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}" 
-                           {{$item->id == $categoryId ? 'selected' : ''}}
-                        >
-                           {{$item->name}}
-                        </option>
+                        @if ($item->parent == 0)
+                           <option 
+                              value="{{$item->id}}"
+                              {{$item->id == $categories[$categoryId]->parent ? 'selected' : ''}}
+                           >
+                              {{$item->name}}
+                           </option>
+                           @php
+                               $subcategories[$item->id] = [];
+                           @endphp
+                        @else
+                            @php
+                                $subcategories[$item->parent][] = ['id'=>$item->id,'name'=>$item->name];
+                            @endphp
+                        @endif
                      @endforeach
                   </select>
+
+                  <input type="hidden" id="subcat" value="{{json_encode($subcategories)}}">
+
+                  <label for="my-select-subcategory">Выберите подкатегорию</label>
+                  <select 
+                     id="my-select-subcategory" 
+                     class="form-control" 
+                     onchange="window.location.href = this.value"
+                  >
+                     <option value="{{$categoryId}}" selected></option> 
+                  </select>                
                </div>
             </div>            
          </div>

@@ -8,9 +8,16 @@ window.$ = function (selector){
 }
  
 class Element {
-    constructor(el, collection = false){
+    constructor(el, collection = false){        
         this.el = el;
         this.collection = collection;
+        if(collection){
+            this.val = [];
+            for (const e of el) {
+                this.val.push(e.value);
+            }
+        }        
+        else this.val = el.value;
     }
 
     click = (event) => {
@@ -94,6 +101,14 @@ class Element {
                 console.log(el);
             }
         } else console.log(this.el);
+    }
+
+    exist = () => {        
+        if(this.collection){
+            return this.el.length > 0;
+        }else{
+            return this.el != undefined;
+        }
     }
 
 }

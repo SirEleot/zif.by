@@ -19,12 +19,12 @@ class CatalogController extends BaseCatalogController
         Request $request
     )
     {
-        $categories = $categoryRepository->getAll();        
+        $categories = $categoryRepository->getAll();
         switch ($categoryId) {
             //search
             case -1:
                 if($request->input('search') != null) {
-                    $request->session()->put('search', $request->input('search'));
+                    $request->session(['search'=> $request->input('search')]);
                 }
                 $paginator = $itemRepository->getSearchedWithPaginate($request->session()->get('search',''));
                 break;
