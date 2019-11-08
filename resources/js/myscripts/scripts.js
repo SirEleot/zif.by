@@ -75,7 +75,7 @@ window.updateSubcategories = () => {
         for (const key in subcategories) {
             const element = subcategories[key];
             const option = document.createElement('option')
-            option.value = `http://localhost:8000/catalog/${element.id}`;
+            option.value = `https://zif.by/catalog/${element.id}`;
             option.innerHTML = element.name;            
             if(element.id == currrSubcategory)  option.selected= true;
             select.append(option);
