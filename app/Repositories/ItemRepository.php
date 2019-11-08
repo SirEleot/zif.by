@@ -18,7 +18,6 @@
         {
             return $this->startConditions()
                 ->select('name', 'id', 'price', 'sale', 'image', 'description')
-                ->with('category')
                 ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
         } 
         
@@ -27,7 +26,6 @@
             return $this->startConditions()                
                 ->where('sale', '>', 0)
                 ->select('name', 'id', 'price', 'sale', 'image')
-                ->with('category')
                 ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
         }
         
@@ -36,7 +34,6 @@
             return $this->startConditions()
                 ->where('category_id', $categories)
                 ->select('name', 'id', 'price', 'sale', 'image')
-                ->with('category')
                 ->paginate($this->itemOnPage);
         }
 
@@ -81,6 +78,14 @@
                 $item->update();
                 $img->storeAs('items',$item->image, 'images');
             }
+        }
+
+        public function getSearchedWithPaginate(string $text, int $itemOnPage = -1)
+        {
+            return $this->startConditions()
+                ->select('name', 'id', 'price', 'sale', 'image', 'description')
+                ->where('name','LIKE',"%$text%")
+                ->paginate($itemOnPage < 0 ? $this->itemOnPage : $itemOnPage);
         }
     }
     

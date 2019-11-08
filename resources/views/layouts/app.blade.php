@@ -15,6 +15,9 @@
       @endphp
       <link rel="stylesheet" href="{{ asset('css/'.$routeName.'.css') }}">
       <link rel="icon" href="https://zif.by/favicon.ico" type="image/x-icon">
+      @if (isset($catalog_con) && $catalog_con)
+        <link rel="canonical" href="{{ route('catalog', ['category'=>0]) }}"/>
+      @endif
       @if ($counter != '')
       {{-- google analytics --}}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E1T86HCJV"></script>

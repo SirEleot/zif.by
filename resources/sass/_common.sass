@@ -50,11 +50,7 @@ section
 	&:hover
 		color: grey
 		cursor: pointer
-@media screen and ( max-width:  861px)
-	#modal-close
-		position: fixed
-		right: 5px
-		top: 5px
+
 .container 
 	overflow: hidden
 
@@ -70,8 +66,8 @@ section
 			color: $PURPLE
 .label-sale
 	position: absolute
-	top: 15px
-	right: 15px
+	top: 10px
+	right: 10px
 .form-inputs
 	justify-content: space-between
 	text-align: center
@@ -86,3 +82,13 @@ section
 		&:focus
 			outline: none
 			box-shadow: 0 0 8px $PINK
+@media screen and ( max-width:  861px)
+	#modal-close
+		position: fixed
+		right: 5px
+		top: 5px
+	.label-sale
+		width: 32px
+		height: 32px
+		top: 3px
+		left: 3px

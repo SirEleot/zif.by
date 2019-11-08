@@ -15,18 +15,31 @@ class CatalogController extends BaseCatalogController
         int $categoryId, 
         CategoryRepository $categoryRepository, 
         ItemRepository $itemRepository, 
-        SettingRepository $settingRepository
+        SettingRepository $settingRepository,
+        Request $request
     )
     {
         $categories = $categoryRepository->getAll();
-        if($categoryId == 0){
-            $paginator = $itemRepository->getAllWithPaginate();
-        }elseif($categoryId == 99){
-            $paginator = $itemRepository->getSaleWithPaginate();
-        }else{ 
-            $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
-            $paginator = $itemRepository->getByCategories($arrayCategories);
+        switch ($categoryId) {
+            //search
+            case -1:
+                $paginator = $itemRepository->getSearchedWithPaginate($request->input('search'));
+                break;
+            //all
+            case 0:
+                $paginator = $itemRepository->getAllWithPaginate();
+                break;
+            //sale
+            case 99:
+                $paginator = $itemRepository->getSaleWithPaginate();
+                break;
+            //by categories
+            default:
+                $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
+                $paginator = $itemRepository->getByCategories($arrayCategories);
+                break;
         }
+      
         $coef = $settingRepository->getCoef();
         return view("catalog.main", compact('paginator', 'categories', 'categoryId', 'coef'));
     }

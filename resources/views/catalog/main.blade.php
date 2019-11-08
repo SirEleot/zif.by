@@ -1,5 +1,9 @@
 
-@extends('layouts.app',['phones'=>Config::get('common.phones'), 'meta'=>Config::get('common.meta.catalog')])
+@extends('layouts.app',[
+   'phones'=>Config::get('common.phones'), 
+   'meta'=>Config::get('common.meta.catalog'),
+   'catalog_con'=>($categoryId != 0)
+])
 
 @section('content')
    @php
@@ -7,7 +11,7 @@
    @endphp
    <section class="catalog">
       <div class="container">
-         <div class="row search">
+         <div class="row alt-filter">
             <div class="col-md-12 col-sm-12">
                <div class="form-group">
                   <label for="my-select">Выберите раздел</label>
@@ -36,13 +40,17 @@
                </div>
                <div itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
                   <a href="{{ route('catalog', $categoryId) }}" itemprop="item">
-                     <span itemprop="name">/ 
-                        @if ($categoryId == 99)
-                            Акционные товары
-                        @else
-                             {{$categories[$categoryId]->name}}
-                        @endif
-                       
+                     <span itemprop="name">/
+                        @switch($categoryId)
+                            @case(-1)
+                                Результаты поиска
+                                @break
+                            @case(99)
+                              Акционные товары
+                                @break
+                            @default
+                              {{$categories[$categoryId]->name}}
+                        @endswitch                        
                      /</span>
                   </a> 
                   <meta itemprop="position" content="3">
@@ -56,7 +64,10 @@
             </div>
             <div class="col-xl-9 col-lg-8 col-md-12">
                <h1 class="tittle text-center">Каталог товаров</h1>
-               <hr>
+               <form class="catalog-search form-inputs" method="GET" action="{{ route('catalog', ['category'=>-1]) }}">
+                  <div class="input"><input type="text" placeholder="Поиск по сайту" name="search" required></div>
+                  <div class="send"><input type="submit" value="Найти"></div>
+               </form>
                <div class="body">
                   @foreach ($paginator as $item)
                      <div class="card" onclick="loadItem({{$item->id}})" title="{{$item->name}}">

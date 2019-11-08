@@ -1,6 +1,21 @@
 .catalog
     margin-top: 25px
     z-index: 50
+    &-search
+        display: flex
+        justify-content: space-between
+        padding: 5px 15px 
+        .send
+            width: 15%
+            margin-right: 15px
+            input
+                padding-left:0 
+                background-color: $PINK
+                color: white
+                &:hover                    
+                    @include box-shadow-hover
+        .input
+            width: 80%
     .tittle
         margin-top: -50px
     .filter
@@ -27,7 +42,7 @@
             a
                 color: white
 
-    .search
+    .alt-filter
         display: none
     .body
         display: flex
@@ -87,40 +102,8 @@
         margin-top: 30px
         .filter
             display: none
-        .card
-            width: 240px
-            height: 330px
-            flex: 0 1 auto
-            margin: 0 15px 30px
-            @include box-shadow
-            position: relative
-            text-align: center
-            transition: all .3
-            &:hover
-                cursor: pointer            
-                @include box-shadow-hover
-                transform: scale(1.02) translate(-4px, -4px)
-        .image       
-            width: 220px
-            height: 220px
-            margin: 10px
-            background-repeat: no-repeat
-            background-position: center
-            background-size: contain
         .info
-            width: 220px
-            border-top: 2px solid rgba(#555,.7)
-            margin: auto
-            &-name
-                text-overflow: ellipsis
-                white-space: nowrap
-                overflow: hidden
-                margin: 5px auto
-                font-size: 18px
-            &-price           
-                font-size: 20px
-                font-weight: bold
-        .search
+        .alt-filter
             display: block
             margin-bottom: 25px
         .body
@@ -138,44 +121,21 @@
         .card
             width: 100%
             height: 100px
-            flex: 0 1 auto
             margin: 1px
-            @include box-shadow
-            position: relative
-            text-align: right
-            transition: all .3
             margin-bottom: 3px
-            &:hover
-                cursor: pointer            
-                @include box-shadow-hover
-                transform: scale(1.02) translate(-4px, -4px)
         .image       
             width: 100px
             height: 100px
             margin: 0
-            background-repeat: no-repeat
             background-position: left
-            background-size: contain
+            position: absolute
+            top: 0
         .info
             margin-right: 5px
             border-top: none
             display: inline-block
-            position: absolute
-            bottom: 0
-            right: 0
             &-name
-                text-overflow: ellipsis
-                white-space: nowrap
-                overflow: hidden
                 margin: 1px
-                font-size: 14px
-            &-price           
-                font-size: 18px
-                font-weight: bold
-        .search
-            display: block
-            margin-bottom: 25px
+                font-size: .9rem
         .body
             margin-bottom: 75px
-        .navi-string 
-            display: none
