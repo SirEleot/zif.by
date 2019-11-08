@@ -25,7 +25,7 @@
                         @if ($item->parent == 0)
                            <option 
                               value="{{$item->id}}"
-                              {{$item->id == $categories[$categoryId]->parent ? 'selected' : ''}}
+                              {{ ($categoryId > 0 && $item->id == $categories[$categoryId]->parent) ? 'selected' : ''}}
                            >
                               {{$item->name}}
                            </option>
@@ -93,7 +93,7 @@
             <div class="col-xl-9 col-lg-8 col-md-12">
                <h1 class="tittle text-center">Каталог товаров</h1>
                <form class="catalog-search form-inputs" method="GET" action="{{ route('catalog', ['category'=>-1]) }}">
-                  <div class="input"><input type="text" placeholder="Поиск по сайту" name="search" required></div>
+                  <div class="input"><input value="{{session('search')}}" type="text" placeholder="Поиск по сайту" name="search" required></div>
                   <div class="send"><input type="submit" value="Найти"></div>
                </form>
                <div class="body">
