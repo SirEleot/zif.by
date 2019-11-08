@@ -17,7 +17,11 @@
                   <label for="my-select">Выберите раздел</label>
                   <select id="my-select" class="form-control" name="nav" onchange="window.location.href = this.value"> 
                      @foreach ($categories as $item)
-                        <option value="{{ route('catalog', ['category'=>$item->id]) }}" class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}" {{$item->id == $categoryId ? 'selected' : ''}}>
+                        <option 
+                           value="{{ route('catalog', ['category'=>$item->id]) }}" 
+                           class="{{$item->parent == 0 ? 'filter-category' : 'filter-subcategory'}}" 
+                           {{$item->id == $categoryId ? 'selected' : ''}}
+                        >
                            {{$item->name}}
                         </option>
                      @endforeach
