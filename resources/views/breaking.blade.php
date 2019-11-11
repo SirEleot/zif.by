@@ -3,7 +3,8 @@
     'phones'=>(array($phone)), 
     'meta'=>Config::get('common.meta.breaking'), 
     'name'=>$name, 
-    'where'=>$where
+    'where'=>$where,
+    'style'=>'vskrytie'
   ]
 )
 

@@ -33,6 +33,7 @@ Route::group(['namespace'=>'Message', 'prefix'=>'send'], function ()
 Route::group(['namespace'=>'Admin', 'prefix'=>'admin'], function ()
 {
     Route::resource('items', "AdminItemsController")->names('admin.items');
+    Route::resource('posts', "AdminPostsController")->names('admin.posts');
     Route::post('setKof', 'AdminItemsController@setCoef')->name('admin.setCoef');
 });
 

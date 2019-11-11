@@ -44,7 +44,7 @@ class CatalogController extends BaseCatalogController
         }
       
         $coef = $settingRepository->getCoef();
-        return view("catalog.main", compact('paginator', 'categories', 'categoryId', 'coef'));
+        return view("catalog", compact('paginator', 'categories', 'categoryId', 'coef'));
     }
 
     public function item(
@@ -73,7 +73,7 @@ class CatalogController extends BaseCatalogController
         }
         $items = count($itemsArray) > 0 ? $itemRepository->getByRange($idsArray) : new Collection();
         $coef = $settingRepository->getCoef();
-        return view("catalog.cart", compact('items', 'counts', 'coef'));
+        return view("cart", compact('items', 'counts', 'coef'));
     }
 
     public function reset()

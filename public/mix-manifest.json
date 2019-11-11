@@ -3,9 +3,10 @@
     "/css/app.css": "/css/app.css",
     "/css/home.css": "/css/home.css",
     "/css/cart.css": "/css/cart.css",
-    "/css/vskrytie-zamkov.css": "/css/vskrytie-zamkov.css",
+    "/css/vskrytie.css": "/css/vskrytie.css",
     "/css/catalog.css": "/css/catalog.css",
-    "/css/admin.items.show.css": "/css/admin.items.show.css",
+    "/css/admin_items.css": "/css/admin_items.css",
+    "/css/admin_posts.css": "/css/admin_posts.css",
     "/css/login.css": "/css/login.css",
     "/css/posts.css": "/css/posts.css",
     "/css/post.css": "/css/post.css"

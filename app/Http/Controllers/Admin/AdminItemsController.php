@@ -79,7 +79,7 @@ class AdminItemsController extends BaseAdminController
             $arrayCategories = $categoryRepository->getCategoriesById($categoryId);
             $paginator = $itemRepository->getByCategories($arrayCategories);
         }
-        return view("admin.main", compact('paginator', 'categories', 'categoryId', 'coef'));
+        return view("admin.items", compact('paginator', 'categories', 'categoryId', 'coef'));
     }
 
     /**

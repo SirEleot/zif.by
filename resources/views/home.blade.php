@@ -1,4 +1,8 @@
-@extends('layouts.app',['phones'=>Config::get('common.phones'), 'meta'=>Config::get('common.meta.home')])
+@extends('layouts.app',[
+   'phones'=>Config::get('common.phones'), 
+   'meta'=>Config::get('common.meta.home'), 
+   'style'=>'home'
+])
 
 @section('content')
    {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}

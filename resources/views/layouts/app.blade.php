@@ -4,17 +4,20 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+      <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
       <meta name="csrf-token" content="{{ csrf_token() }}">
       @php
-          $routeName = Request::route()->getName();
-          $counter = Config::get('common.yandex')[$routeName] ?? '';
+          $counter = Config::get('common.yandex')[Request::route()->getName()] ?? '';
           //dd($name);
           if(isset($name)) {
             $meta = str_replace(['$name', '$where', '$phone'], [$name, $where, $phones[0]], $meta);
           }
       @endphp
-      <link rel="stylesheet" href="{{ asset('css/'.$routeName.'.css') }}">
-      <link rel="icon" href="https://zif.by/favicon.ico" type="image/x-icon">
+      <title>{{$meta['tittle']}}</title>      
+      <meta name="description" content="{{$meta['description']}}">
+      <meta name="keywords" content="{{$meta['keywords']}}">
+      <link rel="stylesheet" href="{{ asset('css/'.$style.'.css') }}">
       @if (isset($catalog_con) && $catalog_con)
         <link rel="canonical" href="{{ route('catalog', ['category'=>0]) }}"/>
       @endif
@@ -45,9 +48,7 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/{{$counter}}" style="position:absolute; left:-9999px;" alt="no js" /></div></noscript>
         {{-- /Yandex.Metrika counter --}}
 
-      @endif
-      <title>{{$meta['tittle']}}</title>      
-      <meta name="description" content="{{$meta['description']}}"> 
+      @endif 
   </head>
   <body>
       <div id="modal"></div>

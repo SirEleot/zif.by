@@ -2,7 +2,8 @@
 @extends('layouts.app',[
    'phones'=>Config::get('common.phones'), 
    'meta'=>Config::get('common.meta.catalog'),
-   'catalog_con'=>($categoryId != 0)
+   'catalog_con'=>($categoryId != 0),
+   'style'=>'catalog'
 ])
 
 @section('content')
@@ -25,7 +26,7 @@
                         @if ($item->parent == 0)
                            <option 
                               value="{{$item->id}}"
-                              {{ ($categoryId > 0 && $item->id == $categories[$categoryId]->parent) ? 'selected' : ''}}
+                              {{ (isset($categories[$categoryId]) && $item->id == $categories[$categoryId]->parent) ? 'selected' : ''}}
                            >
                               {{$item->name}}
                            </option>

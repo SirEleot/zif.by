@@ -1,8 +1,12 @@
-@extends('layouts.app',['phones'=>Config::get('common.phones'), 'meta'=>Config::get('common.meta.catalog')])
+@extends('layouts.app',[
+    'phones'=>Config::get('common.phones'), 
+    'meta'=>Config::get('common.meta.catalog'), 
+    'style'=>'admin_posts'
+])
 
 @section('content')
-    <div class="admin admin-menu">
-        <p class="admin-menu-tittle">Категории:</p>
+    <div class="row admin-menu-top">   
+        <p class="admin-menu-tittle">Категории:</p>     
         <div class="filter">
             <div class="form-group">
                <select  onchange="window.location.href = this.value">
@@ -37,13 +41,14 @@
                 </button>
             </p>
         </form>
-        <hr color="white">
+    </div>
+    <div class="admin admin-menu">
         <p class="admin-menu-tittle text-center">Новый товар:</p>
         <form class="admin-menu-add" id="add-item" action="{{ route('admin.items.store')}}" method="POST"  enctype="multipart/form-data">
             @csrf
             <div class="admin-item-file">
                 <label for="admin-item-file-add">
-                    Изображение: <img src="{{asset('/img/svg/cross.svg')}}" alt="img" alt="фото"  id="admin-item-image-add">                        
+                    Изображение: <img src="{{asset('/img/svg/cross.svg')}}" alt="img" alt="фото"  id="admin-item-image-add">
                 </label> 
                 <input accept="image/jpeg,image/png,image/gif" type="file" name="image" id="admin-item-file-add" onchange="selectFileImg('add', this.files[0])" required>                    
             </div>
