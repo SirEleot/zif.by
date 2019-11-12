@@ -16,7 +16,7 @@
         {
             return $this->startConditions()
             ->select(['id', 'tittle', 'image', 'description', 'created_at'])
-            ->orderBy('created_at')
+            ->orderBy('created_at', 'desc')
             ->take($count)
             ->get();
         }

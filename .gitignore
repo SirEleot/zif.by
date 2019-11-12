@@ -5,6 +5,7 @@
 /vendor
 .env
 public/img/items
+public/img/posts
 public/js
 public/css
 .env.backup

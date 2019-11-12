@@ -13,7 +13,7 @@
           <img src="img/svg/aboutUs/ten.svg" alt="">
           <h3>лет на рынке</h3>
           <p>Уже в течении 10 лет мы оказываем <strong class="color-pink">услуги по вскрытию замков</strong>
-            любой сложнасти и точно знаем как сделать это с наименьшим ущербом для вас</p>
+            любой сложности и точно знаем как сделать это с наименьшим ущербом для вас</p>
         </div>
         <div class="col-xl-4 col-md-4 col-sm-12">
           <img src="img/svg/aboutUs/shield.svg" alt="">
