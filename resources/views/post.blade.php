@@ -37,8 +37,12 @@
                     <p>
                         {!!
                             str_replace(
-                                ['$shop','$breaking'], 
-                                [Config::get('common.postLinks.shop'), Config::get('common.postLinks.breaking')], 
+                                ['$shop','$breaking', '$site'], 
+                                [
+                                    Config::get('common.postLinks.shop'), 
+                                    Config::get('common.postLinks.breaking'), 
+                                    Config::get('common.postLinks.site')
+                                ], 
                                 $p
                             )
                         !!}
