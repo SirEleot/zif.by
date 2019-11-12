@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Repositories\PostRepository;
 
 class AdminPostsController extends Controller
 {
@@ -33,9 +34,11 @@ class AdminPostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, PostRepository $postRepository)
     {
-        //
+        $postRepository->newPost($request->input(), $request->file('image'));
+        
+        return redirect($request->headers->get('referer'));
     }
 
     /**
@@ -44,9 +47,10 @@ class AdminPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id,PostRepository $postRepository)
     {
-        //
+        $post = $postRepository->getPostById($id);
+        return view('admin.postAdd', compact('post'));
     }
 
     /**
@@ -67,9 +71,11 @@ class AdminPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, PostRepository $postRepository)
     {
-        //
+        $postRepository->postUpdate($id, $request->input());
+        if($request->file('image') != null) $request->file('image')->storeAs('posts','post_'.$id.'.jpg', 'images');
+        return redirect($request->headers->get('referer'));
     }
 
     /**

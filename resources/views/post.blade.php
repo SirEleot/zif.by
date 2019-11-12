@@ -1,6 +1,6 @@
 @extends('layouts.app',[
     'phones'=>Config::get('common.phones'), 
-    'meta'=>Config::get('common.meta.home'), 
+    'meta'=>array('tittle'=>$post->tittle,'description'=>$post->description,'keywords'=>$post->keywords), 
     'style'=>'post'
 ])
 

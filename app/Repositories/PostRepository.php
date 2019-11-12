@@ -35,6 +35,30 @@
                 ->first();
         }
 
+        public function newPost($inputs, $img)
+        {
+            $post = $this->startConditions();
+            $post->fill($inputs);
+            $post->save();
+            if($img) {
+                $post['image'] ='post_'.$post->id.'.jpg';
+                $post->update();
+                $img->storeAs('posts',$post->image, 'images');
+            }
+        }
+
+        public function postUpdate($id, $inputs)
+        {
+            $this->startConditions()
+                ->where('id', $id)
+                ->update([
+                    'tittle'=>$inputs['tittle'], 
+                    'description'=>$inputs['description'], 
+                    'text'=>$inputs['text'], 
+                    'keywords'=>$inputs['keywords']
+                ]);
+        }
+
     }
     
 ?>
