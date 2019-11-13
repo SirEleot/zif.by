@@ -46,9 +46,9 @@
                                 class="item-price"
                                 id="item-price-0"  
                                 itemprop="price" 
-                                content="{{ round($items[0]->sale * $coef, 2 ) }}"
+                                content="{{ $items[0]->sale }}"
                             >
-                                {{ round($items[0]->sale * $coef, 2 ) }}
+                                {{ $items[0]->sale }}
                             </span>
                         @else
                             <span 

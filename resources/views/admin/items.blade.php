@@ -99,7 +99,12 @@
                 <div class="admin-item-name" ><input type="text" name="name" value="{{$item->name}}"></div>
                 <div class="admin-item-price"><input type="number" name="sale" placeholder="акция" value="{{$item->sale > 0 ? $item->sale : null}}"></div>                
                 <div class="admin-item-price" ><input type="number" name="price" value="{{$item->price}}"></div>
-                <div class="admin-item-total"> * {{$coef}}  = {{round($item->price * $coef, 2)}} руб.</div>
+                @if ($item->sale > 0)
+                    <div class="admin-item-total"> * {{$coef}}  = {{$item->sale}} руб.</div>
+                @else
+                    <div class="admin-item-total"> * {{$coef}}  = {{round($item->price * $coef, 2)}} руб.</div>
+                @endif
+                
                 <div class="admin-item-btn" title="Удалить товар">
                     <img src="{{ asset('/img/svg/cross.svg') }}" alt="{{$item->name}}" onclick="deleteItem({{$item->id}})">
                 </div>

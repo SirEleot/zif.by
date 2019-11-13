@@ -106,7 +106,7 @@
                            <p class="info-name">{{$item->name}}</p>
                            @if ($item->sale > 0)
                               <p class="info-price-sale">{{ round($item->price * $coef, 2 ) }} руб</p>  
-                              <p class="info-price">{{round($item->sale * $coef, 2 ) }} руб</p>
+                              <p class="info-price">{{$item->sale }} руб</p>
                               <img src="{{ asset('img/svg/sale.svg') }}" alt="sale" class="label-sale">
                            @else
                                <p class="info-price">{{ round($item->price * $coef, 2 )}} руб</p>  

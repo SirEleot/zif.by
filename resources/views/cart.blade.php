@@ -21,7 +21,7 @@
                                 <div>
                                     @if ($item->sale > 0)
                                         <span class="item-sale">{{ round($item->price * $coef, 2 ) }}</span>  
-                                        <span id="item-price-{{$id}}">{{round($item->sale * $coef, 2 ) }}</span>
+                                        <span id="item-price-{{$id}}">{{$item->sale }}</span>
                                      @else
                                          <span id="item-price-{{$id}}">{{ round($item->price * $coef, 2 )}}</span>  
                                      @endif
@@ -32,16 +32,23 @@
                                     <div class="count-btn" onclick="changeItemCount(1, {{ $id }})">+</div>
                                 </div>
                                 <div class="item-total">
-                                    <span id="item-total-{{$id}}">
-                                        {{round( $item->price * $coef * $counts[$item->id], 2)}}
-                                    </span> руб.
+                                    @if ($item->sale > 0)
+                                        <span id="item-total-{{$id}}">
+                                            {{ round( $item->sale * $counts[$item->id], 2) }}
+                                        </span> руб.
+                                     @else
+                                        <span id="item-total-{{$id}}">
+                                            {{round( $item->price * $coef * $counts[$item->id], 2)}}
+                                        </span> руб.  
+                                     @endif
+                                   
                                 </div>
                             </div>
                             <div class="item-remove" onclick="removeItemFromCart({{$item->id}})">
                             </div>
                         </div>
                         @php
-                            $totalPrice += $item->price * $counts[$item->id];
+                            $totalPrice += ($item->sale > 0 ? $item->sale : $item->price)  * $counts[$item->id];
                             $totalCount += $counts[$item->id];
                         @endphp
                     @endforeach

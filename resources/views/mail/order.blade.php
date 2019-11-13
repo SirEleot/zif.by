@@ -19,17 +19,17 @@
                 <a href="{{ asset("img/items/".$item->image) }}"> {{$item->name}}</a>
             </td>
             <td style="padding: 15px; ">
-                Цена: {{($item->sale > 0 ? $item->sale : $item->price) * $coef}}
+                Цена: {{ $item->sale > 0 ? $item->sale : $item->price * $coef }}
             </td>
             <td style="text-align: center;">
                 Кол-во: {{$item->count}} шт.
             </td>
             <td style="text-align: right; padding: 20px;">
-                За {{$item->count}} шт: {{round($item->count * ($item->sale > 0 ? $item->sale : $item->price) * $coef, 2)}}
+                За {{$item->count}} шт: {{round($item->count * ($item->sale > 0 ? $item->sale : $item->price * $coef), 2)}}
             </td>
         </tr>
         @php
-            $totalPrice += $item->count * ($item->sale > 0 ? $item->sale : $item->price) * $coef;
+            $totalPrice += $item->count * ($item->sale > 0 ? $item->sale : $item->price * $coef);
             $switcher = !$switcher;
         @endphp
     @endforeach

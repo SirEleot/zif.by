@@ -24,7 +24,7 @@
         </div>
         <div class="col-xl-3 col-md-3 col-sm-12">
           <img src="{{ asset('img/svg/breaking/fast.svg') }}" alt="fast">
-          <p>Срочный выездв любой район <br> <strong class="color-pink">{{$whom}}</strong></p>
+          <p>Срочный выезд в любой район <br> <strong class="color-pink">{{$whom}}</strong></p>
         </div>
     </div>
   </div>
