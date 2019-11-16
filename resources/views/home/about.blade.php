@@ -42,7 +42,7 @@
         <div class="col-xl-4 col-md-4 col-sm-12">
           <img src="img/svg/aboutUs/product.svg" alt="">
           <h3>ШИРОКИЙ ВЫБОР</h3>
-          <p>Мы имеем огромный ассортимент товаров от ведущих произаодителей <strong class="color-pink">дверной фурнитуры и замков </strong> в мире</p>
+          <p>Мы имеем огромный ассортимент товаров от ведущих производителей <strong class="color-pink">дверной фурнитуры и замков </strong> в мире</p>
         </div>
       </div>
     </div>
