@@ -15,7 +15,7 @@ class HomeController extends Controller
 
     public function breaking($sity)  
     {
-        return view("breaking", config('common.sities')[$sity]);
+        return view("breaking.$sity", config('common.sities')[$sity]);
     }
 
     public function posts(PostRepository $postRepository)
