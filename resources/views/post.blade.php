@@ -34,19 +34,7 @@
                 itemprop="articleBody"
             > 
                 @foreach ($paragraphs as $p)
-                    <p>
-                        {!!
-                            str_replace(
-                                ['$shop','$breaking', '$site'], 
-                                [
-                                    Config::get('common.postLinks.shop'), 
-                                    Config::get('common.postLinks.breaking'), 
-                                    Config::get('common.postLinks.site')
-                                ], 
-                                $p
-                            )
-                        !!}
-                    </p>
+                    <p>{!! $p !!}</p>
                 @endforeach
             </article>
             <p itemprop="publisher" itemscope itemtype="https://schema.org/Organization">

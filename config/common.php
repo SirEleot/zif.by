@@ -62,14 +62,6 @@
             ]
         ),
         /*
-        |   triggers for replace in posts
-        */
-        'postLinks'=>array(
-            'shop'=>'<a href="/catalog/0">Нашем магазине</a>',
-            'breaking'=>'<a href="/vskrytie-zamkov/soligorsk">Наши специалисты</a>',
-            'site'=>'<a href="/vskrytie-zamkov/soligorsk">нашем сайте</a>'
-        ),
-        /*
         |   contacts
         */
         'adress'=>'г.Солигорск ул. Заслонова 44',
