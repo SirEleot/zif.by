@@ -8,10 +8,10 @@
         </div>
         <div class="phones">
           @foreach ($phones as $phone)
-              <a href="tel:{{str_replace(' ', '', $phone)}}" class="phone">
-            <img src="{{ asset('img/svg/whatsapp-white.svg') }}" alt="phone">
-            <span class="phones-text">{{$phone}}</span>
-          </a>
+            <a href="tel:{{str_replace(' ', '', $phone)}}" class="phone">
+              <img src="{{ asset('img/svg/whatsapp-white.svg') }}" alt="phone">
+              <span class="phones-text">{{$phone}}</span>
+            </a>
           @endforeach
         </div>
         <div class="nav-menu">
