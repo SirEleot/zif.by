@@ -21,9 +21,10 @@
                 @endforeach
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <p class="footer-tittle">Наши контакты</p>               
-                <p class="footer-link"><a href="tel://375291420908">+375 29 142 09 08</a></p>
-                <p class="footer-link"><a href="tel://375292420909">+375 29 242 09 09</a></p>
+                <p class="footer-tittle">Наши контакты</p>
+                @foreach ($phones as $phone)
+                    <p class="footer-link"><a href="tel:{{str_replace(' ', '', $phone)}}">{{$phone}}</a></p>
+                @endforeach
                 <p class="footer-link">
                     <a href="{{config('common.social')['vk']}}"  target="blank"><img class="social-ico" src="{{ asset('img/svg/vk.svg') }}" alt="vk"></a>
                     <a href="{{config('common.social')['instagram']}}" target="blank"><img class="social-ico" src="{{ asset('img/svg/instagram-logo.svg') }}" alt="instagramm"></a>

@@ -17,7 +17,7 @@ class Element {
                 this.val.push(e.value);
             }
         }        
-        else this.val = el.value;
+        else this.val = el ? el.value : null;
     }
 
     click = (event) => {

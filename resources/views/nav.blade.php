@@ -23,7 +23,17 @@
           <div class="nav-menu-links" itemscope itemtype="http://www.schema.org/SiteNavigationElement" >                
               <a href="{{ route('home') }}#main_top" class="nav-menu-link action-link"  itemprop="url">Главная </a>
               <a href="{{ route('home') }}#about" class="nav-menu-link action-link"  itemprop="url">О нас</a>
-              <a href="{{ route('home') }}#services" class="nav-menu-link action-link"  itemprop="url">Услуги</a>
+              <a href="{{ route('home') }}#services" class="nav-menu-link action-link" itemprop="url">Услуги</a>
+{{--               
+              <div class="hidden">
+                <a href="{{ route('home') }}#services" class="nav-menu-link action-link" itemprop="url">Услуги</a>
+                <div class="hidden-block">
+                  @foreach (Config::get('common.sities') as $key => $sity)
+                    <a href="{{ route('vskrytie-zamkov',['sity'=>$key]) }}" class="nav-menu-link" itemprop="url">{{$sity['name']}}</a>                   
+                  @endforeach
+                </div>
+              </div>
+               --}}
               <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="url">Каталог товаров</a>
               <a href="{{ route('catalog', ['category'=>99]) }}" class="nav-menu-link action-link"  itemprop="url">Акции</a>
               <a href="{{ route('home') }}#posts" class="nav-menu-link action-link"  itemprop="url">Статьи</a>

@@ -24,7 +24,7 @@
           </div>
           <div class="tittle">
             ВСКРЫТИЕ И УСТАНОВКА ЗАМКОВ <br>
-            ПО МИНСКУ И МИНСКОЙ ОБЛАСТИ
+            {{$tittle}}
           </div>
           <div class="nav-menu">
             <div class="nav-menu-btn">
@@ -56,6 +56,6 @@
 
       @include('footer')
     {{-- Custom Scripts--}}
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
   </body>
 </html>

@@ -1,7 +1,6 @@
 .nav
     background-color: $PURPLE
     box-shadow: 0 1px 6px 2px rgba(#000, .6)
-    z-index: 500
     &-row
         display: flex
         flex-wrap: nowrap
@@ -60,6 +59,14 @@
                     cursor: pointer 
                     fill: $PINK
                     font-weight: bold
+.hidden
+    position: relative
+    margin-left: 15px
+    &-block
+        position: absolute
+        z-index: 1050
+        right: 0
+        top: 100%
 .cart-count
     position: absolute
     background-color: $PINK
