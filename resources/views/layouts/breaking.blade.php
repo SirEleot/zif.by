@@ -33,9 +33,9 @@
                 <div class="nav-menu-btn-line"></div>
             </div>
             <div class="nav-menu-links" itemscope itemtype="http://www.schema.org/SiteNavigationElement" >                
-                <a href="{{ route('home') }}#main_top" class="nav-menu-link action-link"  itemprop="url">Вскрыть дверь</a>
-                <a href="{{ route('home') }}#about" class="nav-menu-link action-link"  itemprop="url">Вскрыть машину</a>
-                <a href="{{ route('home') }}#services" class="nav-menu-link action-link"  itemprop="url">Вскрыть дверь</a>
+            <a href="{{ route('vskrytie-zamkov', ['sity'=>$page]) }}" class="nav-menu-link action-link {{$id==0 ? "active" : ""}}"  itemprop="url">Вскрыть дверь</a>
+                <a href="{{ route('vskrytie-zamkov', ['sity'=>$page]) }}?id=1" class="nav-menu-link action-link {{$id==1 ? "active" : ""}}"  itemprop="url">Вскрыть машину</a>
+                <a href="{{ route('vskrytie-zamkov', ['sity'=>$page]) }}?id=2" class="nav-menu-link action-link {{$id==2 ? "active" : ""}}"  itemprop="url">Вскрыть сейф</a>
             </div>
           </div>
           

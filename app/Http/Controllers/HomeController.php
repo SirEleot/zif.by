@@ -13,9 +13,53 @@ class HomeController extends Controller
         return view("home",compact('posts'));
     }
 
-    public function breaking($sity)  
+    public function breaking($sity, Request $request)  
     {
-        return view("breaking.$sity", config('common.sities')[$sity]);
+        $id = $request->query('id') ?? "0";
+        $array = [
+            [
+                "imgs"=>[
+                    "door_1",
+                    "door_2"
+                ],
+                "subtittles" =>[
+                    ["Профессиональное вскрытие замков", "без повреждения двери"],                    
+                    ["Установка и ремонт", "замков любой сложности"],                    
+                    ["Замена замков", "замки в наличии"],                    
+                    ["Изготовим ключи по замку", "для дверей сейфов и автомобилей"]
+
+                ],
+                "id"=>0
+            ],
+            [
+                "imgs"=>[
+                    "auto_1",
+                    "auto_2"
+                ],
+                "subtittles" =>[
+                    ["Вскрытие автомобиля", ""],                    
+                    ["Ремонт", "замка зажигания"],                    
+                    ["Ремонт", "автомобильных замков"],                    
+                    ["Вскрытие", "капота"],                    
+                    ["Изготовление ключей", ""]
+    
+                ],
+                "id"=>1
+            ],
+            [
+                "imgs"=>[
+                    "safe_1",
+                    "safe_2"
+                ],
+                "subtittles" =>[
+                    ["Перекодировка", "электронных сейфов"],                    
+                    ["Перекодировка", "механичесских сейфов"]
+                ],
+                "id"=>2
+            ]
+        ];
+        $header = $array[$id] ?? $array[0];
+        return view("breaking.$sity", $array[$id] ?? $array[0]);
     }
 
     public function posts(PostRepository $postRepository)
