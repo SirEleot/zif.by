@@ -11,7 +11,7 @@
       <title>Вскрытие замков и авто {{$sity}} </title>      
       <meta name="description" content="Вскрытие замков дверей, сейфов и авто в {{$where}}, срочный выезд в район. Вскроем и заменим замок быстро с наименьшими повреждениями. 📱: {{$phones[0]}}">
       <meta name="keywords" content="не открывается, открыть, вскрытие, дверь, замок, авто, сейф, {{$sity}}, замена, ремонт">
-      <link rel="stylesheet" href="{{ asset('css/vskrytie.css') }}">           
+      <link rel="stylesheet" href="{{ asset('css/vskrytie.css') }}?v=001">           
   </head>
   <body>
     <nav class="nav fixed-top">
@@ -56,6 +56,6 @@
 
       @include('footer')
     {{-- Custom Scripts--}}
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>

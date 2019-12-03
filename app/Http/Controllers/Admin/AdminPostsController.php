@@ -36,8 +36,8 @@ class AdminPostsController extends Controller
      */
     public function store(Request $request, PostRepository $postRepository)
     {
-        $postRepository->newPost($request->input(), $request->file('image'));
-        
+        $postRepository->newPost($request->input(), $request->file('image'));        
+        $result = `\home\dumps\make_dump`;
         return redirect($request->headers->get('referer'));
     }
 

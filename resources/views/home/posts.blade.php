@@ -16,7 +16,7 @@
           <div class="posts-card">
             <div class="posts-card-image" style="background-image: url({{ asset('/img/posts/'.$post->image) }});"></div>
             <div class="posts-card-tittle">{{$post->tittle}}</div>
-            <div class="posts-card-description">{{$post->description}}</div>
+            <div class="posts-card-short">{{$post->description}}</div>
             <div class="posts-card-date">{{$post->created_at}}</div>
           </div>
         </div>

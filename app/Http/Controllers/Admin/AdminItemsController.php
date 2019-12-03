@@ -55,6 +55,7 @@ class AdminItemsController extends BaseAdminController
         }
         $inputs['description'] = json_encode($desc);
         $itemRepository->addItem($inputs, $request->file('image'));
+        $result = `\home\dumps\make_dump`;
         return redirect($request->headers->get('referer'));
     }
 
