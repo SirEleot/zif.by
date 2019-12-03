@@ -43,7 +43,7 @@ $phones = [
     </section>
     <section class="about">
         <div class="container">
-            <h1>Причины обратится к нам</h1>
+            <div class="reson">Причины обратится к нам</div>
             <div class="row">
                 <div class="col-xl-3 about-card">
                     <img src="../img/svg/breaking/ten.svg" alt="ten">

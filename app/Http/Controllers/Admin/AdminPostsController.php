@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\PostRepository;
 
-class AdminPostsController extends Controller
+class AdminPostsController extends BaseAdminController
 {
     /**
      * Display a listing of the resource.
@@ -36,8 +36,7 @@ class AdminPostsController extends Controller
      */
     public function store(Request $request, PostRepository $postRepository)
     {
-        $postRepository->newPost($request->input(), $request->file('image'));        
-        $result = `\home\dumps\make_dump`;
+        $postRepository->newPost($request->input(), $request->file('image'));
         return redirect($request->headers->get('referer'));
     }
 

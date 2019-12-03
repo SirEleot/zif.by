@@ -50,7 +50,7 @@
     .row
         justify-content: space-between
         margin-top: 35px
-    h1
+    .reson
         font-size: 52px
         color: white
         text-transform: uppercase
@@ -80,15 +80,15 @@
     margin: 0 auto
     background-image: url('../img/breaking/men.jpg')
     position: relative
+    &-card
+        position: absolute
+        left: 45%
+        top: 36%
     &-tittle
         font-size: 22px
         color: white
         text-align: center
         font-weight: bold
-    &-card
-        position: absolute
-        left: 45%
-        top: 36%
     .phone
         display: block
         color: $PINK
@@ -109,5 +109,25 @@
     .nav
         .tittle
             font-size: 12px
-    .breaking.row
+    .breaking .row
         justify-content: center
+    .col-xl-5
+        width: auto
+    .about .reson
+        font-size: 48px
+@media screen and (max-width: 766px)
+    .about .reson
+        font-size: 32px
+    .breaking
+        background-image: none
+        margin-top: -35px
+    .contacts      
+        width: 100%
+        background-image: none
+        &-card
+            background-color: #02182b
+            position: relative
+            text-align: center        
+            margin-top: 16%
+            left: 0
+            padding: 25px 0
