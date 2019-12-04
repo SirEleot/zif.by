@@ -9,14 +9,10 @@
       <meta name="csrf-token" content="{{ csrf_token() }}">
       @php
           $counter = Config::get('common.yandex')[Request::route()->getName()] ?? '';
-          //dd($name);
-          if(isset($name)) {
-            $meta = str_replace(['$name', '$where', '$phone'], [$name, $where, $phones[0]], $meta);
-          }
       @endphp
-      <title>{{$meta['tittle']}}</title>      
-      <meta name="description" content="{{$meta['description']}}">
-      <meta name="keywords" content="{{$meta['keywords']}}">
+      <title>Магазин замков и фурнитуры Солигорск ул.Заслонова 44</title>      
+      <meta name="description" content="Магазин замков и фурнитуры в Солигорске. ▶ Мы находимся по адрессу: г.Солигорск ул.Заслонова 44. 📱: +375 29 142 09 08">
+      <meta name="keywords" content="купить, выбор, дверной, дверную, замок, ручку, сердцевину, Солигорск, почтовый ящик">
       <link rel="stylesheet" href="{{ asset('css/'.$style.'.css') }}">
       @if (isset($catalog_con) && $catalog_con)
         <link rel="canonical" href="{{ route('catalog', ['category'=>0]) }}"/>

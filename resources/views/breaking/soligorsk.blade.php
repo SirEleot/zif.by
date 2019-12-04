@@ -6,8 +6,8 @@
 @endphp
 @extends('layouts.breaking',
     [
-        "sity" => "Минск",
-        "where" => "Минске",
+        "sity" => "Солигорск",
+        "where" => "Солигорске",
         "phones" => $phones,
         "page" => "minsk",
         "id"=> $id,
