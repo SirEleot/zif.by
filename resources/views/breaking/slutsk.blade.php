@@ -9,7 +9,7 @@
         "sity" => "Слуцк",
         "where" => "Слуцке",
         "phones" => $phones,
-        "page" => "minsk",
+        "page" => "slutsk",
         "id"=> $id,
         "tittle"=> "в Слуцке и Слуцком районе"
     ]

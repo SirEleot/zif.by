@@ -9,7 +9,7 @@
         "sity" => "Старые Дороги",
         "where" => "Старых Дорогах",
         "phones" => $phones,
-        "page" => "minsk",
+        "page" => "starie_dorogi",
         "id"=> $id,
         "tittle"=> "в Старых дорогах"
     ]

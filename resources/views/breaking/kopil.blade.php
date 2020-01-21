@@ -9,7 +9,7 @@
         "sity" => "Копыль",
         "where" => "Копыле",
         "phones" => $phones,
-        "page" => "minsk",
+        "page" => "kopil",
         "id"=> $id,
         "tittle"=> "в Копыле и Копыльском районе"
     ]

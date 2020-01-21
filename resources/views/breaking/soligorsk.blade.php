@@ -9,7 +9,7 @@
         "sity" => "Солигорск",
         "where" => "Солигорске",
         "phones" => $phones,
-        "page" => "minsk",
+        "page" => "soligorsk",
         "id"=> $id,
         "tittle"=> "в Солигорске и Солигорском районе"
     ]

@@ -9,7 +9,7 @@ $phones = [
         "sity" => "Любань",
         "where" => "Любани",
         "phones" => $phones,
-        "page" => "minsk",
+        "page" => "luban",
         "id"=> $id,
         "tittle"=> "в Любани и Любаньском районе"
     ]
