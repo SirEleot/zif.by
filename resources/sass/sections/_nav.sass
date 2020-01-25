@@ -29,7 +29,7 @@
             width: 16px
     &-menu
         &-links
-            z-index: -1
+            //z-index: -1
             display: flex
         &-link
             font-size: 16px
@@ -62,11 +62,28 @@
 .hidden
     position: relative
     margin-left: 15px
+    &:hover .hidden-block
+        display: block
     &-block
+        background-color: $PURPLE
         position: absolute
         z-index: 1050
-        right: 0
+        left: -50%
         top: 100%
+        display: none
+        padding-top: 10px
+        min-width: 180px
+        &-link
+            padding: 10px 0
+            text-align: center
+            color: $clr_text_white
+            text-decoration: none
+            display: block
+            &:hover
+                color: $PINK
+                text-decoration: none
+                background-color: lighten($PURPLE, 10)
+
 .cart-count
     position: absolute
     background-color: $PINK
@@ -177,3 +194,9 @@
                     &:last-child
                         transform-origin: 0 50%
                         transform: translateY(1.2px) rotateZ(-45deg)
+    .hidden
+        margin-left: 0
+        &-block
+            position: relative
+            left: 0
+            top: 0
