@@ -27,6 +27,7 @@ mix.babelConfig ({
     .sass('resources/sass/login.scss', 'public/css')
     .sass('resources/sass/posts.scss', 'public/css')
     .sass('resources/sass/post.scss', 'public/css')
+    .sass('resources/sass/doors.scss', 'public/css')
     .options({
         processCssUrls: false
      });

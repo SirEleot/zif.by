@@ -21,6 +21,7 @@ Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
 Route::get('/cart', "Catalog\CatalogController@cart")->name('cart');
 Route::post('/sendMessage', "Catalog\CatalogController@order")->name('order');
 Route::get('/reset', "Catalog\CatalogController@reset")->name('reset');
+Route::get('/doors', "Doors\DoorsController@index")->name('doors');
 
 Route::group(['namespace'=>'Message', 'prefix'=>'send'], function ()
 {
