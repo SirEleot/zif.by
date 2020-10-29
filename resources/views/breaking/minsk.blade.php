@@ -1,5 +1,5 @@
 @php
-    $phones = ["+375 29 669 74 74","+375 29 573 95 40"]
+    $phones = ["+375 29 144 96 98"]
 @endphp
 @extends('layouts.breaking',
     [
