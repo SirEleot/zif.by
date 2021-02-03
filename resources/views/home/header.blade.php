@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12 header-text">
           <h1 class="header-tittle">
-            Магазин <strong class="color-pink">замков</strong> <br>
-            и <strong class="color-pink">Фурнитуры</strong> в Солигорске
+            Двери <strong class="color-pink">замки</strong> <br>
+            и <strong class="color-pink">Фурнитура</strong> в Солигорске
           </h1>
             <hr>
           <h3 class="header-subtittle">
