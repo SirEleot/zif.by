@@ -38,7 +38,7 @@
                 </div>
                 <div class="item-add">
                     <div class="item" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                        @if ($items[0]->sale > 0)
+                        <!-- @if ($items[0]->sale > 0)
                             <span class="item-sale">
                                 {{ round($items[0]->price * $coef, 2 ) }}
                             </span>
@@ -59,7 +59,7 @@
                             >
                                 {{ round($items[0]->price * $coef, 2 )}}
                             </span>  
-                        @endif
+                        @endif -->
                         <meta itemprop="priceCurrency" content="BYN">
                         <meta itemprop="prod" content="{{$items[0]->factory}}">
                     </div> 
@@ -69,11 +69,11 @@
                         <div class="count-btn" onclick="changeItemCount(1,0)">+</div>
                     </div>
                     <div class="item">
-                        <span 
+                        <!-- <span 
                             id="item-total-0"
                         >
                             {{round($items[0]->price * $coef, 2) }}
-                        </span> руб
+                        </span> руб -->
                     </div> 
                     <button class="button" onclick="addItemToCart({{$items[0]->id}})">В корзину</button>
                 </div>

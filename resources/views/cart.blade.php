@@ -18,12 +18,12 @@
                             <div class="name">{{$item->name}}</div>
                             <div class="item-add">
                                 <div>
-                                    @if ($item->sale > 0)
+                                    <!-- @if ($item->sale > 0)
                                         <span class="item-sale">{{ round($item->price * $coef, 2 ) }}</span>  
                                         <span id="item-price-{{$id}}">{{$item->sale }}</span>
                                      @else
                                          <span id="item-price-{{$id}}">{{ round($item->price * $coef, 2 )}}</span>  
-                                     @endif
+                                     @endif -->
                                 </div> 
                                 <div class="count">
                                     <div class="count-btn" onclick="changeItemCount(-1, {{ $id }})">-</div> 
@@ -31,7 +31,7 @@
                                     <div class="count-btn" onclick="changeItemCount(1, {{ $id }})">+</div>
                                 </div>
                                 <div class="item-total">
-                                    @if ($item->sale > 0)
+                                    <!-- @if ($item->sale > 0)
                                         <span id="item-total-{{$id}}">
                                             {{ round( $item->sale * $counts[$item->id], 2) }}
                                         </span> руб.
@@ -39,17 +39,17 @@
                                         <span id="item-total-{{$id}}">
                                             {{round( $item->price * $coef * $counts[$item->id], 2)}}
                                         </span> руб.  
-                                     @endif
+                                     @endif -->
                                    
                                 </div>
                             </div>
                             <div class="item-remove" onclick="removeItemFromCart({{$item->id}})">
                             </div>
                         </div>
-                        @php
+                        <!-- @php
                             $totalPrice += ($item->sale > 0 ? $item->sale : $item->price)  * $counts[$item->id];
                             $totalCount += $counts[$item->id];
-                        @endphp
+                        @endphp -->
                     @endforeach
                 </div>                
             </div>
@@ -68,7 +68,7 @@
                     @endif
                     <div class="count">В корзине <span id="order-count">{{$totalCount}}</span> товаров</div>
                     <hr>
-                    <p class="total"> На сумму: <span id="order-price">{{$totalPrice}}</span> руб.</p>
+                    <!-- <p class="total"> На сумму: <span id="order-price">{{$totalPrice}}</span> руб.</p> -->
                 </form>
             </div>
         </div>
