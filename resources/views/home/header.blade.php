@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xl-8 col-lg-9 col-md-9 col-sm-12 header-text">
           <h1 class="header-tittle">
-            Дверная <strong class="color-pink">фурнитура</strong> <br>
+            Замена <strong class="color-pink">замков</strong> <br>
             <strong class="color-pink">Дубликаты</strong> ключей
           </h1>
             <hr>          
