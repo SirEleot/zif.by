@@ -32,9 +32,10 @@
                 </div>
               </div>
               
-              <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="url">Каталог товаров</a>
-              <a href="{{ route('catalog', ['category'=>99]) }}" class="nav-menu-link action-link"  itemprop="url">Акции</a>
-              <a href="{{ route('doors') }}" class="nav-menu-link action-link"  itemprop="url">Двери/Окна</a>
+              <!-- <a href="{{ route('catalog', ['category'=>0]) }}" class="nav-menu-link action-link"  itemprop="url">Каталог товаров</a> -->
+              <!-- <a href="{{ route('catalog', ['category'=>99]) }}" class="nav-menu-link action-link"  itemprop="url">Акции</a> -->
+              <!-- <a href="{{ route('doors') }}" class="nav-menu-link action-link"  itemprop="url">Двери/Окна</a> -->
+              <!-- <a href="{{ route('doors') }}" class="nav-menu-link action-link"  itemprop="url">Дубликаты ключей</a> -->
               <a href="{{ route('home') }}#contacts" class="nav-menu-link action-link"  itemprop="url">Контакты</a>
           </div>
         </div>
