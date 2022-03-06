@@ -5,12 +5,12 @@
                 <img src="{{ asset('img/svg/logo.svg') }}" alt="">
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <p class="footer-tittle">Каталог товаров</p>
+                <!-- <p class="footer-tittle">Каталог товаров</p>
                 <p class="footer-link"><a href="{{ route('catalog', ['category'=>0]) }}">Все товары</a> </p>
                 <p class="footer-link"><a href="{{ route('catalog', ['category'=>1]) }}">Дверные замки</a> </p>
                 <p class="footer-link"><a href="{{ route('catalog', ['category'=>9]) }}">Дверные ручки</a> </p>
                 <p class="footer-link"><a href="{{ route('catalog', ['category'=>15]) }}">Фурнитура</a> </p>
-                <p class="footer-link"><a href="{{ route('catalog', ['category'=>25]) }}">Прочие товары</a> </p>
+                <p class="footer-link"><a href="{{ route('catalog', ['category'=>25]) }}">Прочие товары</a> </p> -->
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                 <p class="footer-tittle">Вскрытие замков</p>
