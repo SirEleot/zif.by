@@ -16,16 +16,16 @@ Route::get('/vskrytie-zamkov/{sity}', "HomeController@breaking")->name('vskrytie
 Route::get('/posts', "HomeController@posts")->name('posts');
 Route::get('/post/{id}', "HomeController@post")->name('post');
 
-Route::get('/catalog/{category}/', "Catalog\CatalogController@index")->name('catalog');
-Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
-Route::get('/cart', "Catalog\CatalogController@cart")->name('cart');
-Route::post('/sendMessage', "Catalog\CatalogController@order")->name('order');
-Route::get('/reset', "Catalog\CatalogController@reset")->name('reset');
+//Route::get('/catalog/{category}/', "Catalog\CatalogController@index")->name('catalog');
+//Route::get('/item/{id}/', "Catalog\CatalogController@item")->name('item');
+//Route::get('/cart', "Catalog\CatalogController@cart")->name('cart');
+//Route::post('/sendMessage', "Catalog\CatalogController@order")->name('order');
+//Route::get('/reset', "Catalog\CatalogController@reset")->name('reset');
 Route::get('/doors', "Doors\DoorsController@index")->name('doors');
 
 Route::group(['namespace'=>'Message', 'prefix'=>'send'], function ()
 {
-    Route::post('/order', "MessageController@order")->name('order');
+    //Route::post('/order', "MessageController@order")->name('order');
     Route::post('/ticket', "MessageController@ticket")->name('ticket');
     Route::post('/callback', "MessageController@callback")->name('callback');
 });
