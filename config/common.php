@@ -25,13 +25,13 @@
                 'phone'=>'+375 29 142 09 08',
                 'img'=>'starie_dorogi.png'
             ],
-            'minsk'=> [
-                'name'=>'Минск', 
-                'where'=>'Минске',
-                'whom'=>'Минска', 
-                'phone'=>'+375 29 144 96 98',
-                'img'=>'minsk.png'
-            ],
+            // 'minsk'=> [
+            //     'name'=>'Минск', 
+            //     'where'=>'Минске',
+            //     'whom'=>'Минска', 
+            //     'phone'=>'+375 29 144 96 98',
+            //     'img'=>'minsk.png'
+            // ],
             'slutsk'=> [
                 'name'=>'Слуцк', 
                 'where'=>'Слуцке',
@@ -60,13 +60,13 @@
                 'phone'=>'+375 29 142 09 08',
                 'img'=>'soligorsk.png'
             ],
-            'baranovichi' => [
-                'name'=>'Барановичи', 
-                'where'=>'Барановичах',
-                'whom'=>'Барановичей', 
-                'phone'=>'+375 29 776 00 82',
-                'img'=>'soligorsk.png'
-            ]
+            // 'baranovichi' => [
+            //     'name'=>'Барановичи', 
+            //     'where'=>'Барановичах',
+            //     'whom'=>'Барановичей', 
+            //     'phone'=>'+375 29 776 00 82',
+            //     'img'=>'soligorsk.png'
+            // ]
         ),
         /*
         |   contacts
